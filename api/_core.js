@@ -16,7 +16,7 @@ export async function saveArchive(id,archive){
  return put(pathname(id),JSON.stringify(archive),{access:'private',allowOverwrite:true,contentType:'application/json',cacheControlMaxAge:60});
 }
 export function validRecipient(archive,gift){return typeof gift==='string'&&gift.length>=16&&archive?.tokenHashes?.some(x=>equal(x,hash(gift)))}
-export function requireConfig(){for(const key of ['BLOB_READ_WRITE_TOKEN','SUPABASE_URL'])if(!process.env[key])throw new Error(`Missing Vercel environment variable ${key}`);if(!process.env.SUPABASE_SECRET_KEY&&!process.env.SUPABASE_SERVICE_ROLE_KEY)throw new Error('Missing SUPABASE_SECRET_KEY')}
+export function requireConfig(){for(const key of ['BLOB_STORE_ID','SUPABASE_URL'])if(!process.env[key])throw new Error(`Missing Vercel environment variable ${key}`);if(!process.env.SUPABASE_SECRET_KEY&&!process.env.SUPABASE_SERVICE_ROLE_KEY)throw new Error('Missing SUPABASE_SECRET_KEY')}
 export function supabaseHeaders(){const key=process.env.SUPABASE_SECRET_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY;return key?.startsWith('sb_secret_')?{apikey:key}:{apikey:key,Authorization:`Bearer ${key}`}}
 export async function supabaseRows(table,roomId,fields='*'){
  const url=`${process.env.SUPABASE_URL}/rest/v1/${table}?paper_id=eq.${roomId}&select=${encodeURIComponent(fields)}`;
