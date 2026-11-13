@@ -1661,7 +1661,16 @@ async function autoArchiveRecipient(giftUrl){
      expectedImageReferences:(JSON.stringify({photosPostbox:room.photosPostbox,photosRolling:room.photosRolling,centerPhotos:room.centerPhotos,centerPhoto:room.centerPhoto,letters:room.letters.map(x=>x.photo)}).match(/data:image\//g)||[]).length})
   });
   const payload=await result.json();
-  if(!result.ok||!payload.ok)return {ok:false,error:payload.error||'ARCHIVE_FAILED'};
+  if(!result.ok||!payload.ok){
+    const detail=String(payload.detail||'');
+    if(/Missing SUPABASE_SECRET_KEY|Missing SUPABASE_SERVICE_ROLE_KEY/i.test(detail))
+      return {ok:false,error:'테스트 서버에 Supabase 인증키가 연결되어 있지 않습니다.'};
+    if(/Missing Vercel environment variable/i.test(detail))
+      return {ok:false,error:'테스트 서버의 저장소 연결 설정이 누락되었습니다.'};
+    if(payload.error==='ADMIN_AUTH_REQUIRED')return {ok:false,error:'이 페이퍼의 관리자 인증이 필요합니다.'};
+    if(payload.error==='LETTER_COUNT_MISMATCH_RELOAD_AND_RETRY')return {ok:false,error:'새 편지가 반영되지 않았습니다. 새로고침 후 다시 시도해 주세요.'};
+    return {ok:false,error:'저장 서버 확인이 필요합니다. ('+String(payload.error||'ARCHIVE_FAILED')+')'};
+  }
   // Read the archived copy before showing the recipient link as archived.
   const token=new URL(giftUrl).searchParams.get('gift');
   const verify=await fetch('/api/archive-read?'+new URLSearchParams({room:room.id,gift:token}),{cache:'no-store'});
@@ -1714,7 +1723,7 @@ if(uuid.test(room.id)){
        '<p class="help">누구나 축하 링크를 만들어 전달할 수 있어요. 봉투 열기와 빵빠레 애니메이션이 실행됩니다.</p>'+
        `<label class="field">주인공 전달 링크</label><input class="input" id="giftLinkPublic" readonly value="${esc(url.href)}">`+
        archiveNote+
-       '<p class="help">⚠️ 이 링크를 가진 사람은 주인공에게만 공개된 편지도 읽을 수 있습니다. 공유 대상에 주의하세요.</p>'+
+       '<p class="help">⚠️ 주인공에게 보내는 링크는 다른 사람도 볼 수 있습니다. 링크를 받은 사람은 주인공 전용 편지까지 읽을 수 있으니 공유할 때 주의해 주세요.</p>'+
        '<div class="actions"><button id="giftCopyPublic" class="btn primary">링크 복사하기</button></div>',true);
      $('giftCopyPublic').onclick=async()=>{
        try{await navigator.clipboard.writeText(url.href);toast('주인공 링크 복사 완료!')}
