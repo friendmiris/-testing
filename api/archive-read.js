@@ -1,5 +1,5 @@
 import {uuidPattern,reply,readArchive,validRecipient,restoreImageUrls,privateHeaders} from './_core.js';
-export default async function handler(request){
+export async function GET(request){
  if(request.method!=='GET')return reply({error:'METHOD_NOT_ALLOWED'},405);
  try{
   const url=new URL(request.url),id=url.searchParams.get('room'),gift=url.searchParams.get('gift')||'';
