@@ -1636,37 +1636,28 @@ if(uuid.test(room.id)){
   };
  };
 }
-/* Permanent archive: make an independent, read-only copy after the server has all photos. */
-if(uuid.test(room.id)&&!recipientMode){
- const archiveButton=document.createElement('button');
- archiveButton.type='button';archiveButton.id='permanentArchiveButton';
- archiveButton.className='btn light slim';
- archiveButton.textContent='🗃 영구 보관하기';
- const parent=document.getElementById('sendRecipientBtn')||document.getElementById('settingsBtn');
- parent?.insertAdjacentElement('afterend',archiveButton);
- archiveButton?.addEventListener('click',()=>{
-  openModal(modalHead('🗃 영구 보관하기')+
-   '<p class="help">현재 서버에 저장된 편지, 사진, 스티커, 배치를 독립 저장소에 복사합니다. <b>기존 자료는 삭제하지 않습니다.</b></p>'+
-   '<p class="help">기존 주인공 링크를 그대로 유지하려면 실제 전달했던 주인공 링크를 붙여넣으세요. 여러 개의 주인공 링크를 사용했다면 각각 한 번씩 추가 보관하세요.</p>'+
-   '<label class="field">기존 주인공 링크</label><input class="input" id="archiveExistingGift" placeholder="https://.../?room=...&mode=gift&gift=...">'+
-   '<label class="field">보관 관리자 키 (Vercel 환경변수로 설정)</label><input class="input" id="archiveAdminSecret" type="password" autocomplete="off">'+
-   '<p class="help">보관이 성공한 뒤 다른 기기의 주인공 링크로 확인하고 Supabase를 중지하세요.</p>'+
-   '<div class="actions"><button class="btn primary" id="archiveConfirmButton">원본을 유지하고 보관본 만들기</button></div>',true);
-  document.getElementById('archiveConfirmButton').onclick=async()=>{
-   const button=document.getElementById('archiveConfirmButton');
-   const giftUrl=document.getElementById('archiveExistingGift').value.trim();
-   const adminSecret=document.getElementById('archiveAdminSecret').value;
-   if(!giftUrl||!adminSecret){toast('주인공 링크와 보관 관리자 키를 입력해주세요.');return}
-   if(decorDirty||decorWriting||decorMovePending||decorMoveQueue.size){toast('꾸미기 서버 저장이 완료된 후 보관해주세요.');return}
-   button.disabled=true;button.textContent='편지·사진 보관 및 확인 중…';
-   try{
-    const res=await fetch('/api/archive-create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({roomId:room.id,giftUrl,adminSecret,expectedLetters:room.letters.length,expectedImageReferences:(JSON.stringify({photosPostbox:room.photosPostbox,photosRolling:room.photosRolling,centerPhotos:room.centerPhotos,centerPhoto:room.centerPhoto,letters:room.letters.map(x=>x.photo)}).match(/data:image\//g)||[]).length})});
-    const data=await res.json();if(!res.ok||!data.ok)throw new Error(data.error||'보관 실패');
-    closeModal();
-    alert('영구 보관 확인 완료! 편지 '+data.counts.letters+'개, 사진 데이터 '+data.counts.images+'개 보관됨. 기존 원본은 유지됩니다.\n기존 주인공 링크로 실제 읽기를 확인한 뒤 Supabase를 중지하세요.');
-   }catch(e){toast('영구 보관 실패: '+String(e.message||e).slice(0,75));button.disabled=false;button.textContent='다시 시도'}
-  }
- });
+/* Permanent archive is automatically created from the recipient-send action.
+   The separate admin key and copy/paste archive dialog were intentionally removed. */
+async function autoArchiveRecipient(giftUrl){
+ const adminPin=localStorage.getItem('rolling.admin.'+room.id)||sessionStorage.getItem('rolling.decor.admin.'+room.id)||'';
+ if(!adminPin)return {ok:false,error:'ADMIN_AUTH_REQUIRED'};
+ if(decorDirty||decorWriting||decorMovePending||decorMoveQueue.size)return {ok:false,error:'DECOR_SAVE_PENDING'};
+ try{
+  const result=await fetch('/api/archive-create',{
+   method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({roomId:room.id,giftUrl,adminPin,expectedLetters:room.letters.length,
+     expectedImageReferences:(JSON.stringify({photosPostbox:room.photosPostbox,photosRolling:room.photosRolling,centerPhotos:room.centerPhotos,centerPhoto:room.centerPhoto,letters:room.letters.map(x=>x.photo)}).match(/data:image\//g)||[]).length})
+  });
+  const payload=await result.json();
+  if(!result.ok||!payload.ok)return {ok:false,error:payload.error||'ARCHIVE_FAILED'};
+  // Read the archived copy before showing the recipient link as archived.
+  const token=new URL(giftUrl).searchParams.get('gift');
+  const verify=await fetch('/api/archive-read?'+new URLSearchParams({room:room.id,gift:token}),{cache:'no-store'});
+  if(!verify.ok)return {ok:false,error:'ARCHIVE_READ_VERIFY_FAILED'};
+  const saved=await verify.json();
+  if(saved.letters?.length!==payload.counts.letters||saved.paper?.id!==room.id)return {ok:false,error:'ARCHIVE_CONTENT_VERIFY_FAILED'};
+  return {ok:true,counts:payload.counts};
+ }catch(error){return {ok:false,error:String(error.message||error)}}
 }
 
 /* V30: reliable share actions, always show the generated URL, with copy fallback. */
@@ -1692,15 +1683,20 @@ if(uuid.test(room.id)){
      const rpc=legacyMode?'/rpc/rolling_public_gift_issue':'/rpc/rp_stage_public_gift_issue';
      const token=await req(rpc,{method:'POST',body:JSON.stringify({p_room:room.id})});
      if(typeof token!=='string'||token.length<32)throw new Error('서버에서 주인공 링크를 받지 못했습니다.');
-     const url=new URL(location.origin+location.pathname);
+     const url=new URL('https://rollingpaper-sandy.vercel.app/');
      url.searchParams.set('room',room.id);
      // A recipient link opens the original layout of this current paper link.
      url.searchParams.set('view',currentView);
      url.searchParams.set('mode','gift');
      url.searchParams.set('gift',token);
+     const archiveResult=await autoArchiveRecipient(url.href);
+     const archiveNote=archiveResult.ok
+       ? '<p class="help">✅ 보관본 저장 및 열람 확인 완료. 테스트 배포에서 만든 보관본은 운영 코드 배포 후 기존 링크에 반영됩니다.</p>'
+       : '<p class="help" style="color:#ad4c36">⚠️ 링크는 만들었지만 영구 보관은 아직 완료되지 않았어요. 서버를 중지하지 마세요. (사유: '+esc(archiveResult.error)+')</p>';
      openModal(modalHead('🎁 주인공에게 보내기')+
        '<p class="help">누구나 축하 링크를 만들어 전달할 수 있어요. 봉투 열기와 빵빠레 애니메이션이 실행됩니다.</p>'+
        `<label class="field">주인공 전달 링크</label><input class="input" id="giftLinkPublic" readonly value="${esc(url.href)}">`+
+       archiveNote+
        '<p class="help">⚠️ 이 링크를 가진 사람은 주인공에게만 공개된 편지도 읽을 수 있습니다. 공유 대상에 주의하세요.</p>'+
        '<div class="actions"><button id="giftCopyPublic" class="btn primary">링크 복사하기</button></div>',true);
      $('giftCopyPublic').onclick=async()=>{
