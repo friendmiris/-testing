@@ -1,6 +1,6 @@
 import {get} from '@vercel/blob';
 import {uuidPattern,reply,readArchive,validRecipient,privateHeaders} from './_core.js';
-export default async function handler(request){
+export async function GET(request){
  if(request.method!=='GET')return reply({error:'METHOD_NOT_ALLOWED'},405);
  try{
   const params=new URL(request.url).searchParams;

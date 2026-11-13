@@ -1,25 +1,29 @@
 import {requireConfig,uuidPattern,reply,hash,readArchive,saveArchive,supabasePaper,supabaseRows,extractImageData,fetchRemoteImages,imageUpload,validateExistingGift,supabaseHeaders} from './_core.js';
 
-export default async function handler(request){
+export async function POST(request){
  if(request.method!=='POST')return reply({error:'METHOD_NOT_ALLOWED'},405);
  try{
   requireConfig();
   const {roomId,adminPin,giftUrl,expectedLetters,expectedImageReferences}=await request.json();
   if(!uuidPattern.test(roomId||'')||typeof giftUrl!=='string'||giftUrl.length>3000)return reply({error:'INVALID_REQUEST'},400);
-  if(typeof adminPin!=='string'||adminPin.length<4)return reply({error:'ADMIN_AUTH_REQUIRED'},403);
   let url;try{url=new URL(giftUrl)}catch{return reply({error:'INVALID_GIFT_URL'},400)}
   if(url.protocol!=='https:'||url.hostname!=='rollingpaper-sandy.vercel.app'||url.searchParams.get('room')!==roomId||url.searchParams.get('mode')!=='gift'||!url.searchParams.get('gift'))return reply({error:'GIFT_LINK_MUST_MATCH_THIS_SITE'},400);
   const gift=url.searchParams.get('gift');if(gift.length<16||gift.length>1024)return reply({error:'INVALID_GIFT_TOKEN'},400);
   const old=await supabasePaper('rolling_papers',roomId);
   const stage=old?null:await supabasePaper('rp_stage_papers',roomId);
   const paper=old||stage;if(!paper)return reply({error:'PAPER_NOT_FOUND'},404);
-  // The existing paper's administrator password authorizes this archival operation.
-  // Never expose the server archive key to the browser.
-  const adminRpc=old?'rolling_admin_check':'rp_stage_admin_check';
-  const adminRes=await fetch(`${process.env.SUPABASE_URL}/rest/v1/rpc/${adminRpc}`,{
-   method:'POST',headers:{'Content-Type':'application/json',...supabaseHeaders()},
-   body:JSON.stringify({p_room:roomId,p_admin:adminPin}),cache:'no-store'});
-  if(!adminRes.ok||(await adminRes.json())!==true)return reply({error:'ADMIN_AUTH_REQUIRED'},403);
+  // Old papers created without an administrator password cannot pass an admin check.
+  // A previously issued, server-verified gift token is sufficient for those legacy papers.
+  // Papers with an administrator password continue to require the existing local admin pin.
+  const needsAdmin=!!(old?old.admin_password_hash:stage.admin_hash);
+  if(needsAdmin){
+   if(typeof adminPin!=='string'||adminPin.length<4)return reply({error:'ADMIN_AUTH_REQUIRED'},403);
+   const adminRpc=old?'rolling_admin_check':'rp_stage_admin_check';
+   const adminRes=await fetch(`${process.env.SUPABASE_URL}/rest/v1/rpc/${adminRpc}`,{
+    method:'POST',headers:{'Content-Type':'application/json',...supabaseHeaders()},
+    body:JSON.stringify({p_room:roomId,p_admin:adminPin}),cache:'no-store'});
+   if(!adminRes.ok||(await adminRes.json())!==true)return reply({error:'ADMIN_AUTH_REQUIRED'},403);
+  }
   const verified=await validateExistingGift({roomId,gift,isLegacy:!!old});
   // Only archive letters the existing recipient link is allowed to read.
   // The stage table can contain private or excluded letters; never leak them to a gift link.
