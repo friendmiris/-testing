@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta name="referrer" content="no-referrer"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dear, Together</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{--ink:#342e38;--muted:#817987;--accent:#8e6cb1;--paper:#fffdf9;--line:#e9e1eb}*{box-sizing:border-box}body{margin:0;background:#f8f5f8;color:var(--ink);font-family:'DM Sans','Noto Sans KR',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.hidden{display:none!important}.top{height:76px;background:#fffafaeb;display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100vw - 1260px)/2));border-bottom:1px solid #eee8ef;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.logo{font-weight:800;font-size:21px;letter-spacing:-1px;color:#6c4a87}.logo span{font-weight:400;color:#b58fc7}.toplinks{display:flex;gap:10px;align-items:center}.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:700;background:#eee7f0;color:#624d70;transition:.18s}.btn:hover{filter:brightness(.97);transform:translateY(-1px)}.btn.primary{background:#76528e;color:white;box-shadow:0 5px 13px #76528e24}.btn.light{background:white;border:1px solid var(--line)}.btn.slim{padding:9px 13px;font-size:13px}.shell{max-width:1260px;margin:0 auto;padding:35px 24px 80px}.intro{text-align:center;padding:28px 0 27px}.eyebrow{display:inline-block;background:#f1e8f2;color:#976b9e;font-size:12px;padding:8px 14px;border-radius:30px;font-weight:700;letter-spacing:1.3px}.intro h1{font-size:clamp(31px,4.2vw,48px);line-height:1.35;margin:15px 0 10px;letter-spacing:-2px}.intro p{color:var(--muted);font-size:15px;line-height:1.8;margin:0}.controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0}.meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px}.pill{display:inline-flex;background:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:30px;gap:7px;align-items:center}.board{position:relative;min-height:580px;border:1px solid #e8dce7;border-radius:25px;overflow:hidden;background-color:#f4eaf2;background-image:radial-gradient(#e7d4e3 1px,transparent 1px);background-size:19px 19px;box-shadow:0 17px 44px #55435b12;padding:24px}.board[data-theme="sage"]{background-color:#eaf2e9;background-image:radial-gradient(#cfdcca 1px,transparent 1px)}.board[data-theme="sky"]{background-color:#eaf1fb;background-image:radial-gradient(#d0dff2 1px,transparent 1px)}.board[data-theme="cream"]{background-color:#faf0da;background-image:radial-gradient(#e9dfc9 1px,transparent 1px)}.board-head{max-width:570px;margin:18px auto 40px;background:#fffdfbf0;border:1px solid #fff;border-radius:19px;padding:20px 25px;text-align:center;box-shadow:0 8px 25px #6c507914}.board-head .to{font-size:12px;letter-spacing:2px;color:#a98cb1;font-weight:800}.board-head h2{font-size:28px;line-height:1.4;margin:8px 0}.board-head p{font-size:13px;color:#897d88;margin:0}.letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:27px 20px;align-items:start;min-height:300px}.envelope{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:155px;background:var(--color,#e2c2d0);border:0;border-radius:9px;box-shadow:0 8px 14px #61455b22,0 2px 1px #ffffff7d inset;isolation:isolate;padding:16px 12px;transform:rotate(var(--rotate,0deg));transition:transform .2s,box-shadow .2s;color:#4b3749;overflow:hidden}.envelope:hover{transform:rotate(0deg) translateY(-5px);box-shadow:0 12px 19px #61455b30}.envelope:before{content:'';position:absolute;z-index:-1;top:0;left:0;width:100%;height:69%;clip-path:polygon(0 0,100% 0,50% 92%);background:#ffffff45;filter:drop-shadow(0 1px 1px #fff9)}.envelope:after{content:'';position:absolute;z-index:-2;bottom:0;left:0;width:100%;height:83%;clip-path:polygon(0 100%,50% 21%,100% 100%);background:#ffffff2e}.wax{width:35px;height:35px;display:grid;place-items:center;background:#fff8;border:1px solid #fffb;border-radius:50%;font-size:18px;box-shadow:0 2px 4px #5640581a;margin:15px 0 12px}.envelope .from{font-size:12px;font-weight:800;max-width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.envelope small{font-size:10px;color:#765e73;margin-top:4px}.empty{text-align:center;grid-column:1/-1;margin:45px auto;color:#977f98;line-height:1.8}.empty .big{font-size:45px}.footerhint{text-align:center;font-size:13px;color:#8e7a89;margin-top:22px}.below{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:24px;color:#948694;font-size:13px}.backdrop{position:fixed;inset:0;background:#2f23378a;z-index:50;display:grid;place-items:center;padding:20px;overflow:auto}.modal{width:min(100%,490px);max-height:calc(100vh - 40px);overflow:auto;background:#fffdfd;border-radius:23px;box-shadow:0 28px 70px #17111a40;padding:27px}.modal.wide{width:min(100%,610px)}.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}.modal-head h3{font-size:22px;margin:0;letter-spacing:-.8px}.close{border:0;background:#f4eef5;width:34px;height:34px;border-radius:50%;font-size:18px}.field{display:block;font-size:13px;font-weight:800;margin:15px 0 7px}.input{width:100%;padding:12px 13px;border:1px solid #e8dfe8;border-radius:12px;outline:none;background:#fff;color:#403344}.input:focus{border-color:#a785bb;box-shadow:0 0 0 3px #e9dcf16a}textarea.input{resize:vertical;min-height:145px;line-height:1.7}.swatches{display:flex;gap:9px;flex-wrap:wrap}.swatch{width:33px;height:33px;border-radius:50%;border:3px solid transparent;box-shadow:0 0 0 1px #ddd5dd;cursor:pointer}.swatch.selected{border-color:#fff;box-shadow:0 0 0 2px #7c568c}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}.help{font-size:12px;color:#958695;line-height:1.7;margin:8px 0}.preview{max-height:150px;max-width:100%;object-fit:contain;border-radius:12px;margin-top:10px}.letter-paper{background:#fffaf0;border:1px solid #f1e8d9;padding:27px;border-radius:13px;line-height:2;white-space:pre-wrap;min-height:170px;overflow-wrap:anywhere}.letter-paper img{max-width:100%;max-height:260px;display:block;margin:12px auto;border-radius:10px}.letter-sign{text-align:right;color:#8d7789;font-size:13px;margin-top:13px}.settings-line{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:13px 0}.settings-line>label{font-size:13px;font-weight:700}.settings-line select{width:52%}.note{padding:12px;background:#fbf3e9;border-radius:12px;font-size:12px;color:#775f52;line-height:1.75;margin-top:16px}.print-only{display:none}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#3e3444;color:#fff;padding:12px 19px;border-radius:25px;box-shadow:0 8px 30px #0003;z-index:100;font-size:13px;max-width:92vw;text-align:center}@media(max-width:640px){.top{height:65px;padding:0 15px}.logo{font-size:17px}.toplinks{gap:6px}.toplinks .btn{padding:8px 9px;font-size:11px}.shell{padding:23px 12px 65px}.intro{padding:17px 0}.intro h1{font-size:28px;letter-spacing:-1.4px}.intro p{font-size:12px}.board{padding:12px;min-height:520px;border-radius:18px}.board-head{margin:9px auto 30px;padding:20px 12px}.board-head h2{font-size:22px}.letters{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 13px}.envelope{min-height:132px}.controls{justify-content:center}.meta{justify-content:center;flex-wrap:wrap}.footerhint{font-size:11px}.below{flex-direction:column;text-align:center}.modal{padding:21px}}@media print{@page{size:A4;margin:16mm}body{background:white}.top,.shell,.backdrop,.toast{display:none!important}.print-only{display:block}.print-heading{text-align:center;border-bottom:1px solid #ddd;padding:0 0 18px;margin-bottom:20px}.print-letter{break-inside:avoid;padding:18px;border:1px solid #ddd;border-radius:10px;margin:12px 0;white-space:pre-wrap;overflow-wrap:anywhere}.print-letter img{display:block;max-width:90%;max-height:120mm;margin:10px auto}.print-letter h3{margin:0 0 10px}.print-letter p{margin:6px 0}.print-letter .sign{text-align:right;color:#666}}
+
+/* 보기 방식 전환 */
+.view-switch{display:flex;gap:5px;background:#efe8f1;border:1px solid #e2d7e7;padding:6px;border-radius:19px;max-width:430px;margin:3px auto 23px;box-shadow:0 5px 20px #4d35500b}
+.view-switch button{flex:1;border:0;background:transparent;border-radius:14px;padding:13px 10px;font-weight:800;color:#85758e;transition:.2s}
+.view-switch button[aria-selected="true"]{background:#fff;color:#6e4b87;box-shadow:0 3px 14px #5734621c}
+.board.rolling{background-color:#252426;background-image:none;border-color:#252426;padding:20px 24px 32px}
+.board.rolling .board-head{background:transparent;border:0;box-shadow:none;color:white;margin:7px auto 24px}
+.board.rolling .board-head .to,.board.rolling .board-head p{color:#d4cdd7}
+.board.rolling .letters{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px 19px;align-items:stretch}
+.note-card{border:0;text-align:left;background:#fffefe;color:#29232a;border-radius:17px;box-shadow:0 9px 17px #0003;min-height:220px;padding:19px 17px 15px;position:relative;transform:rotate(var(--rotate,0deg));transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:12px;cursor:pointer;overflow-wrap:anywhere}
+.note-card:hover{transform:rotate(0deg) translateY(-5px);box-shadow:0 15px 24px #0005}
+.note-card .note-content{white-space:pre-wrap;font-size:14px;line-height:1.85;flex:1}
+.note-card img{display:block;width:100%;max-height:210px;object-fit:cover;border-radius:9px}
+.note-card .note-author{border-top:1px solid #eee8ed;padding-top:9px;font-weight:700;font-size:12px;color:#746774;text-align:right}
+.note-card .note-sticker{font-size:25px;position:absolute;top:6px;right:10px;pointer-events:none}
+.note-card .note-content{padding-top:8px}
+.board.rolling .footerhint{color:#e6dfe8}
+.board.rolling .empty{color:#eee}
+@media(max-width:650px){.board.rolling{padding:12px}.board.rolling .letters{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.note-card{padding:12px;min-height:190px}.note-card .note-content{font-size:12px;line-height:1.7}.note-card .note-sticker{font-size:18px}.view-switch{max-width:100%}}
+@media(max-width:380px){.board.rolling .letters{grid-template-columns:1fr}}
+
+/* Customizable rolling-paper canvas */
+.canvas-toolbar{display:none;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:12px auto 18px;padding:12px;border-radius:18px;background:#ffffffeb;max-width:950px;color:#39313b;box-shadow:0 4px 18px #0001}
+.canvas-toolbar{display:flex}
+.canvas-toolbar button,.canvas-toolbar select,.canvas-toolbar input[type=color]{background:#fff;border:1px solid #d9d2dd;border-radius:9px;padding:8px 10px;color:#423a44;font-size:13px;max-width:160px}
+.canvas-toolbar input[type=color]{width:43px;height:37px;padding:3px;vertical-align:middle}
+.canvas-toolbar .tool-label{font-size:12px;font-weight:700;color:#756976}
+.board.rolling .letters.canvas-stage{display:block;position:relative;min-height:660px;width:100%;overflow:visible;border-radius:20px;border:1px dashed #ffffff4a;background:var(--canvas-bg,#f8e3ee);background-image:radial-gradient(#ffffff12 1px,transparent 1px);background-size:18px 18px}
+.board.rolling{background:var(--canvas-bg,#f8e3ee)!important}
+.board.rolling .board-head{position:relative;z-index:1}
+.canvas-object{position:absolute;touch-action:none;box-shadow:0 7px 18px #0002;transition:box-shadow .2s;}
+.canvas-object .move-handle{position:absolute;top:-12px;left:-10px;z-index:3;padding:5px 8px;border-radius:20px;background:#302b35;color:white;border:1px solid #fff7;font-size:11px;cursor:grab;touch-action:none;user-select:none}
+.canvas-object .edit-handle{position:absolute;top:-12px;right:-10px;z-index:3;padding:5px 8px;border-radius:20px;background:#fff;color:#413b47;border:1px solid #ddd;font-size:11px}
+.canvas-object.note-card{width:210px;min-height:180px;max-height:330px;overflow:visible;transform:rotate(var(--rotate,0deg))}
+.canvas-object.note-card .note-content{overflow:auto;max-height:190px}
+.canvas-object.note-card:focus-within{outline:2px solid #d8a2e5}
+.canvas-object.note-card .move-handle,.canvas-object.note-card .edit-handle{transform:rotate(calc(-1 * var(--rotate,0deg)))}
+.canvas-object.shape-round{border-radius:50% / 36%;padding:28px 22px}
+.canvas-object.shape-cloud{border-radius:45% 45% 40% 38%;border:3px solid var(--shape-border,#edb0c9);background:#fffdfd!important;padding:27px 21px}
+.canvas-object.shape-speech{border-radius:30px 30px 30px 7px;border:3px solid var(--shape-border,#a9cbe6);background:#fffdfa!important}
+.canvas-object.shape-star{clip-path:polygon(50% 0%,60% 10%,75% 1%,81% 17%,98% 15%,92% 32%,100% 47%,88% 58%,96% 77%,77% 79%,70% 98%,52% 87%,35% 99%,25% 82%,6% 79%,13% 58%,0% 45%,10% 30%,3% 12%,24% 14%,32% 0%);padding:47px 36px;width:238px;min-height:250px}
+.canvas-object.shape-star .move-handle,.canvas-object.shape-star .edit-handle{top:19px}
+.canvas-object.photo-center{width:235px;min-height:210px;padding:10px;background:white;border:9px solid white;border-bottom-width:34px;border-radius:5px;transform:rotate(-2deg)}
+.canvas-object.photo-center img{width:100%;height:180px;object-fit:cover;border-radius:3px;display:block}
+.canvas-object.photo-center .photo-caption{position:absolute;bottom:-29px;left:5px;right:5px;text-align:center;font:700 14px 'Noto Sans KR',sans-serif;color:#65596c}
+.canvas-object.sticker-object{width:65px;height:65px;box-shadow:none;font-size:50px;background:transparent;border:0;display:flex;align-items:center;justify-content:center;user-select:none}
+.board.rolling .canvas-object.note-card:hover{box-shadow:0 12px 28px #0003;transform:rotate(var(--rotate,0deg))}
+@media(max-width:650px){.canvas-toolbar{gap:5px;padding:8px}.canvas-toolbar button{padding:7px;font-size:12px}.board.rolling .letters.canvas-stage{min-height:740px}.canvas-object.note-card{width:175px;min-height:145px;padding:14px}.canvas-object.note-card .note-content{font-size:11px}.canvas-object.photo-center{width:165px;min-height:150px}.canvas-object.photo-center img{height:125px}}
+@media print{.canvas-toolbar,.move-handle,.edit-handle{display:none!important}}
+
+/* V4: canvas editing controls are outside the paper */
+.canvas-toolbar{max-width:1160px;margin:0 auto 14px;border:1px solid #ebe3ef;box-shadow:0 6px 25px #4f344610;padding:14px 18px;justify-content:flex-start;position:relative;z-index:4}
+.canvas-toolbar:before{content:'🎨 롤링페이퍼 꾸미기';font-weight:800;font-size:14px;margin-right:10px;color:#704b83}
+.canvas-toolbar button:hover{background:#f5edf8}
+.board.rolling .board-head{padding-top:10px}
+@media(max-width:650px){.canvas-toolbar{margin:0 10px 12px}.canvas-toolbar:before{width:100%}}
+.crop-preview{width:245px;height:200px;overflow:hidden;border:8px solid #fff;border-radius:10px;margin:12px auto;box-shadow:0 2px 15px #0002;background:#eee}.crop-preview img{width:100%;height:100%;object-fit:cover;display:block}.postbox-decor{margin-top:23px;border:1px dashed #dccbda!important}.photo-center{overflow:visible}.photo-center img{clip-path:inset(0 round 3px)}@media(max-width:650px){.postbox-decor{min-height:480px}}
+.photo-image-frame{height:100%;width:100%;overflow:hidden;background:#fff;position:relative}.photo-image-frame img{width:100%;height:100%;object-fit:cover}
+/* V6: clean card edges, version-isolated decorations, free-position postbox overlay */
+.canvas-object.note-card{box-sizing:border-box;height:auto;max-height:none;min-height:225px;overflow:visible;background-clip:padding-box;isolation:isolate;box-shadow:0 9px 18px #0003}
+.canvas-object.note-card .note-content{max-height:225px;overflow:auto;min-height:0;flex:0 1 auto}
+.canvas-object.note-card .note-author{margin-top:auto;background:transparent}
+.canvas-object.note-card img{max-height:175px;object-fit:cover}
+.board:not(.rolling){min-height:780px}
+.board .postbox-decor.canvas-stage{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;margin:0!important;border:0!important;background:transparent!important;pointer-events:none;overflow:visible;z-index:4}
+.postbox-decor .canvas-object{pointer-events:auto}
+.board:not(.rolling) .board-head,.board:not(.rolling) .letters,.board:not(.rolling) .footerhint{position:relative;z-index:1}
+.canvas-object.photo-center{height:250px;min-height:0;padding:0 0 32px;border:10px solid white;background:white;box-sizing:border-box;overflow:visible}
+.canvas-object.photo-center img{height:100%;width:100%;display:block;object-fit:cover;clip-path:none;border-radius:2px}
+.canvas-object.photo-center .photo-caption{bottom:1px;left:0;right:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:650px){.canvas-object.photo-center{height:195px;min-height:0}}
+
+/* V7: resizing and painting */
+.canvas-object .resize-handle{position:absolute;right:-10px;bottom:-10px;width:24px;height:24px;z-index:9;cursor:nwse-resize;touch-action:none;border-radius:8px;border:2px solid white;background:#7b5592;color:white;display:grid;place-items:center;font:bold 16px sans-serif;box-shadow:0 2px 9px #0004;transform:none!important;user-select:none}
+.canvas-object.sticker-object .resize-handle{display:none}
+.canvas-object.note-card{min-width:125px;max-width:none}
+.canvas-object.note-card .note-content{flex:1 1 auto;min-height:0}
+.canvas-object.photo-center{min-width:110px}
+.photo-center .photo-image-frame{min-height:0;flex:1 1 auto}
+.crop-preview{touch-action:none;cursor:grab;user-select:none}
+.crop-preview:active{cursor:grabbing}
+.paint-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:#fff;border:1px solid #e9dfea;border-radius:14px;max-width:1160px;padding:12px;margin:0 auto 12px;box-shadow:0 4px 16px #0001}
+.paint-toolbar button,.paint-toolbar select{padding:8px 12px;border-radius:9px;border:1px solid #ddd5df;background:#fff;color:#41394b;font-weight:600;cursor:pointer}
+.paint-toolbar button.selected{background:#7b5592;color:white}
+.paint-toolbar input[type=color]{width:40px;height:36px;border:0;background:transparent}
+.paint-toolbar input[type=range]{width:100px}
+.paint-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6;touch-action:none}
+.paint-layer.active{pointer-events:auto;cursor:crosshair}
+.paint-help{font-size:12px;color:#7d6c81}
+@media print{.resize-handle,.paint-toolbar{display:none!important}}
+
+/* V8: editorial pastel design and floating stationery */
+:root{--ink:#2e2934;--accent:#93688d;--line:#e9dfdf}
+body{background:#faf7f2;color:var(--ink)}
+.top{background:#fffcf8ef;border-bottom:1px solid #efe8e3}
+.logo{color:#9b678f;letter-spacing:-.8px}
+.shell{max-width:1320px}
+.intro{position:relative;isolation:isolate;margin:4px auto 20px;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.intro:before{content:'';position:absolute;width:min(690px,78%);height:205px;top:18px;left:50%;transform:translateX(-50%) rotate(-1deg);border:2px solid #dcc6d5;border-radius:51% 46% 48% 54%;background:radial-gradient(ellipse at 50% 50%,#fffefdcc,#ffffff00 65%);z-index:-1}
+.intro h1{font-weight:800;letter-spacing:-2.6px;font-size:clamp(30px,4vw,47px);text-wrap:balance}
+.intro .eyebrow{background:#fff3e9;border:1px solid #f2ded3;color:#a16e83;letter-spacing:2px}
+.floating-note{position:absolute;display:grid;place-items:center;text-align:left;white-space:pre-line;width:132px;min-height:85px;padding:15px;font-size:11px;line-height:1.7;font-weight:600;color:#65576a;background:#fffdfacc;border:2px solid var(--outline);box-shadow:0 8px 22px #44333b0a;animation:floatnote var(--speed,6s) ease-in-out infinite alternate;pointer-events:none;z-index:-1}
+.floating-note:nth-of-type(1){left:1%;top:5%;border-radius:48% 53% 45% 57%;--outline:#efc5ac;--speed:5.7s;transform:rotate(-5deg)}
+.floating-note:nth-of-type(2){left:12%;bottom:0%;border-radius:7px 7px 7px 1px;--outline:#acd9bf;--speed:7s;transform:rotate(4deg)}
+.floating-note:nth-of-type(3){right:2%;top:2%;border-radius:42% 58% 43% 55%;--outline:#eeb8cd;--speed:6.2s;transform:rotate(5deg)}
+.floating-note:nth-of-type(4){right:12%;bottom:0%;border-radius:8px;--outline:#bed5ee;--speed:7.3s;transform:rotate(-4deg)}
+@keyframes floatnote{0%{translate:0 0}100%{translate:0 -13px}}
+.view-switch{background:#f1e6eb;border-color:#eedee6}
+.view-switch button[aria-selected=true]{color:#875a82}
+.canvas-toolbar,.paint-toolbar{background:#fffcfa;border:1px solid #ecdfde;box-shadow:0 8px 25px #53424f0c;border-radius:16px}
+.board{border:1px solid #e8dcd9;box-shadow:0 18px 48px #4a304417}
+.board.rolling{border-color:#393137;background:#302b33}
+.board.rolling .letters.canvas-stage{border:1px solid #ffffff21;background-image:radial-gradient(#ffffff13 1px,transparent 1px);background-size:20px 20px}
+.canvas-object.note-card{border:1px solid #e6dedd;box-shadow:0 12px 28px #0002}
+.canvas-object.note-card.shape-speech{border-color:#a9cee0}
+.canvas-object.note-card.shape-cloud{border-color:#ebb8d0}
+.canvas-object.note-card .note-author{color:#9b758c}
+.paint-toolbar{position:relative;z-index:9}
+.paint-toolbar button.selected{background:#825d82;border-color:#825d82;color:white}
+.paint-toolbar button:focus-visible{outline:3px solid #e0aedc;outline-offset:2px}
+.paint-layer{z-index:12!important;touch-action:none!important}
+.paint-layer.active{pointer-events:auto!important;cursor:crosshair!important}
+body.draw-on .canvas-object{pointer-events:none!important}
+body.draw-on .board{user-select:none}
+.board:not(.rolling)>canvas.paint-layer{display:block}
+.board.rolling>canvas.paint-layer{display:none!important}
+.paint-help{flex-basis:100%;text-align:center}
+@media(max-width:850px){.floating-note{width:102px;min-height:70px;padding:10px;font-size:9px;opacity:.65}.floating-note:nth-of-type(2),.floating-note:nth-of-type(4){display:none}.intro{min-height:220px}}
+@media(max-width:550px){.floating-note{display:none}.intro{min-height:0}.intro:before{height:150px;top:0}.paint-toolbar{justify-content:flex-start;margin:0 10px 12px}}
+@media(prefers-reduced-motion:reduce){.floating-note{animation:none}}
+.font-panel{display:flex;align-items:center;gap:15px;flex-wrap:wrap;background:#fffcff;border:1px solid #e9dfe9;border-radius:14px;padding:13px 17px;margin:10px 0 18px;color:#65546b;font-size:13px}.font-panel label{display:flex;gap:12px;align-items:center;font-weight:700}.font-panel input{accent-color:#8d6cb0;width:145px}.font-help{font-size:11px;color:#99899e}@media(max-width:600px){.font-panel label{flex-wrap:wrap}}
+
+/* V10: show the edit controls only for the selected item in rolling view. */
+.board.rolling .canvas-object .move-handle,
+.board.rolling .canvas-object .edit-handle,
+.board.rolling .canvas-object .resize-handle {opacity:0;visibility:hidden;pointer-events:none;transition:opacity .13s ease,visibility .13s ease}
+.board.rolling .canvas-object.is-selected .move-handle,
+.board.rolling .canvas-object.is-selected .edit-handle,
+.board.rolling .canvas-object.is-selected .resize-handle {opacity:1;visibility:visible;pointer-events:auto}
+.board.rolling .canvas-object.is-selected {outline:2px dashed #ac87b5;outline-offset:5px}
+.board.rolling .canvas-object {cursor:pointer}
+.board.is-exporting .move-handle,.board.is-exporting .edit-handle,.board.is-exporting .resize-handle,
+.board.is-exporting .paint-toolbar {display:none!important}
+.board.is-exporting .canvas-object {outline:none!important}
+@media print {.move-handle,.edit-handle,.resize-handle{display:none!important}.canvas-object{outline:none!important}}
+
+/* V12: recipient reveal & safer navigation */
+#newBtn {order:3;background:#fff;border:1px solid #ddd4dc;color:#605568}
+#writeBtn {box-shadow:0 6px 16px #ae79a83d;font-weight:800}
+#myPapersBtn {background:#fff;border:1px solid #ddd4dc;color:#62556a}
+.recipient-lock .toplinks,.recipient-lock .view-switch,.recipient-lock .controls,.recipient-lock .canvas-toolbar,.recipient-lock .paint-toolbar,.recipient-lock .below{display:none!important}
+.recipient-lock .top{justify-content:center}
+.recipient-lock .intro{display:none}
+.recipient-lock .board {margin-top:35px}
+.recipient-reveal {position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 27%,#fff9f1,#f7dfe9 65%,#e2d4ee);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity .7s ease,visibility .7s ease}
+.recipient-reveal.is-done{opacity:0;visibility:hidden;pointer-events:none}
+.recipient-scene{text-align:center;max-width:93vw;position:relative}
+.recipient-caption{font-size:clamp(19px,4vw,30px);font-weight:750;color:#60465d;margin-bottom:32px;letter-spacing:-.04em}
+.recipient-envelope{width:min(310px,75vw);height:212px;margin:auto;position:relative;filter:drop-shadow(0 18px 18px #81567d36);perspective:800px;animation:giftFloat 3s ease-in-out infinite}
+.recipient-envelope .env-body{position:absolute;inset:0;border-radius:9px;background:linear-gradient(125deg,#efd1db,#caaccb);clip-path:polygon(0 0,100% 0,100% 100%,0 100%);z-index:3}
+.recipient-envelope .env-body:after{content:'';position:absolute;inset:0;background:#f9e9ee;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);opacity:.9}
+.recipient-envelope .env-flap{position:absolute;inset:0;background:#d3abc9;clip-path:polygon(0 0,100% 0,50% 62%);z-index:5;transform-origin:top;transition:transform 1.0s ease,z-index 0s 0.5s}
+.recipient-envelope .env-letter{position:absolute;left:9%;bottom:10px;width:82%;height:87%;background:#fffdfa;border-radius:8px;z-index:2;padding:20px;display:flex;justify-content:center;align-items:center;color:#a46b8a;font-weight:700;font-size:24px;box-shadow:0 6px 14px #46304625;transition:transform 1.4s .7s ease}
+.recipient-envelope.open .env-flap{transform:rotateX(180deg);z-index:1}
+.recipient-envelope.open .env-letter{transform:translateY(-135px) rotate(-3deg);z-index:4}
+.recipient-start{margin-top:48px;border:0;color:#fff;background:#ae78a2;border-radius:999px;padding:14px 30px;font-weight:800;cursor:pointer;font-size:16px}
+.recipient-open-text{margin-top:18px;color:#795c75;font-size:14px}
+@keyframes giftFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.recipient-envelope,.recipient-envelope *{animation:none!important;transition:none!important}}
+.paper-choice{display:flex;gap:10px;justify-content:space-between;align-items:center;margin:10px 0;padding:12px 14px;border:1px solid #eee4ed;border-radius:13px;background:#fff}
+.paper-choice small{display:block;color:#817483;margin-top:3px}
+.paper-actions{display:flex;gap:6px;flex-wrap:wrap}
+
+/* V13 welcome and unified actions */
+.controls{gap:12px;flex-direction:column;align-items:center}
+.controls>div:last-child{display:flex!important;justify-content:center!important;gap:9px!important}
+.controls #writeBtn{background:#fff;color:#805475;border:1px solid #d6b7ca}
+#shareBtn{display:none}
+.welcome-stage{position:fixed;inset:0;z-index:9000;background:radial-gradient(circle at 28% 10%,#fff9f9,#faf5ef 52%,#f3edf8);overflow-y:auto;display:flex;justify-content:center;align-items:center;padding:32px 16px}
+.welcome-inner{width:min(850px,100%);text-align:center}
+.welcome-label{letter-spacing:.19em;font-size:12px;color:#a879a1;font-weight:750}
+.welcome-inner h1{font-size:clamp(27px,5vw,44px);line-height:1.32;letter-spacing:-.055em;color:#3d3140;margin:15px 0 8px}
+.welcome-inner>p{color:#857789;margin:0 0 32px}
+.welcome-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.welcome-card{background:#fff;border:1px solid #ede2e9;border-radius:22px;padding:23px 18px 19px;min-height:280px;cursor:pointer;text-align:left;box-shadow:0 14px 38px #80688216;transition:transform .2s,box-shadow .2s}
+.welcome-card:hover,.welcome-card:focus-visible{transform:translateY(-5px);box-shadow:0 18px 40px #80688229;outline:2px solid #d5a4c2}
+.welcome-illustration{height:146px;display:flex;align-items:center;justify-content:center;font-size:80px;border-radius:15px;background:#f8e9ef;margin-bottom:17px}
+.welcome-card:nth-child(2) .welcome-illustration{background:#f1eefa}
+.welcome-card strong{display:block;font-size:19px;color:#3e3043}
+.welcome-card small{display:block;font-size:13px;line-height:1.7;color:#8b798b;margin-top:6px}
+.welcome-footer{margin-top:24px;color:#88798a;font-size:13px}
+.welcome-footer button{border:0;background:transparent;color:#915f8c;font-weight:750;text-decoration:underline;cursor:pointer;font-size:14px}
+@media(max-width:580px){.welcome-cards{grid-template-columns:1fr}.welcome-card{min-height:0}.welcome-illustration{height:110px;font-size:62px}.controls #writeBtn{flex-grow:1}}
+
+/* V14: screenshot-matched pastel introductory homepage */
+.welcome-stage{display:block;padding:0;background:#f8f5f0;overflow:auto;color:#25212f}
+.landing-nav{height:50px;display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100vw - 1020px)/2));background:#fbf8f4;position:relative;z-index:3;box-shadow:0 2px 12px #9484920a}
+.landing-brand{font-family:Georgia,serif;font-size:20px;color:#bd7fa8;letter-spacing:.035em;white-space:nowrap}.landing-brand span{font-size:24px;vertical-align:middle}
+.landing-links{display:flex;gap:22px;align-items:center}.landing-links a{font-size:12px;color:#6e6575;text-decoration:none;cursor:pointer}.landing-links a:hover{color:#ae729e}
+.landing-begin{border:1px solid #322b38;background:transparent;padding:8px 16px;font-size:12px;color:#2c2634;cursor:pointer}
+.landing-main{min-height:calc(100dvh - 50px);position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at center,#fffbf7 0%,#f8f5f0 76%)}
+.landing-center{width:min(970px,90%);position:relative;z-index:2;margin:0 auto;min-height:calc(100dvh - 50px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 0 86px}
+.landing-ring{position:absolute;inset:auto;width:min(900px,100%);height:460px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;overflow:visible;pointer-events:none}
+.landing-center h1{font-family:'Pretendard', 'Noto Sans KR',system-ui,sans-serif;font-weight:900;font-size:clamp(36px,4vw,67px);line-height:1.17;letter-spacing:-.075em;margin:0 0 56px;text-align:center;color:#282332;text-shadow:none}
+.landing-center h1 em{font-style:normal;box-shadow:inset 0 -.15em #e6d1df}
+.landing-create{display:flex;gap:12px;align-items:stretch;width:min(680px,90%)}
+.landing-create input{flex:1;min-width:0;border:none;border-bottom:3px solid #272231;background:transparent;font-size:clamp(17px,1.8vw,23px);font-weight:500;text-align:center;padding:12px 5px;outline:none;color:#272231}
+.landing-create input::placeholder{color:#b8b2b9}.landing-create button{padding:0 35px;background:#ad709e;border:0;color:white;font-size:15px;font-weight:700;cursor:pointer;min-height:60px}
+.landing-modes{display:flex;gap:7px;margin-top:20px;flex-wrap:wrap;justify-content:center}.landing-modes button{border:1px solid #48404b;color:#302b35;padding:8px 12px;background:#faf8f6;font-size:12px;cursor:pointer}.landing-modes button.active{background:#ad709e;border-color:#ad709e;color:white}.landing-modes button{font-weight:700;border-radius:5px;padding:10px 18px;transition:background .2s,color .2s,transform .2s}.landing-modes button:hover{transform:translateY(-2px)}.landing-modes button:focus-visible{outline:3px solid #6c4a87;outline-offset:3px}
+.landing-bubble{position:absolute;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;text-align:left;width:clamp(144px,12vw,214px);height:clamp(92px,8vw,140px);color:#4b4150;background:#fffdfa;border:2px solid var(--bubble-color,#f5bc9b);font:600 clamp(10px,.75vw,13px)/1.65 'Noto Sans KR',sans-serif;letter-spacing:.06em;animation:bubbleFloat 6s ease-in-out infinite alternate;z-index:1;pointer-events:none}
+.landing-bubble small{font-size:10px;color:#756979;align-self:flex-end;margin-right:20px}.landing-bubble.speech{border-radius:50% 48% 47% 40%;transform:rotate(-4deg)}.landing-bubble.square{border-radius:3px;transform:rotate(2deg)}.landing-bubble.cloud{border-radius:46% 55% 42% 50% / 43% 48% 48% 56%}.landing-bubble.star{clip-path:polygon(50% 0%,61% 12%,76% 1%,80% 18%,97% 13%,90% 31%,100% 44%,89% 54%,99% 71%,80% 74%,75% 97%,59% 85%,44% 100%,35% 82%,16% 91%,18% 72%,0 62%,13% 48%,1% 29%,20% 24%,20% 5%,39% 15%);border:none;background:var(--bubble-color);padding:17px}.landing-bubble.star:before{content:'';position:absolute;inset:2px;background:#faf8f5;clip-path:inherit;z-index:-1}.landing-bubble.l1{left:-.5%;top:3%}.landing-bubble.l2{left:19%;top:5%}.landing-bubble.l3{left:40%;top:1%}.landing-bubble.l4{left:59%;top:4%}.landing-bubble.l5{right:-.5%;top:2%}.landing-bubble.l6{left:-.5%;top:29%}.landing-bubble.l7{right:-.5%;top:27%}.landing-bubble.l8{left:-.5%;top:59%}.landing-bubble.l9{right:1%;top:60%}.landing-bubble.l10{left:-.5%;bottom:3%}.landing-bubble.l11{left:20%;bottom:2%}.landing-bubble.l12{left:39%;bottom:1%}.landing-bubble.l13{left:59%;bottom:1%}.landing-bubble.l14{right:0;bottom:2%}
+@keyframes bubbleFloat{from{translate:0 0}to{translate:0 -9px}}
+.landing-welcome-foot{position:absolute;bottom:15px;z-index:3;left:50%;transform:translateX(-50%);font-size:12px;color:#8d818c;white-space:nowrap}.landing-welcome-foot button{background:transparent;border:0;text-decoration:underline;color:#996d98;cursor:pointer}
+@media(max-width:900px){.landing-links a{display:none}.landing-main{min-height:720px}.landing-center{min-height:720px}.landing-center h1{font-size:clamp(32px,5vw,54px)}.landing-bubble{opacity:.75;width:145px;height:95px;font-size:10px}.landing-bubble.l2,.landing-bubble.l4,.landing-bubble.l11,.landing-bubble.l13{display:none}}
+@media(max-width:580px){.landing-main,.landing-center{min-height:680px}.landing-center{padding:130px 0}.landing-center h1{font-size:35px;margin-bottom:35px}.landing-create{width:95%;gap:6px}.landing-create input{font-size:15px}.landing-create button{padding:0 16px;min-height:54px}.landing-ring{width:110%;height:350px}.landing-bubble{width:120px;height:80px;font-size:9px;opacity:.55}.landing-bubble.l3,.landing-bubble.l8,.landing-bubble.l9,.landing-bubble.l12{display:none}.landing-bubble.l6{top:34%}.landing-bubble.l7{top:35%}.landing-brand{font-size:16px}}
+
+/* V19: recipient celebration + read-only gift view */
+.recipient-lock .toplinks,
+.recipient-lock .view-switch,
+.recipient-lock .meta,
+.recipient-lock .canvas-toolbar,
+.recipient-lock .paint-toolbar,
+.recipient-lock .font-panel,
+.recipient-lock .below,
+.recipient-lock #writeBtn,
+.recipient-lock #shareParticipantBtn,
+.recipient-lock #sendRecipientBtn,
+.recipient-lock #settingsBtn,
+.recipient-lock #shareBtn,
+.recipient-lock #newBtn,
+.recipient-lock #myPapersBtn,
+.recipient-lock #count,
+.recipient-lock #mode,
+.recipient-lock #status{display:none!important}
+.recipient-lock .controls{display:flex!important;justify-content:center;gap:12px;margin-top:18px}
+.recipient-lock .controls>div:last-child{justify-content:center;display:flex;gap:12px;flex-wrap:wrap}
+.recipient-lock .top{justify-content:center}
+.recipient-lock .board{margin-top:10px}
+.recipient-lock .footerhint{display:none}
+.recipient-lock .edit-handle,.recipient-lock .move-handle,.recipient-lock .resize-handle{display:none!important}
+.recipient-lock .canvas-object.is-selected{outline:none!important;box-shadow:0 12px 28px #0002!important}
+.recipient-lock #expandBtn,.recipient-lock #printBtn,.recipient-lock #imageSaveBtn{display:inline-flex!important}
+.recipient-lock .pill-actions-only{justify-content:center!important}
+.recipient-lock .logo{font-size:24px}
+.recipient-lock .modal .actions{justify-content:center}
+.recipient-fireworks,.recipient-confetti{position:fixed;inset:0;pointer-events:none;z-index:99998;overflow:hidden}
+.recipient-confetti .piece{position:absolute;top:-10vh;width:12px;height:18px;border-radius:3px;opacity:.96;animation:confettiDrop 2.6s linear forwards;transform:translate3d(0,0,0) rotate(0deg)}
+.recipient-fireworks .burst{position:absolute;width:10px;height:10px;border-radius:50%;box-shadow:0 0 0 0 currentColor;animation:burstPop 1.2s ease-out forwards}
+.recipient-banner{position:fixed;left:50%;top:11%;transform:translateX(-50%) scale(.82);z-index:99999;background:linear-gradient(135deg,#fffbf3,#ffe7f0);border:1px solid #f0c9d8;color:#8f5276;padding:16px 28px;border-radius:999px;box-shadow:0 12px 30px #8f527626;font-weight:800;font-size:clamp(22px,3vw,34px);letter-spacing:-.04em;opacity:0;animation:bannerPop 1.7s ease forwards}
+.recipient-banner small{display:block;font-size:14px;font-weight:600;color:#a06b8a;margin-top:6px;letter-spacing:0}
+@keyframes confettiDrop{0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:1}100%{transform:translate3d(var(--dx),110vh,0) rotate(760deg);opacity:0}}
+@keyframes burstPop{0%{transform:scale(.2);opacity:0;box-shadow:0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor,0 0 0 0 currentColor}25%{opacity:1}100%{transform:scale(1.8);opacity:0;box-shadow:0 -52px 0 -3px currentColor,37px -37px 0 -3px currentColor,52px 0 0 -3px currentColor,37px 37px 0 -3px currentColor,0 52px 0 -3px currentColor,-37px 37px 0 -3px currentColor,-52px 0 0 -3px currentColor,-37px -37px 0 -3px currentColor}}
+@keyframes bannerPop{0%{opacity:0;transform:translateX(-50%) translateY(10px) scale(.72)}25%{opacity:1}70%{opacity:1;transform:translateX(-50%) translateY(0) scale(1.03)}100%{opacity:0;transform:translateX(-50%) translateY(-12px) scale(1)}}
+
+
+/* V20: home logo, lightweight TOC and list removal */
+a.logo{text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}a.logo:focus-visible{outline:3px solid #b779a1;outline-offset:5px;border-radius:7px}
+.landing-brand{text-decoration:none}.landing-top-actions{display:flex;gap:10px;align-items:center}.landing-toc-btn{background:#fffaf9;color:#6e526b;border:1px solid #e8dce5;padding:8px 13px;border-radius:8px;font-weight:700;cursor:pointer}
+.landing-toc{position:absolute;right:max(16px,calc((100vw - 1020px)/2));top:49px;z-index:11;display:grid;min-width:230px;background:#fffcfa;border:1px solid #e9dce5;border-radius:12px;padding:7px;box-shadow:0 12px 35px #4a334927}
+.landing-toc.hidden{display:none!important}.landing-toc button{border:0;background:transparent;padding:13px 12px;text-align:left;font-size:13px;color:#514054;border-radius:8px;cursor:pointer}.landing-toc button:hover{background:#f8edf3}
+.paper-actions{display:flex;flex-wrap:wrap;gap:6px}.paper-delete{color:#a23d64!important;border-color:#f3c9d9!important}.paper-delete:hover{background:#fbe5ed!important}
+@media(max-width:580px){.landing-toc-btn{font-size:12px;padding:7px 10px}.landing-top-actions{gap:6px}}
+
+/* V22 */.controls .meta{display:none!important}.board.rolling{overflow:visible!important}.board.rolling .letters.canvas-stage{overflow:visible!important;height:auto!important;min-height:800px}.board.rolling .canvas-object{max-width:100%}
+
+.stage-notice{background:#fff3dd;color:#775b31;text-align:center;padding:9px 16px;font:600 12px 'Noto Sans KR',sans-serif;border-bottom:1px solid #efd4a6}
+.stage-notice b{font-weight:800}
+
+/* V27 - free-position envelopes and a continuously growing sheet */
+.board:not(.rolling) .letters.postbox-stage{display:block!important;position:relative!important;min-height:560px;overflow:visible!important;isolation:isolate;z-index:5;pointer-events:none}
+.board:not(.rolling) .postbox-stage .postbox-letter{position:absolute;display:flex;min-height:145px;width:166px;max-width:none;padding:18px 10px;overflow:visible;touch-action:none;cursor:pointer;pointer-events:auto;z-index:1;transform:rotate(var(--rotate,0deg))}
+.postbox-letter .move-handle{left:-6px;top:-14px;z-index:12;cursor:grab;touch-action:none;min-height:35px;min-width:57px}
+.postbox-letter.is-selected{outline:2px dashed #a478a4;outline-offset:4px;z-index:7}
+.postbox-letter:focus-visible{outline:3px solid #a478a4}
+.board:not(.rolling) .postbox-decor.canvas-stage{overflow:visible!important}
+.board.rolling .letters.canvas-stage{height:auto!important;min-height:800px;overflow:visible!important}
+.board.rolling{overflow:visible!important}
+@media (max-width:650px){.board:not(.rolling) .postbox-stage .postbox-letter{width:145px;min-height:135px}}
+.recipient-lock .postbox-letter{outline:none!important}
+@media print{.postbox-letter .move-handle{display:none!important}}
+
+
+/* V28: the postbox receives the exact same verified gift animation as rolling view. */
+.recipient-lock .postbox-letter .move-handle,
+.recipient-lock .postbox-letter .edit-handle,
+.recipient-lock .postbox-letter .resize-handle{display:none!important}
+.recipient-lock .postbox-letter{cursor:pointer;transition:filter .3s ease,box-shadow .3s ease}
+.recipient-lock .postbox-letter:hover{filter:brightness(1.035);box-shadow:0 15px 28px #7b56703c}
+.recipient-reveal .recipient-scene{animation:recipientSceneIn .7s cubic-bezier(.2,.8,.3,1) both}
+@keyframes recipientSceneIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* V29: mobile-first recipient experience, no horizontal clipping */
+@media(max-width:650px){
+ .recipient-lock{overflow-x:hidden}
+ .recipient-lock .top{height:60px;padding:0 12px}
+ .recipient-lock .logo{font-size:19px;white-space:nowrap}
+ .recipient-lock .shell{width:100%;max-width:100%;padding:10px 10px 50px}
+ .recipient-lock .controls{margin:12px auto!important;padding:0 2px;max-width:100%}
+ .recipient-lock .controls>div:last-child{width:100%;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px!important}
+ .recipient-lock .controls #expandBtn{grid-column:1/-1}
+ .recipient-lock .controls #expandBtn,.recipient-lock .controls #printBtn,.recipient-lock .controls #imageSaveBtn{width:100%;min-width:0;justify-content:center;padding:12px 7px;font-size:12px;line-height:1.35;white-space:normal;min-height:44px}
+ .recipient-lock .board{margin-top:12px!important;padding:13px 10px;max-width:100%;border-radius:16px}
+ .recipient-lock .board-head{max-width:100%;padding:16px 10px;margin:4px auto 20px}
+ .recipient-lock .board-head h2{font-size:clamp(20px,6vw,28px);overflow-wrap:anywhere}
+ .recipient-lock .modal{padding:18px;width:min(100%,490px)}
+ .recipient-lock .backdrop{padding:10px;align-items:center}
+ .recipient-lock .letter-paper{overflow-wrap:anywhere}
+ .recipient-lock .postbox-letter{touch-action:pan-y!important}
+ .recipient-lock .postbox-stage{max-width:100%}
+ .recipient-reveal{padding:18px 12px;padding-top:max(18px,env(safe-area-inset-top));padding-bottom:max(18px,env(safe-area-inset-bottom));overflow-y:auto}
+ .recipient-scene{width:100%;max-width:360px;margin:auto}
+ .recipient-caption{font-size:clamp(20px,6vw,28px);line-height:1.42;margin-bottom:48px;overflow-wrap:anywhere}
+ .recipient-envelope{width:min(275px,75vw);height:188px}
+ .recipient-envelope.open .env-letter{transform:translateY(-98px) rotate(-3deg)}
+ .recipient-start{margin-top:34px;padding:15px 25px;font-size:15px;min-height:48px;max-width:100%}
+ .recipient-open-text{font-size:12px;line-height:1.5}
+ .recipient-banner{width:max-content;max-width:94vw;text-align:center;font-size:clamp(19px,5.4vw,28px);padding:12px 19px;white-space:normal}
+ .recipient-confetti .piece{width:9px;height:13px}
+}
+@media(max-width:350px){.recipient-lock .controls>div:last-child{grid-template-columns:1fr}.recipient-lock .controls #expandBtn{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.recipient-confetti .piece,.recipient-fireworks .burst,.recipient-banner{animation-duration:.05s!important}.recipient-reveal .recipient-scene{animation:none!important}}
+
+
+/* Mobile reading layout: two readable columns, with the original desktop coordinates
+   left untouched in saved paper data. */
+@media screen and (max-width:650px){
+  body{overflow-x:hidden}
+  .board:not(.rolling){
+    display:flex!important;flex-direction:column!important;
+    min-height:0!important;height:auto!important;
+    overflow:visible!important;padding:14px 12px 22px!important;
+  }
+  .board:not(.rolling)>.board-head{order:0;width:100%;position:relative!important;margin:4px auto 16px!important}
+  .board:not(.rolling)>.postbox-decor.canvas-stage{
+    order:1;position:relative!important;inset:auto!important;top:auto!important;
+    left:auto!important;right:auto!important;bottom:auto!important;
+    width:100%!important;height:auto!important;min-height:0!important;
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;align-items:start!important;justify-items:stretch!important;
+    padding:0!important;margin:0 0 14px!important;overflow:visible!important;
+    pointer-events:auto!important;z-index:2!important;
+  }
+  .board:not(.rolling)>.postbox-decor.canvas-stage:empty{display:none!important}
+  .board:not(.rolling) .postbox-decor .canvas-object{
+    position:relative!important;left:auto!important;top:auto!important;
+    right:auto!important;bottom:auto!important;transform:none!important;
+    max-width:100%!important;margin:0!important;
+  }
+  .board:not(.rolling) .postbox-decor .photo-center{
+    width:100%!important;height:auto!important;min-height:0!important;
+    aspect-ratio:0.83;overflow:visible!important;
+    box-shadow:0 4px 13px #64415a20;
+  }
+  .board:not(.rolling) .postbox-decor .photo-image-frame{height:calc(100% - 12px)!important;min-height:0!important}
+  .board:not(.rolling) .postbox-decor .photo-center img{width:100%!important;height:100%!important;object-fit:cover}
+  .board:not(.rolling) .postbox-decor .photo-caption{font-size:11px!important;line-height:1.3}
+  .board:not(.rolling) .postbox-decor .sticker-object{width:100%!important;height:70px!important;font-size:42px!important}
+  .board:not(.rolling)>.letters.postbox-stage{
+    order:2;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;position:relative!important;min-height:0!important;
+    height:auto!important;overflow:visible!important;align-items:start!important;
+    pointer-events:auto!important;isolation:auto!important;width:100%!important;
+  }
+  .board:not(.rolling) .postbox-stage .postbox-letter{
+    position:relative!important;left:auto!important;top:auto!important;right:auto!important;
+    transform:none!important;display:flex!important;width:100%!important;
+    min-height:145px!important;height:auto!important;aspect-ratio:1.07!important;
+    padding:12px 6px!important;touch-action:pan-y!important;
+    overflow:hidden!important;pointer-events:auto!important;box-sizing:border-box!important;
+    border-radius:10px!important;
+  }
+  .board:not(.rolling) .postbox-stage .postbox-letter .move-handle,
+  .board:not(.rolling) .postbox-stage .postbox-letter .resize-handle,
+  .board:not(.rolling) .postbox-decor .move-handle,
+  .board:not(.rolling) .postbox-decor .resize-handle {display:none!important}
+  .board:not(.rolling) .postbox-stage .postbox-letter .env-from,
+  .board:not(.rolling) .postbox-stage .postbox-letter .env-cta{font-size:clamp(11px,3vw,14px)!important}
+  .board:not(.rolling)>.footerhint{order:3;position:relative!important;margin-top:16px!important}
+  .board:not(.rolling)>canvas.paint-layer{display:none!important}
+  .board.rolling .letters.canvas-stage{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;position:relative!important;align-content:start!important;
+    height:auto!important;min-height:0!important;overflow:visible!important;
+  }
+  .board.rolling .letters.canvas-stage>.canvas-object{
+    position:relative!important;left:auto!important;top:auto!important;
+    width:100%!important;max-width:100%!important;
+    transform:none!important;box-sizing:border-box!important;
+  }
+  .board.rolling .letters.canvas-stage>.note-card{
+    padding:12px!important;min-height:190px!important;height:auto!important;
+  }
+  .board.rolling .letters.canvas-stage .note-content{
+    font-size:clamp(12px,3.25vw,14px)!important;line-height:1.55!important;
+    overflow-wrap:anywhere;
+  }
+  .board.rolling .letters.canvas-stage>.photo-center{
+    aspect-ratio:0.85;height:auto!important;min-height:0!important;
+  }
+  .board.rolling .letters.canvas-stage>.photo-center .photo-image-frame{height:calc(100% - 12px)!important}
+  .board.rolling .letters.canvas-stage>.photo-center img{width:100%!important;height:100%!important}
+  .board.rolling .letters.canvas-stage .move-handle,
+  .board.rolling .letters.canvas-stage .resize-handle{display:none!important}
+  .board.rolling .letters.canvas-stage>.sticker-object{min-height:70px!important;height:70px!important}
+  .recipient-lock .board-head{margin-bottom:16px!important}
+}
+
+/* Mobile memory gallery: full-size hero photograph, then readable 2-column envelopes.
+   Presentation only; never rewrite saved canvas positions, image data or letter IDs. */
+@media screen and (max-width:650px){
+ .board:not(.rolling)>.postbox-decor.canvas-stage{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;row-gap:14px!important;
+    width:100%!important;margin:0 0 22px!important;
+    align-items:start!important;align-content:start!important;
+ }
+ .board:not(.rolling) .postbox-decor .photo-center.mobile-featured-photo{
+    grid-column:1/-1!important;order:-1!important;
+    display:flex!important;flex-direction:column!important;
+    width:100%!important;max-width:100%!important;
+    height:auto!important;min-height:0!important;
+    aspect-ratio:auto!important;
+    padding:12px!important;
+    background:#fffdfb!important;
+    border-radius:14px!important;
+    box-shadow:0 7px 23px #6c456a22!important;
+ }
+ .board:not(.rolling) .postbox-decor .mobile-featured-photo .photo-image-frame{
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    width:100%!important;height:auto!important;min-height:250px!important;
+    max-height:440px!important;aspect-ratio:1 / 1!important;
+    overflow:hidden!important;background:#f9ecf3!important;
+    border-radius:8px!important;
+ }
+ .board:not(.rolling) .postbox-decor .mobile-featured-photo img{
+    position:relative!important;inset:auto!important;
+    width:100%!important;height:100%!important;
+    object-fit:contain!important;object-position:center!important;
+    transform:none!important;
+ }
+ .board:not(.rolling) .postbox-decor .mobile-featured-photo .photo-caption{
+    flex:none!important;font-size:13px!important;line-height:1.4!important;
+    text-align:center!important;min-height:24px!important;
+    padding:7px 3px 1px!important;white-space:normal!important;
+ }
+ .board:not(.rolling) .postbox-decor .photo-center:not(.mobile-featured-photo){
+    display:flex!important;flex-direction:column!important;
+    width:100%!important;aspect-ratio:auto!important;min-height:0!important;
+    padding:7px!important;background:#fff!important;border-radius:11px!important;
+ }
+ .board:not(.rolling) .postbox-decor .photo-center:not(.mobile-featured-photo) .photo-image-frame{
+    height:auto!important;aspect-ratio:1/1!important;min-height:0!important;
+    border-radius:6px!important;overflow:hidden!important;
+ }
+ .board:not(.rolling) .postbox-decor .photo-center:not(.mobile-featured-photo) img{
+    object-fit:contain!important;object-position:center!important;transform:none!important;
+    width:100%!important;height:100%!important;
+ }
+ .board:not(.rolling) .postbox-decor .photo-center:not(.mobile-featured-photo) .photo-caption{
+    font-size:11px!important;line-height:1.4!important;padding-top:5px!important;
+ }
+ .board:not(.rolling)>.letters.postbox-stage{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;align-content:start!important;
+    width:100%!important;padding:0!important;
+ }
+ .board:not(.rolling) .postbox-stage .postbox-letter{
+    width:100%!important;min-width:0!important;
+    min-height:140px!important;aspect-ratio:1.02!important;
+    height:auto!important;font-size:12px!important;
+    border-radius:12px!important;
+ }
+ .board:not(.rolling) .postbox-stage .postbox-letter .env-from,
+ .board:not(.rolling) .postbox-stage .postbox-letter .env-cta{
+    font-size:clamp(11px,3vw,13px)!important;line-height:1.3!important;
+ }
+ .board:not(.rolling) .postbox-decor .move-handle,
+ .board:not(.rolling) .postbox-decor .edit-handle,
+ .board:not(.rolling) .postbox-decor .resize-handle{
+    display:none!important;
+ }
+}
+
+
+/* Mobile shared-photo gallery remains visible above the two-column envelopes. */
+@media screen and (max-width:650px){
+ .board:not(.rolling)>.postbox-decor.canvas-stage:has(.photo-center){display:grid!important;visibility:visible!important;opacity:1!important;}
+ .recipient-lock .board:not(.rolling)>.postbox-decor.canvas-stage{order:1!important;}
+ .recipient-lock .board:not(.rolling)>.postbox-decor.canvas-stage .photo-center{visibility:visible!important;opacity:1!important;}
+ .recipient-lock .board:not(.rolling)>.postbox-decor.canvas-stage .photo-center.mobile-featured-photo{grid-column:1/-1!important;order:-1!important;}
+ .recipient-lock .board:not(.rolling)>.letters.postbox-stage{order:2!important;}
+}
+
+/* V-next: responsive photo gallery is independent of editable canvas coordinates. */
+.paper-photo-gallery{display:none}
+.paper-photo-lightbox{position:fixed;inset:0;z-index:100100;background:rgba(18,14,25,.94);display:flex;align-items:center;justify-content:center;padding:54px 14px 62px;box-sizing:border-box}
+.paper-photo-lightbox img{max-width:100%;max-height:calc(100dvh - 135px);width:auto;height:auto;object-fit:contain;border-radius:9px;box-shadow:0 12px 34px #0009}
+.paper-photo-lightbox .photo-zoom-close{position:absolute;right:17px;top:max(16px,env(safe-area-inset-top));height:45px;width:45px;border-radius:50%;background:#fff;color:#302335;border:0;font-size:26px;cursor:pointer}
+.paper-photo-lightbox .photo-zoom-caption{position:absolute;bottom:max(18px,env(safe-area-inset-bottom));left:16px;right:16px;text-align:center;color:white;font:600 15px/1.5 sans-serif;max-height:48px;overflow:hidden}
+.canvas-object.photo-center img{cursor:zoom-in}
+@media screen and (max-width:650px){
+ .board .paper-photo-gallery{display:grid!important;order:1!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;box-sizing:border-box;margin:0 0 18px;position:relative;z-index:6}
+ .board .paper-photo-gallery[hidden]{display:none!important}
+ .board .paper-photo-gallery .paper-photo-tile{min-width:0;border:0;padding:7px 7px 28px;background:white;box-shadow:0 4px 14px #78596e2b;border-radius:9px;position:relative;aspect-ratio:.85;cursor:zoom-in;box-sizing:border-box}
+ .board .paper-photo-gallery .paper-photo-tile:first-child{grid-column:1/-1;aspect-ratio:1.65}
+ .board .paper-photo-gallery .paper-photo-tile img{width:100%;height:100%;border-radius:5px;display:block;object-fit:cover}
+ .board .paper-photo-gallery .paper-photo-tile .photo-tile-caption{position:absolute;bottom:5px;left:5px;right:5px;font:600 11px/1.3 sans-serif;color:#765f73;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+ /* Keep original desktop photo coordinates intact. Mobile has one photo gallery only. */
+ .board.has-paper-photo-gallery:not(.rolling) .postbox-decor .photo-center,
+ .board.has-paper-photo-gallery.rolling .letters.canvas-stage>.photo-center{display:none!important}
+ .board.has-paper-photo-gallery:not(.rolling)>.postbox-decor.canvas-stage:has(.photo-center):not(:has(.sticker-object)){display:none!important}
+ .board.rolling{display:flex!important;flex-direction:column!important;overflow:visible!important}
+ .board.rolling>.board-head{order:0!important}
+ .board.rolling>.paper-photo-gallery{order:1!important}
+ .board.rolling>.letters{order:2!important;width:100%!important}
+ .board.rolling>.footerhint{order:3!important}
+ .recipient-lock .paper-photo-gallery{display:grid!important}
+}
+@media screen and (min-width:651px){.paper-photo-gallery{display:none!important}}
+
+
+/* Photo move controls: editable papers only. Gift recipients remain read-only. */
+@media screen and (min-width:651px){
+ body:not(.recipient-lock) .board .canvas-object.photo-center .move-handle{
+  display:inline-flex!important;align-items:center;justify-content:center;
+  pointer-events:auto!important;opacity:1!important;visibility:visible!important;z-index:14!important;
+ }
+}
+@media screen and (max-width:650px){
+ .paper-photo-gallery .paper-photo-tile{cursor:default!important;overflow:visible;}
+ .paper-photo-gallery .paper-photo-open{display:block;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;cursor:zoom-in;text-align:inherit;}
+ .paper-photo-gallery .paper-photo-open img{width:100%;height:100%;object-fit:cover;display:block;}
+ body:not(.recipient-lock) .paper-photo-gallery .gallery-move-handle{
+  display:flex!important;align-items:center;justify-content:center;position:absolute;
+  z-index:30;top:7px;left:7px;min-height:36px;min-width:63px;
+  border:1px solid #fff8;border-radius:20px;background:#302b35;color:#fff;
+  font-size:12px;font-weight:700;cursor:grab;touch-action:none;user-select:none;
+  box-shadow:0 2px 9px #0005;
+ }
+ .paper-photo-gallery .paper-photo-tile.photo-dragging{opacity:.58;outline:3px solid #9162aa;z-index:5;}
+ .paper-photo-gallery .paper-photo-tile.photo-drop-target{outline:3px dashed #7c4d98;}
+ body.recipient-lock .paper-photo-gallery .gallery-move-handle, .recipient-lock .gallery-move-handle{display:none!important;}
+}
+@media print{.paper-photo-gallery .gallery-move-handle{display:none!important;}}
+
+/* Recipient: persistent letter collection & tap-to-enlarge reader */
+.recipient-lock .modal.wide{width:min(95vw,760px);max-height:min(90dvh,900px);overflow-y:auto}
+.recipient-letter-collection{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.recipient-letter-preview{appearance:none;border:0;padding:0;background:transparent;text-align:left;cursor:zoom-in;min-width:0;border-radius:14px}
+.recipient-letter-preview .letter-paper{min-height:160px;height:100%;padding:16px;line-height:1.7;box-shadow:0 5px 15px #4a2e4510;transition:box-shadow .2s}
+.recipient-letter-preview:hover .letter-paper,.recipient-letter-preview:focus-visible .letter-paper{box-shadow:0 0 0 2px #aa83bb,0 7px 18px #4a2e4520}
+.recipient-preview-tip{display:block;text-align:right;color:#805b89;font-size:12px;padding:6px 5px}
+.recipient-expanded-letter .letter-paper{padding:clamp(20px,4vw,40px);font-size:clamp(18px,2.7vw,24px)!important;line-height:1.85;white-space:pre-wrap;min-height:240px}
+.recipient-expanded-letter .letter-paper img{max-height:none;max-width:100%;height:auto}
+.recipient-reader-actions{flex-wrap:wrap;justify-content:center}
+@media(max-width:600px){.recipient-letter-collection{grid-template-columns:1fr}.recipient-lock .modal.wide{width:100%;max-height:90dvh}.recipient-expanded-letter .letter-paper{font-size:19px!important;padding:18px}.recipient-reader-actions button{flex:1}}
+
+</style></head><body><header class="top"><a class="logo" id="homeLogo" href="./" title="첫 메인 화면으로" aria-label="첫 메인 화면으로">dear<span>, together.</span> 💌</a><div class="toplinks"><button class="btn light slim" id="newBtn">+ 새 페이퍼</button><button class="btn light slim" id="shareBtn">🔗 공유</button><button class="btn slim" id="settingsBtn">⚙ 설정</button></div></header><main class="shell"><section class="intro"><div class="floating-note" aria-hidden="true">오늘도 네 편이야 ♡</div><div class="floating-note" aria-hidden="true">함께해서 참 고마워</div><div class="floating-note" aria-hidden="true">오래오래 기억할게 ✿</div><div class="floating-note" aria-hidden="true">늘 반짝이길 ✨</div><span class="eyebrow">A LITTLE LETTER, A LOT OF LOVE</span><h1>마음이 모이면, 특별한 선물이 돼요.</h1><p>소중한 사람을 위한 편지함 ✨<br>하나씩 봉투를 열어 마음을 만나보세요.</p></section><div class="view-switch" role="tablist" aria-label="편지 보기 방식"><button id="postboxTab" role="tab" aria-selected="true">📮 버전 1 · 우체통</button><button id="rollingTab" role="tab" aria-selected="false">📝 버전 2 · 롤링페이퍼</button></div><div class="controls"><div class="meta"><span class="pill" id="count" style="display:none">💌 0개의 편지</span><span class="pill" id="mode" style="display:none">🌷 공개</span><span class="pill" id="status" style="display:none">✍️ 작성 가능</span></div><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><button class="btn light slim" id="expandBtn">💌 편지 모아보기</button><button class="btn light slim" id="printBtn">🖨️ 인쇄 / PDF</button><button class="btn light slim" id="imageSaveBtn">📷 PNG 저장</button><button class="btn primary slim" id="shareParticipantBtn">🔗 링크 공유하기</button><button class="btn slim" id="sendRecipientBtn" style="background:#32283d;color:white">✉️ 주인공에게 보내기</button><button class="btn primary slim" id="writeBtn">＋ 편지 남기기</button></div></div><div class="canvas-toolbar" id="canvasToolbar"><span class="tool-label">배경</span><input type="color" id="canvasBg" aria-label="롤링페이퍼 배경색"><span class="tool-label">새 메모 모양</span><select id="newShape"><option value="square">둥근 네모</option><option value="speech">말풍선</option><option value="cloud">구름</option><option value="round">동그라미</option><option value="star">별</option></select><button id="addSticker">✨ 스티커 추가</button><button id="addCenterPhoto">🖼️ 사진 여러 장 추가</button><button id="editHeading">✏️ 문구·색상 수정</button><button id="managePhotos">📷 사진 관리</button><button id="resetCanvas">↺ 위치 정렬</button><small style="width:100%;text-align:center;color:#777">사진 권장: 1200×1200px 이상 · 사진 ✏️에서 자르기 위치와 확대 조절</small><input id="centerPhotoFile" type="file" accept="image/*" multiple hidden></div><section class="board" id="board"><div class="board-head"><div class="to" id="boardTo">TO. SOMEONE SPECIAL</div><h2 id="boardTitle"></h2><p id="boardDesc"></p></div><div class="letters" id="letters"></div><p class="footerhint">💡 봉투를 누르면 편지가 열려요. 소중한 마음을 하나씩 확인해 보세요.</p></section><div class="below"><span>© 2026 Dear, Together · 소중한 마음을 담는 공간</span><span id="saveMode"></span></div></main><div class="print-only" id="printArea"></div><div id="overlay" class="backdrop hidden"><div id="dialog" class="modal"></div></div><script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.13/dist/html-to-image.min.js"></script><script>
+const colors=['#e5c4d2','#d1cee9','#c6dfd0','#f4dab0','#c6dced','#edcbbd'];const themes=['blush','sage','sky','cream'];const storageKey='dearTogether.v1';const params=new URLSearchParams(location.search);const roomId=params.get('room')||'demo';let allData={};try{allData=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{}function makeRoom(){return{id:roomId,title:'소중한 우리에게 💜',description:'함께한 순간들을 오래도록 기억할게요.',theme:'blush',canvasBg:'#f8e3ee',visibility:'link',accessToken:'',fontScale:{postbox:100,rolling:100},locked:false,password:'',adminPin:'',letters:[{id:'sample1',name:'다정한 친구',message:'함께 웃던 순간들이 오래 기억될 것 같아. 앞으로도 늘 네 편이 되어줄게! 🌷',color:colors[0],photo:'',createdAt:Date.now()-3600000},{id:'sample2',name:'언제나 응원해',message:'너와 함께해서 즐거웠어. 어디서든 반짝반짝 빛나길! ✨',color:colors[1],photo:'',createdAt:Date.now()-1500000}]}}let room=allData[roomId]||makeRoom();room.accessToken ||= crypto.randomUUID().replace(/-/g,'');room.fontScale ||= {postbox:100,rolling:100};if(!['link','password'].includes(room.visibility))room.visibility='link';let accessGranted=!!allData[roomId] && !/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(roomId), adminGranted=false;let currentView=localStorage.getItem('dearTogether.view')==='rolling'?'rolling':'postbox';function save(){allData[roomId]=room;try{localStorage.setItem(storageKey,JSON.stringify(allData))}catch{toast('브라우저 저장 용량이 부족해요. 사진을 더 추가하려면 이미지 서버 저장 방식이 필요합니다.')}window.dispatchEvent(new Event('rp:decor-change'))}save();const $=id=>document.getElementById(id);function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function toast(t){document.querySelector('.toast')?.remove();let e=document.createElement('div');e.className='toast';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),3000)}function canView(){if(/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(room.id))return accessGranted;return adminGranted||accessGranted||(room.visibility==='link'&&params.get('access')===room.accessToken)}function update(){ $('board').classList.toggle('rolling',currentView==='rolling');$('postboxTab').setAttribute('aria-selected',String(currentView==='postbox'));$('rollingTab').setAttribute('aria-selected',String(currentView==='rolling'));$('expandBtn').textContent='💌 편지 모아보기';document.querySelector('.footerhint').textContent=currentView==='rolling'?'💡 모든 편지가 펼쳐져 있어요. 편지를 누르면 크게 볼 수 있어요.':'💡 봉투를 누르면 편지가 열려요. 소중한 마음을 하나씩 확인해 보세요.';document.querySelector('.intro p').innerHTML=currentView==='rolling'?'함께 남긴 진심이 한눈에 보이는 롤링페이퍼 ✨<br>편지와 사진으로 마음을 채워 보세요.':'소중한 사람을 위한 편지함 ✨<br>하나씩 봉투를 열어 마음을 만나보세요.'; $('board').dataset.theme=room.theme;if(currentView==='postbox'&&room.postboxBg)$('board').style.backgroundColor=room.postboxBg;else $('board').style.backgroundColor='';$('boardTo').textContent=room.toLabel||'TO. SOMEONE SPECIAL';$('boardTitle').textContent=room.title;$('boardDesc').textContent=room.description;const headingColors=(room.headingColors||{})[currentView]||{};$('boardTo').style.color=headingColors.to||'';$('boardTitle').style.color=headingColors.title||'';$('boardDesc').style.color=headingColors.desc||'';$('count').textContent=`💌 ${room.letters.length}개의 편지`;$('mode').textContent=room.visibility==='password'?'🔑 링크 + 암호':'🔗 링크 공유';$('status').textContent=room.locked?'🔒 작성 마감':'✍️ 작성 가능';$('writeBtn').disabled=room.locked&&!adminGranted;let list=$('letters');list.innerHTML='';if(!canView()){list.innerHTML='<div class="empty"><div class="big">🔐</div>비공개 편지함이에요.<br>열람 권한이 필요해요.<br><button class="btn primary" style="margin-top:16px" id="accessBtn">열람하기</button></div>';$('accessBtn').onclick=accessModal;return}if(!room.letters.length){list.innerHTML='<div class="empty"><div class="big">💌</div>아직 도착한 편지가 없어요.<br>첫 번째 편지를 남겨보세요!</div>';return}room.letters.forEach((l,i)=>{if(currentView==='rolling'){let b=document.createElement('button');b.className='note-card';b.style.setProperty('--rotate',`${[-3,2,-1,3,0,-2,1][i%7]}deg`);b.style.background=['#fff','#fffaf5','#fffdfd','#f9fbff','#fafff8'][i%5];b.setAttribute('aria-label',`${l.name}님의 편지 크게 보기`);b.innerHTML=`<span class="note-sticker">${['💗','🌷','✨','🩷','⭐','🎀'][i%6]}</span><span class="note-content">${esc(l.message)}</span>${l.photo&&(!l.viewPin||unlockedLetters.has(l.id)||adminGranted)?`<img src="${l.photo}" alt="첨부 사진">`:""}<span class="note-author">From. ${esc(l.name)}</span>`;b.onclick=allLettersModal;list.appendChild(b);return}let b=document.createElement('button');b.className='envelope';b.style.setProperty('--color',l.color);b.style.setProperty('--rotate',`${[-3,2,-1,3,0,-2,1][i%7]}deg`);b.innerHTML=`<span class="wax">${l.photo?'📸':'♥'}</span><span class="from">From. ${esc(l.name)}</span><small>열어서 편지 보기 ↗</small>`;b.onclick=()=>viewLetter(l.id);list.appendChild(b)})}function openModal(content,wide=false){$('dialog').className='modal'+(wide?' wide':'');$('dialog').innerHTML=content;$('overlay').classList.remove('hidden');$('dialog').querySelector('.close')?.addEventListener('click',closeModal)}function closeModal(){$('overlay').classList.add('hidden')} $('overlay').addEventListener('click',e=>{if(e.target===$('overlay'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});function modalHead(t){return`<div class="modal-head"><h3>${t}</h3><button class="close" aria-label="닫기">×</button></div>`}function requireAdmin(next){if(adminGranted||!room.adminPin){adminGranted=true;next();return}openModal(modalHead('🔑 관리자 확인')+`<p class="help">이 페이퍼의 관리 비밀번호를 입력해 주세요.</p><input type="password" class="input" id="pinInput" placeholder="관리 비밀번호"><div class="actions"><button class="btn primary" id="pinConfirm">확인</button></div>`);$('pinConfirm').onclick=()=>{if($('pinInput').value===room.adminPin){adminGranted=true;closeModal();next()}else toast('관리 비밀번호가 다릅니다.') }}function writeModal(){if(room.locked&&!adminGranted){toast('작성이 마감된 편지함입니다.');return}let color=colors[0],photo='';openModal(modalHead('💌 마음 담아 편지 쓰기')+`<label class="field">보내는 사람</label><input class="input" id="writer" maxlength="30" placeholder="이름 또는 별명"><label class="field">전하고 싶은 말</label><textarea class="input" id="message" maxlength="3000" placeholder="고마웠던 순간, 응원하는 마음을 남겨보세요."></textarea><label class="field">수정·삭제 비밀번호 (숫자나 문자 4자 이상)</label><input class="input" id="authorPin" type="password" minlength="4" maxlength="32" placeholder="작성 후에도 편지를 수정·삭제할 때 사용"><p class="help">🌍 작성한 편지는 이 롤링페이퍼의 링크를 받은 모든 사람이 읽을 수 있어요.</p><label class="field">봉투 색상</label><div class="swatches" id="swatches"></div><label class="field">함께 담을 사진 (선택)</label><input class="input" type="file" id="photoFile" accept="image/*"><div id="preview"></div><p class="help">이미지는 서버에 저장됩니다. 용량이 큰 이미지는 자동으로 축소돼요.</p><div class="actions"><button class="btn light" id="cancel">취소</button><button class="btn primary" id="send">💌 봉투에 넣기</button></div>`,true);const sw=$('swatches');colors.forEach(c=>{const b=document.createElement('button');b.className='swatch'+(c===color?' selected':'');b.style.background=c;b.setAttribute('aria-label','봉투 색상');b.onclick=()=>{color=c;sw.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')};sw.appendChild(b)});$('cancel').onclick=closeModal;$('photoFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;if(f.size>20*1024*1024){toast('20MB 이하의 사진을 선택해주세요.');return}try{photo=await resizeImage(f);$('preview').innerHTML=`<img class="preview" src="${photo}" alt="사진 미리보기">`}catch{toast('사진을 읽지 못했어요.')}};$('send').onclick=()=>{let name=$('writer').value.trim(),message=$('message').value.trim(),authorPin=$('authorPin').value;if(!name||(!message&&!photo)){toast('이름과 편지 내용 또는 사진을 입력해주세요.');return}if(authorPin.length<4){toast('수정·삭제 비밀번호를 4자 이상 입력해주세요.');return}room.letters.push({id:crypto.randomUUID(),name,message,color,photo,fontScale:100,authorPin,viewPin:$('letterViewPin').value,createdAt:Date.now()});save();closeModal();update();toast('따뜻한 마음이 도착했어요! 💌')}}function resizeImage(file){return new Promise((resolve,reject)=>{let reader=new FileReader();reader.onerror=reject;reader.onload=()=>{let img=new Image();img.onerror=reject;img.onload=()=>{let scale=Math.min(1,1000/Math.max(img.width,img.height));let canvas=document.createElement('canvas');canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',.73))};img.src=reader.result};reader.readAsDataURL(file)})}function viewLetter(id){if(!canView()){accessModal();return}let l=room.letters.find(x=>x.id===id);if(!l)return;if(l.viewPin&&!adminGranted&&!unlockedLetters.has(l.id)){askLetterAccess(l,()=>viewLetter(id));return}openModal(modalHead('✉️ 도착한 편지')+`<div class="letter-paper" data-letter-id="${l.id}" style="font-size:${16*(room.fontScale[currentView]||100)/100*(l.fontScale||100)/100}px">${l.viewPin&&!unlockedLetters.has(l.id)&&!adminGranted?'🔒 비밀번호가 설정된 편지':esc(l.message).replace(/\n/g,'<br>')}${l.photo?`<img src="${l.photo}" alt="첨부한 사진">`:''}<div class="letter-sign">From. ${esc(l.name)}</div></div><div class="actions"><button class="btn light" id="authorEdit">✏️ 수정</button><button class="btn light" id="authorDelete">🗑 삭제</button><button class="btn primary" id="done">마음 간직하기 ♥</button></div>`,true);$('done').onclick=closeModal;$('authorEdit').onclick=()=>authorizeLetter(l,()=>editLetter(l));$('authorDelete').onclick=()=>authorizeLetter(l,()=>{if(confirm('이 편지를 삭제할까요?')){room.letters=room.letters.filter(x=>x.id!==id);delete canvasPos['note:'+id];save();closeModal();update()}})}function accessModal(){if(room.visibility==='link'){openModal(modalHead('🔗 전용 링크로 입장')+'<p class="help">이 페이퍼는 초대받은 공유 링크로만 볼 수 있어요. 관리자에게 정확한 링크를 요청해 주세요.</p><div class="actions"><button class="btn primary" id="accessClose">확인</button></div>');$('accessClose').onclick=closeModal;return}if(room.visibility==='private'){requireAdmin(()=>{closeModal();update()});return}openModal(modalHead('🔑 암호가 필요한 편지함')+`<p class="help">주최자에게 받은 열람 암호를 입력해 주세요.</p><input class="input" type="password" id="viewPw" placeholder="열람 암호"><div class="actions"><button class="btn primary" id="checkPw">열람하기</button></div>`);$('checkPw').onclick=()=>{if($('viewPw').value===room.password){accessGranted=true;closeModal();update()}else toast('열람 암호가 다릅니다.')}}function settingsModal(){requireAdmin(()=>{openModal(modalHead('⚙️ 페이퍼 관리')+`<label class="field">페이퍼 제목</label><input id="sTitle" class="input" maxlength="80" value="${esc(room.title)}"><label class="field">짧은 설명</label><input id="sDesc" class="input" maxlength="150" value="${esc(room.description)}"><div class="settings-line"><label for="sTheme">배경 테마</label><select id="sTheme" class="input"><option value="blush">핑크 라벤더</option><option value="sage">세이지 그린</option><option value="sky">스카이 블루</option><option value="cream">크림 옐로</option></select></div><div class="settings-line"><label for="sVis">공유 링크 설정</label><select id="sVis" class="input"><option value="link">🔗 링크만 있으면 열람</option><option value="password">🔑 링크 + 열람 비밀번호</option></select></div><label class="field">공유 링크 열람 비밀번호 (암호 사용 시)</label><input id="sPassword" class="input" type="password" placeholder="공유 링크를 받은 사람에게 알려줄 암호" value="${esc(room.password)}"><p class="help">버전 1·2 모두 동일한 열람 설정이 적용됩니다. 편지별 비밀번호는 작성자가 따로 선택할 수 있어요.</p><label class="field">관리 비밀번호 (수정·삭제 방지)</label><input id="sPin" class="input" type="password" placeholder="관리 비밀번호를 설정해 주세요" value="${esc(room.adminPin)}"><div class="settings-line"><label for="sLock">새 편지 받기</label><select id="sLock" class="input"><option value="no">열기 — 누구나 작성 가능</option><option value="yes">잠금 — 작성 마감</option></select></div><div class="note">⚠️ 이 파일은 로컬 체험판입니다. 비밀번호와 편지는 현재 브라우저에 저장되므로 보안이 필요한 실제 행사에는 서버형 버전이 필요합니다. 관리 비밀번호를 설정하기 전에는 누구나 관리 화면에 접근할 수 있어요.</div><div class="actions"><button class="btn light" id="resetDemo">편지 전체 삭제</button><button class="btn primary" id="saveSettings">저장하기</button></div>`,true);$('sTheme').value=room.theme;$('sVis').value=room.visibility;$('sLock').value=room.locked?'yes':'no';$('saveSettings').onclick=()=>{let title=$('sTitle').value.trim(),visibility=$('sVis').value,pw=$('sPassword').value;if(!title){toast('제목을 입력해주세요.');return}if(visibility==='password'&&!pw){toast('열람 암호를 설정해주세요.');return}Object.assign(room,{title,description:$('sDesc').value.trim(),theme:$('sTheme').value,visibility,password:pw,adminPin:$('sPin').value,locked:$('sLock').value==='yes'});save();closeModal();update();toast('설정이 저장되었어요.')};$('resetDemo').onclick=()=>{if(confirm('모든 편지를 삭제할까요? 되돌릴 수 없어요.')){room.letters=[];save();closeModal();update()}}})}function shareModal(){let url=location.protocol==='file:'?'(로컬 파일은 외부 공유 불가)':location.href;openModal(modalHead('🔗 함께 마음 모으기')+`<p class="help">참여할 사람들에게 주소를 공유하세요.</p><input class="input" readonly id="shareUrl" value="${esc(url)}"><p class="help">현재 버전은 브라우저에만 저장됩니다. 주소를 공유해도 서로 다른 기기에서 편지가 동기화되지는 않습니다.</p><div class="actions"><button class="btn primary" id="copyUrl">링크 복사</button></div>`);$('copyUrl').onclick=async()=>{if(location.protocol==='file:'){toast('배포 후 링크를 공유할 수 있어요.');return}try{await navigator.clipboard.writeText(url);toast('링크가 복사됐어요.')}catch{ $('shareUrl').select();document.execCommand('copy');toast('링크 복사를 시도했어요.')}}}function newModal(){openModal(modalHead('🌷 새 롤링페이퍼')+`<label class="field">누구를 위한 편지함인가요?</label><input class="input" id="newTitle" maxlength="80" placeholder="예: 수영아, 생일 축하해! 🎂"><label class="field">관리자 비밀번호 (4자 이상)</label><input class="input" type="password" id="newAdminPin" minlength="4" placeholder="페이퍼를 만든 사람이 관리할 때 사용"><label class="field">짧은 소개</label><input class="input" id="newDesc" maxlength="150" placeholder="예: 우리들의 마음을 담았어"><div class="actions"><button class="btn primary" id="createNew">새 페이퍼 만들기</button></div>`);$('createNew').onclick=()=>{let title=$('newTitle').value.trim();if(!title){toast('제목을 입력해주세요.');return}const newPin=$('newAdminPin').value;if(newPin.length<4){toast('관리 비밀번호를 4자 이상 입력해 주세요.');return}let id=crypto.randomUUID(),newRoom={...makeRoom(),id,title,description:$('newDesc').value.trim(),adminPin:newPin,letters:[]};allData[id]=newRoom;localStorage.setItem(storageKey,JSON.stringify(allData));location.href=location.pathname+'?room='+encodeURIComponent(id)}}function allLettersModal(){if(!canView()){accessModal();return}openModal(modalHead('💌 모든 편지')+(!room.letters.length?'<p class="help">아직 편지가 없어요.</p>':room.letters.map(l=>`<div class="letter-paper" data-letter-id="${l.id}" style="margin-bottom:13px;min-height:0;font-size:${16*(room.fontScale[currentView]||100)/100*(l.fontScale||100)/100}px">${l.viewPin&&!unlockedLetters.has(l.id)&&!adminGranted?'🔒 비밀번호가 설정된 편지':esc(l.message).replace(/\n/g,'<br>')}${l.photo&&(!l.viewPin||unlockedLetters.has(l.id)||adminGranted)?`<img src="${l.photo}" alt="첨부 사진">`:""}<div class="letter-sign">From. ${esc(l.name)}</div></div>`).join('')),true)}function printLetters(){if(!canView()){accessModal();return}if(!room.letters.length){toast('인쇄할 편지가 없어요.');return}$('printArea').innerHTML=`<div class="print-heading"><h1>${esc(room.title)}</h1><p>${esc(room.description)}</p><small>${room.letters.length}개의 소중한 마음</small></div>`+room.letters.map(l=>`<article class="print-letter"><h3>To. ${esc(room.title)}</h3><p style="font-size:${16*(room.fontScale[currentView]||100)/100*(l.fontScale||100)/100}px">${l.viewPin&&!unlockedLetters.has(l.id)&&!adminGranted?'🔒 비밀번호가 설정된 편지':esc(l.message).replace(/\n/g,'<br>')}</p>${l.photo&&(!l.viewPin||unlockedLetters.has(l.id)||adminGranted)?`<img src="${l.photo}" alt="첨부 사진">`:""}<p class="sign">From. ${esc(l.name)}</p></article>`).join('');setTimeout(()=>window.print(),120)}$('postboxTab').onclick=()=>{currentView='postbox';localStorage.setItem('dearTogether.view',currentView);update()};$('rollingTab').onclick=()=>{currentView='rolling';localStorage.setItem('dearTogether.view',currentView);update()};$('writeBtn').onclick=writeModal;$('settingsBtn').onclick=settingsModal;$('shareBtn').onclick=shareModal;$('newBtn').onclick=newModal;$('expandBtn').onclick=allLettersModal;$('printBtn').onclick=printLetters;
+// The view is controlled by the URL when a shared view parameter is present.
+const sharedView=params.get('view');
+if(sharedView==='rolling'||sharedView==='postbox'){currentView=sharedView;document.querySelector('.view-switch').style.display='none'}
+let canvasPos=room.canvasPos||{};
+function stablePos(id,index){if(canvasPos[id])return canvasPos[id];const col=index%4,row=Math.floor(index/4);return {x:4+col*24,y:15+row*225};}
+function commitCanvas(){room.canvasPos=canvasPos;save()}
+function makeMovable(element,id){const handle=document.createElement('button');handle.className='move-handle';handle.type='button';handle.textContent='✥ 이동';handle.title='누른 상태에서 드래그 · 관리자 암호 불필요';element.appendChild(handle);handle.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();const stage=element.parentElement,bounds=stage.getBoundingClientRect();let startX=e.clientX,startY=e.clientY;let origin=canvasPos[id]||{x:element.offsetLeft,y:element.offsetTop};let moved=false;handle.setPointerCapture(e.pointerId);const move=ev=>{moved=true;let x=Math.max(0,Math.min(stage.clientWidth-element.offsetWidth,origin.x+(ev.clientX-startX)));let y=Math.max(0,origin.y+(ev.clientY-startY));element.style.left=x+'px';element.style.top=y+'px';canvasPos[id]={x,y}};const done=()=>{handle.removeEventListener('pointermove',move);handle.removeEventListener('pointerup',done);handle.removeEventListener('pointercancel',done);if(moved){commitCanvas();scheduleBoardExpansion()}};handle.addEventListener('pointermove',move);handle.addEventListener('pointerup',done);handle.addEventListener('pointercancel',done)});}
+function placeElement(el,id,defaultX,defaultY){const pos=canvasPos[id]||{x:defaultX,y:defaultY};el.style.left=pos.x+'px';el.style.top=pos.y+'px';makeMovable(el,id);makeResizable(el,id)}
+function editNoteShape(letter){openModal(modalHead('✍️ 메모 꾸미기')+`<label class="field">메모 모양</label><select class="input" id="editShape"><option value="square">둥근 네모</option><option value="speech">말풍선</option><option value="cloud">구름</option><option value="round">동그라미</option><option value="star">별</option></select><label class="field">내 편지 열람 암호 (선택)</label><input class="input" id="editViewPin" type="password" value="${esc(l.viewPin||'')}" placeholder="비워두면 열람 제한 없음"><label class="field">이 편지 글씨 크기</label><input class="input" type="range" id="noteFontSize" min="70" max="200" step="5"><div class="help" id="noteFontValue"></div><label class="field">메모 색상</label><input type="color" class="input" id="editColor" value="${letter.noteColor||'#ffffff'}"><div class="actions"><button class="btn primary" id="applyShape">적용</button></div>`);$('editShape').value=letter.shape||'square';$('noteFontSize').value=letter.fontScale||100;$('noteFontValue').textContent=$('noteFontSize').value+'%';$('noteFontSize').oninput=()=>{$('noteFontValue').textContent=$('noteFontSize').value+'%'};$('applyShape').onclick=()=>{letter.fontScale=Number($('noteFontSize').value);letter.shape=$('editShape').value;letter.noteColor=$('editColor').value;save();closeModal();update()}}
+function photosForView(view){
+ if(view==='rolling' && !room.photosRolling && (room.centerPhotos?.length||room.centerPhoto)){
+   room.photosRolling=[...(room.centerPhotos||[])];
+   if(room.centerPhoto&&!room.photosRolling.length)room.photosRolling.push({id:'legacy',src:room.centerPhoto,caption:room.photoCaption||'Our special person ♡'});
+ }
+ const key=view==='rolling'?'photosRolling':'photosPostbox';room[key]??=[];return room[key];
+}
+function stickersForView(view){const key=view==='rolling'?'stickersRolling':'stickersPostbox';if(view==='rolling'&&!room[key]&&room.stickers?.length)room[key]=[...room.stickers];room[key]??=[];return room[key]}
+function renderPhoto(photo,i,stage,view,x,y){
+ const id=(view==='rolling'?'photo:':'p1photo:')+photo.id,p=document.createElement('div');p.className='photo-center canvas-object';if(view==='postbox'&&i===0)p.classList.add('mobile-featured-photo');
+ const img=document.createElement('img');img.src=photo.src;img.alt='주인공 사진';img.style.objectPosition=`${photo.cropX??50}% ${photo.cropY??50}%`;img.style.transform=cropTransform(photo.cropX??50,photo.cropY??50,photo.zoom??1);
+ // Crop image inside its frame, never show unpainted borders beneath a scaled image.
+ const frame=document.createElement('div');frame.className='photo-image-frame';frame.appendChild(img);p.appendChild(frame);
+ const caption=document.createElement('div');caption.className='photo-caption';caption.textContent=photo.caption||'Our special person ♡';p.appendChild(caption);
+ placeElement(p,id,x,y);p.addEventListener('click',e=>{if(!e.target.closest('button'))selectCanvasObject(p)});const edit=document.createElement('button');edit.className='edit-handle';edit.textContent='✏️';edit.onclick=e=>{e.stopPropagation();editPhoto(photo)};p.appendChild(edit);stage.appendChild(p)
+}
+function selectCanvasObject(el){
+ const board=document.getElementById('board');
+ board.querySelectorAll('.canvas-object.is-selected').forEach(node=>{if(node!==el)node.classList.remove('is-selected')});
+ el.classList.add('is-selected');
+}
+document.getElementById('board').addEventListener('click',event=>{
+ if(currentView!=='rolling')return;
+ if(!event.target.closest('.canvas-object'))document.querySelectorAll('#board .canvas-object.is-selected').forEach(node=>node.classList.remove('is-selected'));
+});
+function renderStickers(stage,view,stageW){stickersForView(view).forEach((st,i)=>{const el=document.createElement('div');el.className='canvas-object sticker-object';el.textContent=st.emoji;const id=(view==='rolling'?'sticker:':'p1sticker:')+st.id;el.addEventListener('click',e=>{if(!e.target.closest('button'))selectCanvasObject(el)});placeElement(el,id,st.x??(30+i*80)%Math.max(100,stageW-80),st.y??(view==='rolling'?250:300));const b=document.createElement('button');b.className='edit-handle';b.textContent='×';b.onclick=()=>{room[view==='rolling'?'stickersRolling':'stickersPostbox']=stickersForView(view).filter(x=>x.id!==st.id);delete canvasPos[id];commitCanvas();update()};el.appendChild(b);stage.appendChild(el)})}
+function renderCustomCanvas(){const board=$('board'),stage=$('letters');board.style.setProperty('--canvas-bg',room.canvasBg||'#f8e3ee');if(currentView!=='rolling'){stage.classList.remove('canvas-stage');renderPostboxDecor();renderMovablePostboxLetters();return}
+ stage.classList.add('canvas-stage');if(!canView())return;stage.innerHTML='';const stageW=stage.clientWidth||900,cols=Math.max(1,Math.floor(stageW/230));const photoCount=photosForView('rolling').length;const photoCols=Math.max(1,Math.min(3,Math.floor(stageW/250)));const noteRows=Math.ceil(room.letters.length/cols);const photoRows=Math.ceil(photoCount/photoCols);const photoStart=30+noteRows*275+35;const height=Math.max(800,photoStart+photoRows*300+120);stage.style.minHeight=height+'px';
+ room.letters.forEach((letter,index)=>{const id='note:'+letter.id,n=document.createElement('div');n.dataset.letterId=letter.id;n.className='note-card canvas-object shape-'+(letter.shape||room.defaultShape||'square');n.style.setProperty('--rotate',[-3,3,-2,2,0][index%5]+'deg');n.style.background=letter.noteColor||['#fffdfb','#fff9f4','#f9fcff','#fff7fa'][index%4];n.innerHTML=`<div class="note-content">${esc(letter.message)}</div>${letter.photo?`<img src="${letter.photo}" alt="첨부 사진">`:''}<div class="note-author">From. ${esc(letter.name)}</div>`;n.addEventListener('click',e=>{if(e.target.closest('button'))return;selectCanvasObject(n)});n.addEventListener('dblclick',e=>{if(!e.target.closest('button'))viewLetter(letter.id)});const x=15+(index%cols)*(stageW/cols),y=28+Math.floor(index/cols)*275;placeElement(n,id,x,y);const edit=document.createElement('button');edit.className='edit-handle';edit.textContent='⚙ 모양';edit.onclick=e=>{e.stopPropagation();editNoteShape(letter)};n.appendChild(edit);stage.appendChild(n)});
+ photosForView('rolling').forEach((photo,i)=>{const cellW=stageW/photoCols;renderPhoto(photo,i,stage,'rolling',Math.max(5,(i%photoCols)*cellW+(cellW-225)/2),photoStart+Math.floor(i/photoCols)*300)});renderStickers(stage,'rolling',stageW);requestAnimationFrame(()=>expandRollingCanvas());
+}
+function renderPostboxDecor(){let stage=$('postboxDecor');if(!stage){stage=document.createElement('div');stage.id='postboxDecor';stage.className='postbox-decor canvas-stage';$('board').appendChild(stage)}stage.innerHTML='';if(!canView())return;const photos=photosForView('postbox');const stageW=$('board').clientWidth||850;photos.forEach((photo,i)=>renderPhoto(photo,i,stage,'postbox',25+(i%4)*Math.max(145,Math.min(230,stageW/4)),260+Math.floor(i/4)*265));renderStickers(stage,'postbox',stageW)}
+
+/* V22: extend the rolling board to include every letter, photo and sticker. */
+function expandRollingCanvas(){
+ const stage=document.getElementById('letters');if(!stage||currentView!=='rolling'||!stage.classList.contains('canvas-stage'))return;
+ const bounds=stage.getBoundingClientRect();let bottom=780;
+ stage.querySelectorAll('.canvas-object').forEach(el=>{
+  const r=el.getBoundingClientRect();const y=(r.bottom-bounds.top);if(Number.isFinite(y))bottom=Math.max(bottom,y+120);
+ });
+ const h=Math.ceil(Math.max(parseFloat(stage.style.minHeight)||800,bottom));
+ if(h>stage.offsetHeight)stage.style.minHeight=h+'px';
+}
+document.getElementById('letters').addEventListener('pointerup',()=>requestAnimationFrame(expandRollingCanvas));
+window.addEventListener('resize',()=>requestAnimationFrame(expandRollingCanvas));
+
+const originalUpdate=update;
+update=function(){originalUpdate();$('canvasToolbar').querySelector('.tool-label').textContent=currentView==='rolling'?'롤링페이퍼 배경':'우체통 배경';$('canvasBg').value=currentView==='rolling'?(room.canvasBg||'#f8e3ee'):(room.postboxBg||'#f8eaf2');let decor=$('postboxDecor');if(decor)decor.style.display=currentView==='rolling'?'none':'block';renderCustomCanvas()};
+$('canvasBg').value=room.canvasBg||'#f8e3ee';$('canvasBg').addEventListener('input',e=>{if(currentView==='rolling'){room.canvasBg=e.target.value;$('board').style.setProperty('--canvas-bg',room.canvasBg)}else{room.postboxBg=e.target.value;$('board').style.backgroundColor=room.postboxBg;const d=$('postboxDecor');if(d)d.style.background=room.postboxBg}save()});
+const fontPanel=document.createElement('div');fontPanel.className='font-panel';fontPanel.innerHTML='<label>🔠 전체 편지 글씨 크기 <input id="allFontSize" type="range" min="70" max="200" step="5"><span id="allFontValue"></span></label><span class="font-help">버전별로 따로 저장 · 각 편지의 개별 크기는 편지 수정에서 설정</span>';$('canvasToolbar').insertAdjacentElement('afterend',fontPanel);$('allFontSize').oninput=e=>{room.fontScale[currentView]=Number(e.target.value);save();updateFontSizes();};function updateFontSizes(){const v=room.fontScale[currentView]||100;$('allFontSize').value=v;$('allFontValue').textContent=v+'%';document.querySelectorAll('.note-card .note-content').forEach(el=>{const id=el.closest('.note-card')?.dataset.letterId;const letter=room.letters.find(l=>l.id===id);el.style.fontSize=`${14*v/100*(letter?.fontScale||100)/100}px`});document.querySelectorAll('.letter-paper').forEach(el=>{const id=el.dataset.letterId;const l=room.letters.find(x=>x.id===id);el.style.fontSize=`${16*v/100*(l?.fontScale||100)/100}px`});}const preFontUpdate=update;update=function(){preFontUpdate();updateFontSizes()};
+$('newShape').value=room.defaultShape||'square';$('newShape').onchange=e=>{room.defaultShape=e.target.value;save();toast('앞으로 작성하는 메모의 기본 모양이 변경됐어요.')};
+$('addSticker').onclick=()=>{openModal(modalHead('✨ 스티커 고르기')+`<p class="help">추가할 스티커를 고르세요. 추가 후 드래그해서 위치를 바꿀 수 있어요.</p><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px" id="stickerGrid"></div>`);['💗','💖','💜','🌷','🌸','🌼','⭐','✨','🎀','🦋','🍀','🐻','🎂','🎉','💌','🪄','☁️','🌈','🧸','📸'].forEach(emoji=>{let btn=document.createElement('button');btn.className='btn light';btn.style.fontSize='28px';btn.textContent=emoji;btn.onclick=()=>{const stickers=stickersForView(currentView);stickers.push({id:crypto.randomUUID(),emoji});save();closeModal();update()};$('stickerGrid').appendChild(btn)})};
+$('addCenterPhoto').onclick=()=>$('centerPhotoFile').click();$('centerPhotoFile').onchange=async e=>{if(!e.target.files[0])return;try{const photos=photosForView(currentView);for(const file of Array.from(e.target.files)){photos.push({id:crypto.randomUUID(),src:await resizeImage(file),caption:'Our special person ♡'})}save();update();requestAnimationFrame(expandRollingCanvas);e.target.value='';toast('현재 버전에 사진을 추가했어요.')}catch{toast('사진을 불러오지 못했어요.')}};
+$('resetCanvas').onclick=()=>{if(!confirm('사진·메모·스티커의 위치를 기본 배치로 되돌릴까요?'))return;Object.keys(canvasPos).forEach(k=>{if(currentView==='rolling'? !k.startsWith('p1') : k.startsWith('p1'))delete canvasPos[k]});commitCanvas();update()};
+
+function editHeadings(){requireAdmin(()=>{const cs=(room.headingColors||{})[currentView]||{};openModal(modalHead('✏️ 문구와 글자 색상 수정')+`<p class="help">현재 선택한 ${currentView==='rolling'?'롤링페이퍼':'우체통'}의 글자 색상만 변경됩니다. 문구는 두 버전에서 공유해요.</p><label class="field">작은 상단 문구</label><input class="input" id="editTo" maxlength="90" value="${esc(room.toLabel||'TO. SOMEONE SPECIAL')}"><label class="field">작은 문구 색상</label><input type="color" class="input" id="toColor" value="${cs.to||'#a98cb1'}"><label class="field">제목</label><input class="input" id="editTitle" maxlength="90" value="${esc(room.title)}"><label class="field">제목 색상</label><input type="color" class="input" id="titleColor" value="${cs.title||(currentView==='rolling'?'#ffffff':'#342e38')}"><label class="field">소개 문구</label><textarea class="input" id="editDesc" maxlength="250">${esc(room.description)}</textarea><label class="field">소개 문구 색상</label><input type="color" class="input" id="descColor" value="${cs.desc||'#897d88'}"><div class="actions"><button class="btn primary" id="applyHeading">저장하기</button></div>`);$('applyHeading').onclick=()=>{room.toLabel=$('editTo').value.trim();room.title=$('editTitle').value.trim()||room.title;room.description=$('editDesc').value.trim();room.headingColors??={};room.headingColors[currentView]={to:$('toColor').value,title:$('titleColor').value,desc:$('descColor').value};save();closeModal();update()}})}
+$('editHeading').onclick=editHeadings;
+function editPhoto(photo){openModal(modalHead('📷 사진 자르기·꾸미기')+`<p class="help">사진은 원본 비율을 유지하고 폴라로이드 틀에서만 일부 잘려 보입니다. 아래에서 잘리는 위치와 확대 정도를 조절할 수 있어요.</p><div class="crop-preview"><img id="cropPreview" src="${photo.src}" alt="자르기 미리보기"></div><label class="field">가로 위치 <span id="cropXValue"></span></label><input class="input" type="range" id="cropX" min="0" max="100" value="${photo.cropX??50}"><label class="field">세로 위치 <span id="cropYValue"></span></label><input class="input" type="range" id="cropY" min="0" max="100" value="${photo.cropY??50}"><label class="field">확대율 <span id="zoomValue"></span></label><input class="input" type="range" id="cropZoom" min="100" max="250" value="${Math.round((photo.zoom??1)*100)}"><label class="field">사진 아래 문구</label><input class="input" id="photoLabel" maxlength="50" value="${esc(photo.caption||'')}"><div class="actions"><button class="btn light" id="deletePhoto">사진 삭제</button><button class="btn primary" id="savePhoto">저장</button></div>`);const preview=()=>{const x=+$('cropX').value,y=+$('cropY').value,z=+$('cropZoom').value;$('cropPreview').style.objectPosition=`${x}% ${y}%`;$('cropPreview').style.transform=cropTransform(x,y,z/100);$('cropXValue').textContent=x+'%';$('cropYValue').textContent=y+'%';$('zoomValue').textContent=z+'%'};['cropX','cropY','cropZoom'].forEach(id=>$(id).oninput=preview);enableCropDrag(preview);preview();$('savePhoto').onclick=()=>{photo.caption=$('photoLabel').value.trim();photo.cropX=+$('cropX').value;photo.cropY=+$('cropY').value;photo.zoom=+$('cropZoom').value/100;save();closeModal();update()};$('deletePhoto').onclick=()=>{if(!confirm('이 사진을 삭제할까요?'))return;room[currentView==='rolling'?'photosRolling':'photosPostbox']=photosForView(currentView).filter(x=>x.id!==photo.id);delete canvasPos[(currentView==='rolling'?'photo:':'p1photo:')+photo.id];commitCanvas();closeModal();update()}}
+$('managePhotos').onclick=()=>{const photos=photosForView(currentView);openModal(modalHead('📷 주인공 사진 관리')+`<p class="help">사진을 여러 장 추가하고, 각 사진의 ✏️ 버튼으로 문구·삭제를 설정할 수 있어요.</p><p>${photos.length}장의 사진이 등록되어 있어요.</p><div class="actions"><button class="btn primary" id="morePhotos">+ 사진 추가</button></div>`);$('morePhotos').onclick=()=>{closeModal();$('centerPhotoFile').click()}};
+function authorizeLetter(l,callback){if(adminGranted){callback();return}if(!l.authorPin){toast('기존에 작성된 편지는 관리자만 수정할 수 있어요.');return}openModal(modalHead('🔐 작성자 확인')+`<p class="help">편지 작성 당시 설정한 수정·삭제 비밀번호를 입력해주세요.</p><input class="input" id="verifyAuthorPin" type="password" placeholder="수정·삭제 비밀번호"><div class="actions"><button class="btn primary" id="verifyAuthor">확인</button></div>`);$('verifyAuthor').onclick=()=>{if($('verifyAuthorPin').value===l.authorPin)callback();else toast('비밀번호가 일치하지 않습니다.')}}
+function editLetter(l){openModal(modalHead('✏️ 내 편지 수정')+`<label class="field">작성자 이름</label><input class="input" id="editWriter" maxlength="30" value="${esc(l.name)}"><label class="field">편지 내용</label><textarea class="input" id="editMessage" maxlength="3000">${esc(l.message)}</textarea><label class="field">이 편지 글씨 크기</label><input class="input" type="range" id="editFontSize" min="70" max="200" step="5"><span id="editFontValue"></span><label class="field">사진 변경 (선택)</label><input class="input" type="file" id="editLetterPhoto" accept="image/*"><p class="help">사진을 바꾸지 않으면 기존 사진이 유지돼요.</p><div class="actions"><button class="btn light" id="clearLetterPhoto">기존 사진 삭제</button><button class="btn primary" id="saveLetterEdit">변경 저장</button></div>`,true);let photo=l.photo;$('editFontSize').value=l.fontScale||100;$('editFontValue').textContent=$('editFontSize').value+'%';$('editFontSize').oninput=()=>{$('editFontValue').textContent=$('editFontSize').value+'%'};$('editLetterPhoto').onchange=async e=>{if(e.target.files[0]){photo=await resizeImage(e.target.files[0]);toast('변경할 사진을 선택했어요.')}};$('clearLetterPhoto').onclick=()=>{photo='';toast('저장하면 사진이 삭제됩니다.')};$('saveLetterEdit').onclick=()=>{const name=$('editWriter').value.trim(),message=$('editMessage').value.trim();if(!name||(!message&&!photo)){toast('이름과 편지 내용 또는 사진을 입력해주세요.');return}l.name=name;l.message=message;l.fontScale=Number($('editFontSize').value);l.photo=photo;l.viewPin=$('editViewPin').value;l.updatedAt=Date.now();save();closeModal();update();toast('편지를 수정했어요.')}}
+
+$('imageSaveBtn').onclick=async()=>{if(!canView()){accessModal();return}if(!window.htmlToImage){toast('PNG 저장 기능은 인터넷 연결이 필요해요.');return}try{toast('이미지를 만드는 중이에요.');await document.fonts.ready;const node=$('board');const url=await htmlToImage.toPng(node,{pixelRatio:2,backgroundColor:currentView==='rolling'?(room.canvasBg||'#f8e3ee'):(room.postboxBg||'#f8eaf2'),cacheBust:true,filter:el=>!(el.classList && (el.classList.contains('move-handle')||el.classList.contains('edit-handle')||el.classList.contains('resize-handle')))});const a=document.createElement('a');a.href=url;a.download='rolling-paper-'+currentView+'.png';document.body.appendChild(a);a.click();a.remove()}catch(err){console.error(err);toast('이미지 저장 실패: 사진 용량을 줄이거나 인터넷 연결을 확인해 주세요.')}};
+const oldShare=shareModal;shareModal=function(){const base=location.protocol==='file:'?'':location.origin+location.pathname;let u1=new URLSearchParams({room:room.id,view:'postbox',...(room.visibility==='link'?{access:room.accessToken}:{})}),u2=new URLSearchParams({room:room.id,view:'rolling',...(room.visibility==='link'?{access:room.accessToken}:{})});openModal(modalHead('🔗 버전별 공유 링크')+`<p class="help">공유받는 사람은 선택한 버전만 보게 됩니다. (시제품은 버전 전환 버튼도 남아 있습니다.)</p><label class="field">📮 버전 1 · 우체통</label><input class="input" readonly id="urlPost" value="${esc(base?base+'?'+u1:'로컬 파일에서는 외부 공유 불가')}"><button class="btn light" id="copyPost">우체통 링크 복사</button><label class="field">📝 버전 2 · 롤링페이퍼</label><input class="input" readonly id="urlRoll" value="${esc(base?base+'?'+u2:'로컬 파일에서는 외부 공유 불가')}"><button class="btn primary" id="copyRoll">롤링페이퍼 링크 복사</button><p class="help">🔒 암호 없는 링크는 전달받은 누구나 열 수 있습니다. 이 설정은 서버 인증이나 실제 접근 제어를 대체하지 못합니다.</p><p class="help">⚠️ 브라우저 저장형 시제품입니다. 서로 다른 기기에서 편지는 동기화되지 않습니다. 실제 비공개 보안·공동 작성에는 서버가 필요합니다.</p>`,true);for(const [b,id] of [['copyPost','urlPost'],['copyRoll','urlRoll']])$(b).onclick=async()=>{if(!base){toast('배포 후 링크를 복사할 수 있어요.');return}try{await navigator.clipboard.writeText($(id).value);toast('링크가 복사됐어요.')}catch{$(id).select();document.execCommand('copy')}}};
+const oldPost=$('postboxTab').onclick,oldRoll=$('rollingTab').onclick;
+$('postboxTab').onclick=()=>{oldPost();if(location.protocol!=='file:'){const q=new URL(location.href);q.searchParams.set('view','postbox');history.replaceState({},'',q)}};
+$('rollingTab').onclick=()=>{oldRoll();if(location.protocol!=='file:'){const q=new URL(location.href);q.searchParams.set('view','rolling');history.replaceState({},'',q)}};
+const originalSave=save;
+save=function(){if(room.letters){room.letters.forEach(l=>{if(!l.shape)l.shape=room.defaultShape||'square'})}originalSave()};
+
+
+// V11: one sharing model, two possible visitor modes. Existing rooms remain on the same browser.
+settingsModal=function(){requireAdmin(()=>{openModal(modalHead('⚙️ 페이퍼 관리')+`<label class="field">페이퍼 제목</label><input id="sTitle" class="input" value="${esc(room.title)}"><label class="field">소개 문구</label><input id="sDesc" class="input" value="${esc(room.description)}"><label class="field">공유받는 사람의 열람 방식</label><select id="sVis" class="input"><option value="link">🔗 링크만으로 열람</option><option value="password">🔑 링크 + 열람 암호</option></select><label class="field">공유 링크 열람 암호 (선택 시 필수)</label><input id="sPassword" class="input" type="password" value="${esc(room.password||'')}" placeholder="방문자에게 알려줄 암호"><label class="field">관리자 비밀번호 (설정 수정용)</label><input id="sPin" class="input" type="password" value="${esc(room.adminPin||'')}" placeholder="관리자만 보관"><label class="field">새 편지 받기</label><select id="sLock" class="input"><option value="no">작성 허용</option><option value="yes">작성 마감</option></select><p class="help">각 편지는 작성자가 별도로 암호를 걸 수 있습니다. 서버 없는 HTML 시제품의 암호는 실제 접속 보안을 보장하지 않습니다.</p><div class="actions"><button class="btn primary" id="saveSettings">저장하기</button></div>`,true);$('sVis').value=room.visibility==='password'?'password':'link';$('sLock').value=room.locked?'yes':'no';$('saveSettings').onclick=()=>{const vis=$('sVis').value,pw=$('sPassword').value;if(vis==='password'&&!pw.trim()){toast('열람 비밀번호를 입력해 주세요.');return}room.title=$('sTitle').value.trim()||room.title;room.description=$('sDesc').value.trim();room.visibility=vis;room.password=pw;room.adminPin=$('sPin').value;room.locked=$('sLock').value==='yes';save();closeModal();update();toast('공유 설정이 저장됐어요.')}})};
+$('settingsBtn').onclick=settingsModal;
+accessModal=function(){if(room.visibility==='link'){openModal(modalHead('🔗 초대 링크 확인')+'<p class="help">페이퍼 전용 링크로 접속해 주세요.</p>');return}openModal(modalHead('🔑 열람 암호 입력')+'<p class="help">링크를 공유해 준 관리자에게 열람 암호를 받아 입력하세요.</p><input class="input" type="password" id="viewPw" placeholder="열람 암호"><div class="actions"><button class="btn primary" id="checkPw">열람하기</button></div>');$('checkPw').onclick=()=>{if($('viewPw').value===room.password){accessGranted=true;closeModal();update()}else toast('열람 암호가 다릅니다.')}};
+// No false ownership claim: only locally created rooms are editable with their management PIN.
+const originalNewModal=newModal;
+newModal=function(){originalNewModal();$('dialog').insertAdjacentHTML('beforeend','<p class="help">이전 페이퍼는 이 브라우저에 남습니다. 주소를 저장해 두면 다시 열 수 있어요.</p>')};
+$('newBtn').onclick=newModal;
+
+const unlockedLetters=new Set();
+function askLetterAccess(letter,onSuccess){openModal(modalHead('🔐 비밀 편지')+`<p class="help">이 편지는 작성자가 열람 암호를 걸었어요.</p><input class="input" id="letterUnlockInput" type="password" placeholder="편지 열람 비밀번호"><div class="actions"><button class="btn primary" id="unlockLetter">편지 열기</button></div>`);$('unlockLetter').onclick=()=>{if($('letterUnlockInput').value!==letter.viewPin){toast('편지 암호가 일치하지 않습니다.');return}unlockedLetters.add(letter.id);closeModal();update();onSuccess()}}
+update();/* No automatic invitation popup on first paper load. */
+
+/* V7: image pan at zoom, resize handles, freehand drawing */
+function cropTransform(x,y,z){
+  z=Math.max(1,Number(z)||1);
+  // At 100%, object-position provides cropping. At higher zoom, translation exposes desired detail.
+  return `scale(${z}) translate(${(50-x)*(z-1)/z}%,${(50-y)*(z-1)/z}%)`;
+}
+function enableCropDrag(redraw){
+  const el=document.querySelector('.crop-preview');if(!el)return;
+  let point=null;
+  el.addEventListener('pointerdown',e=>{if(e.button!==0)return;point={x:e.clientX,y:e.clientY,cx:+$('cropX').value,cy:+$('cropY').value};el.setPointerCapture(e.pointerId);e.preventDefault()});
+  el.addEventListener('pointermove',e=>{if(!point)return;const zoom=Math.max(1.01,+$('cropZoom').value/100);const sensitivity=100/Math.max(.2,zoom-1);
+    $('cropX').value=Math.max(0,Math.min(100,point.cx-(e.clientX-point.x)/el.clientWidth*sensitivity));
+    $('cropY').value=Math.max(0,Math.min(100,point.cy-(e.clientY-point.y)/el.clientHeight*sensitivity));redraw();});
+  const stop=()=>point=null;el.addEventListener('pointerup',stop);el.addEventListener('pointercancel',stop);
+}
+function makeResizable(el,id){
+  if(!id.startsWith('note:')&&!id.startsWith('photo:')&&!id.startsWith('p1photo:'))return;
+  const sizeStore=room.canvasSizes||(room.canvasSizes={});
+  const dims=sizeStore[id];if(dims){el.style.width=dims.w+'px';el.style.height=dims.h+'px';el.style.minHeight='0';el.style.maxHeight='none';}
+  const h=document.createElement('button');h.type='button';h.className='resize-handle';h.title='드래그하여 크기 변경';h.textContent='↘';el.appendChild(h);
+  h.addEventListener('click',e=>{e.stopPropagation();e.preventDefault()});
+  h.addEventListener('pointerdown',e=>{
+    if(e.button!==0)return;e.preventDefault();e.stopPropagation();
+    const start={x:e.clientX,y:e.clientY,w:el.getBoundingClientRect().width,h:el.getBoundingClientRect().height};
+    const stage=el.parentElement;h.setPointerCapture(e.pointerId);
+    const minW=id.startsWith('note:')?135:110,minH=id.startsWith('note:')?145:145;
+    const move=ev=>{ev.preventDefault();const zoomRatio=stage.getBoundingClientRect().width/(stage.clientWidth||1);
+      const w=Math.max(minW,Math.min(700,start.w+(ev.clientX-start.x)/zoomRatio));
+      const height=Math.max(minH,Math.min(850,start.h+(ev.clientY-start.y)/zoomRatio));
+      el.style.width=w+'px';el.style.height=height+'px';el.style.minHeight='0';el.style.maxHeight='none';
+      sizeStore[id]={w:Math.round(w),h:Math.round(height)};
+    };
+    const done=()=>{h.removeEventListener('pointermove',move);h.removeEventListener('pointerup',done);h.removeEventListener('pointercancel',done);save()};
+    h.addEventListener('pointermove',move);h.addEventListener('pointerup',done);h.addEventListener('pointercancel',done)
+  });
+}
+// Put the painting controls outside both paper designs.
+const paintControls=document.createElement('div');paintControls.className='paint-toolbar';paintControls.innerHTML=`
+  <button type="button" id="paintToggle">🖌️ 그리기</button>
+  <button type="button" id="paintPen" class="selected">✏️ 펜</button>
+  <button type="button" id="paintEraser">⌫ 지우개</button>
+  <label style="font-size:12px">색상 <input type="color" id="paintColor" value="#232028"></label>
+  <label style="font-size:12px">굵기 <input type="range" id="paintWidth" min="2" max="35" value="5"></label>
+  <button type="button" id="paintUndo">↶ 실행 취소</button><button type="button" id="paintClear">🗑️ 전체 지우기</button>
+  <span class="paint-help">펜 = 선 그리기 · 지우개 = 그린 선 지우기 · 완료 = 사진과 편지 이동하기</span>`;
+const toolbar=document.getElementById('canvasToolbar');toolbar.insertAdjacentElement('afterend',paintControls);
+let painting=false,paintMode='pen',paintActive=false,paintPointer=null;
+let paintingHistory={rolling:[],postbox:[]};
+function paintingSurface(){return currentView==='rolling'?document.getElementById('letters'):document.getElementById('board')}
+function paintLayer(){let stage=paintingSurface();if(!stage)return null;let layer=stage.querySelector(':scope > canvas.paint-layer');
+  if(!layer){layer=document.createElement('canvas');layer.className='paint-layer';stage.appendChild(layer);setupPaintEvents(layer)}
+  return layer;
+}
+function paintKey(){return currentView==='rolling'?'drawRolling':'drawPostbox'}
+function setupPaintEvents(layer){
+  layer.addEventListener('pointerdown',e=>{if(!paintActive||e.button!==0)return;e.preventDefault();layer.setPointerCapture(e.pointerId);
+    const key=paintKey();const strokes=room[key]||(room[key]=[]);paintingHistory[currentView].push(JSON.stringify(strokes));
+    if(paintingHistory[currentView].length>30)paintingHistory[currentView].shift();
+    paintPointer={id:e.pointerId,stroke:{tool:paintMode,color:document.getElementById('paintColor').value,width:+document.getElementById('paintWidth').value,points:[]}};
+    strokes.push(paintPointer.stroke);addPoint(e);});
+  layer.addEventListener('pointermove',e=>{if(paintPointer&&e.pointerId===paintPointer.id)addPoint(e)});
+  const finish=()=>{if(paintPointer){paintPointer=null;save()}};layer.addEventListener('pointerup',finish);layer.addEventListener('pointercancel',finish);
+  function addPoint(e){const r=layer.getBoundingClientRect();paintPointer.stroke.points.push({x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height});repaint()}
+}
+function repaint(){const layer=paintLayer();if(!layer)return;
+  const stage=layer.parentElement;const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);const ratio=Math.min(2,window.devicePixelRatio||1);
+  if(layer.width!==Math.round(w*ratio)||layer.height!==Math.round(h*ratio)){layer.width=Math.round(w*ratio);layer.height=Math.round(h*ratio)}
+  const ctx=layer.getContext('2d');ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,w,h);ctx.lineJoin='round';ctx.lineCap='round';
+  (room[paintKey()]||[]).forEach(s=>{if(!s.points?.length)return;ctx.globalCompositeOperation=s.tool==='eraser'?'destination-out':'source-over';ctx.lineWidth=s.width;ctx.strokeStyle=s.color;
+    ctx.beginPath();s.points.forEach((pt,i)=>{const x=pt.x*w,y=pt.y*h;if(!i)ctx.moveTo(x,y);else ctx.lineTo(x,y)});
+    if(s.points.length===1){const p=s.points[0];ctx.lineTo(p.x*w+.1,p.y*h+.1)}ctx.stroke()});ctx.globalCompositeOperation='source-over';
+  layer.classList.toggle('active',paintActive);}
+function refreshPaint(){
+  document.body.classList.toggle('draw-on',paintActive);
+  document.querySelectorAll('canvas.paint-layer').forEach(el=>{
+    const correct=el.parentElement===paintingSurface();
+    el.style.display=correct?'block':'none';
+    el.classList.toggle('active',correct&&paintActive);
+  });
+  repaint();
+  document.getElementById('paintToggle').classList.toggle('selected',paintActive);
+  document.getElementById('paintToggle').textContent=paintActive?'✓ 그리기 완료':'🖌️ 그리기';
+  document.getElementById('paintPen').classList.toggle('selected',paintMode==='pen');
+  document.getElementById('paintEraser').classList.toggle('selected',paintMode==='eraser');
+}
+document.getElementById('paintToggle').onclick=()=>{paintActive=!paintActive;refreshPaint()};
+document.getElementById('paintPen').onclick=()=>{paintMode='pen';if(!paintActive)paintActive=true;refreshPaint();toast('펜 모드: 종이 위를 드래그해 그림을 그려보세요.');};
+document.getElementById('paintEraser').onclick=()=>{paintMode='eraser';if(!paintActive)paintActive=true;refreshPaint();toast('지우개 모드: 그린 선 위를 드래그해 지워보세요.');};
+document.getElementById('paintUndo').onclick=()=>{const prev=paintingHistory[currentView].pop();if(prev!==undefined){room[paintKey()]=JSON.parse(prev);save();repaint()}};
+document.getElementById('paintClear').onclick=()=>{if(!confirm('이 버전에 그린 그림을 전부 지울까요?'))return;paintingHistory[currentView].push(JSON.stringify(room[paintKey()]||[]));room[paintKey()]=[];save();repaint()};
+const beforePaintUpdate=update;
+update=function(){beforePaintUpdate();requestAnimationFrame(refreshPaint)};
+window.addEventListener('resize',()=>requestAnimationFrame(repaint));
+// Restores separate painting for each version on page load.
+requestAnimationFrame(refreshPaint);
+
+/* V12: safer creation, local paper directory, recipient delivery */
+const qp=new URLSearchParams(location.search);
+const recipientMode=qp.get('mode')==='gift';
+const fixedSharedView=qp.get('view');
+const hasFixedView=['rolling','postbox'].includes(fixedSharedView);
+if(hasFixedView){currentView=fixedSharedView;document.querySelector('.view-switch').style.display='none';update();}
+// Keep real actions visually distinct: adding a letter must not be confused with creating a new paper.
+$('newBtn').textContent='＋ 다른 페이퍼 만들기';
+$('newBtn').title='현재 페이퍼에 편지를 추가하려면 아래의 「편지 남기기」를 누르세요.';
+$('writeBtn').textContent='＋ 편지 남기기';
+const libraryBtn=document.createElement('button');libraryBtn.id='myPapersBtn';libraryBtn.className='btn light slim';libraryBtn.textContent='📚 내 페이퍼 목록';
+$('newBtn').before(libraryBtn);
+function openPaperDirectory(){
+ const entries=Object.entries(allData).filter(([id,data])=>id!=='demo'&&data&&typeof data==='object').sort((a,b)=>(b[1].createdAt||0)-(a[1].createdAt||0));
+ const currentIsDemo=roomId==='demo';
+ const rows=entries.map(([id,data])=>`<div class="paper-choice"><div><strong>${esc(data.title||'제목 없는 페이퍼')}</strong><small>${(data.letters||[]).length}개의 편지 · ${id===room.id?'현재 열려 있음':'이 브라우저에 보관됨'}</small></div><div class="paper-actions"><button class="btn light slim" data-paper="${esc(id)}">열기</button><button class="btn light slim" data-copy="${esc(id)}">주소 복사</button><button class="btn light slim paper-delete" data-delete="${esc(id)}" aria-label="${esc(data.title||'페이퍼')} 목록에서 삭제">🗑 삭제</button></div></div>`).join('');
+ openModal(modalHead('📚 내 페이퍼 목록')+`<p class="help">현재 브라우저에 저장된 페이퍼입니다. 새 페이퍼를 만들어도 기존 페이퍼는 삭제되지 않습니다.</p>${rows||'<p class="help">아직 만든 페이퍼가 없습니다.</p>'}`,true);
+ $('dialog').querySelectorAll('[data-paper]').forEach(b=>b.onclick=()=>{const p=new URLSearchParams({room:b.dataset.paper});location.href=location.pathname+'?'+p});
+ $('dialog').querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{if(location.protocol==='file:'){toast('배포 주소가 있어야 링크 공유가 가능합니다.');return;}const url=location.origin+location.pathname+'?'+new URLSearchParams({room:b.dataset.copy});try{await navigator.clipboard.writeText(url);toast('주소를 복사했습니다.')}catch{toast('주소 복사에 실패했습니다.')}});
+ $('dialog').querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{const id=b.dataset.delete;const data=allData[id];if(!data)return;const isServer=/^[0-9a-f]{8}-[0-9a-f-]{27,}$/i.test(id);const detail=isServer?'서버에 저장된 편지와 페이퍼는 삭제되지 않습니다. 이 브라우저의 목록에서만 제거됩니다.':'이 브라우저에 보관된 페이퍼와 편지를 삭제합니다. 이 작업은 취소할 수 없습니다.';if(!confirm('「'+(data.title||'제목 없는 페이퍼')+'」를 삭제할까요?\n'+detail))return;delete allData[id];try{localStorage.setItem(storageKey,JSON.stringify(allData))}catch{};if(id===room.id){location.href=location.pathname;return;}openPaperDirectory();toast('목록에서 삭제했습니다.');});
+}
+libraryBtn.onclick=openPaperDirectory;
+const createPaperForm=newModal;
+newModal=function(){
+ openModal(modalHead('새 페이퍼를 만드시겠어요?')+`<p class="help">현재 페이퍼에 편지를 추가하려는 경우에는 <b>「편지 남기기」</b>를 선택하세요.</p><p class="help">새 페이퍼는 완전히 별도의 편지함을 만듭니다. <b>기존 페이퍼는 삭제되지 않으며</b> 「내 페이퍼 목록」에서 다시 열 수 있습니다.</p><div class="actions"><button class="btn light" id="newCancel">취소</button><button class="btn primary" id="newContinue">새 페이퍼 만들기 계속</button></div>`);
+ $('newCancel').onclick=closeModal;
+ $('newContinue').onclick=()=>{createPaperForm();const createButton=$('createNew');if(createButton){createButton.textContent='새로운 페이퍼 생성 (기존 유지)';createButton.addEventListener('click',e=>{const name=$('newTitle')?.value.trim();const pin=$('newAdminPin')?.value||'';if(name&&pin.length>=4&&!confirm('「'+name+'」 새 페이퍼를 생성하고 이동할까요?\n현재 페이퍼는 삭제되지 않고 목록에 남습니다.')){e.preventDefault();e.stopImmediatePropagation()}},true)}};
+};
+$('newBtn').onclick=newModal;
+// Share different links for participants and for the recipient, retaining the current paper's view.
+function buildPaperLink(view,mode){
+ if(location.protocol==='file:')return '배포 후 링크를 만들 수 있습니다.';
+ const opts={room:room.id,view,...(mode==='gift'?{mode:'gift'}:{}),...(room.visibility==='link'?{access:room.accessToken}:{})};
+ return location.origin+location.pathname+'?'+new URLSearchParams(opts);
+}
+shareModal=function(){
+ const view=currentView;
+ const normal=buildPaperLink(view,'normal'),gift=buildPaperLink(view,'gift');
+ openModal(modalHead('💌 링크 공유하기')+`<p class="help"><b>${view==='postbox'?'📮 버전 1 · 우체통':'📝 버전 2 · 롤링페이퍼'}</b> 디자인으로 공유합니다.</p><label class="field">✍️ 참여자에게 공유할 링크</label><input class="input" readonly id="participantUrl" value="${esc(normal)}"><button class="btn light" id="copyParticipant">참여 링크 복사</button><label class="field">🎁 주인공에게 전달할 링크</label><input class="input" readonly id="recipientUrl" value="${esc(gift)}"><button class="btn primary" id="copyRecipient">주인공 링크 복사</button><p class="help">주인공은 봉투가 열리는 애니메이션을 본 뒤 선택한 버전으로 입장합니다. 링크에 표시되는 버전 전환 기능은 숨깁니다.</p><p class="help">⚠️ 서버 없는 시제품입니다. 다른 기기에서는 작성한 편지나 사진이 공유되지 않습니다.</p>`,true);
+ [['copyParticipant','participantUrl'],['copyRecipient','recipientUrl']].forEach(([button,input])=>{$(button).onclick=async()=>{if(location.protocol==='file:'){toast('Vercel 배포 후 이용하세요.');return}try{await navigator.clipboard.writeText($(input).value);toast('링크가 복사됐어요.')}catch{$(input).select();document.execCommand('copy')}}});
+};
+$('shareBtn').onclick=shareModal;
+// Gift mode is intentionally read-only in the UI (not a security boundary).
+if(recipientMode){
+ document.body.classList.add('recipient-lock');
+ const gift=document.createElement('section');gift.className='recipient-reveal';gift.id='giftReveal';
+ gift.innerHTML=`<div class="recipient-scene"><div class="recipient-caption">${esc(room.title)}<div style="font-size:15px;font-weight:500;margin-top:10px">당신을 위해 모은 마음이 도착했어요 💌</div></div><div class="recipient-envelope" id="giftEnvelope"><div class="env-letter">For You ♡</div><div class="env-body"></div><div class="env-flap"></div></div><button id="giftOpen" class="recipient-start">💌 편지 열어보기</button><div class="recipient-open-text">클릭하면 마음이 펼쳐집니다</div></div>`;
+ document.body.appendChild(gift);
+ $('giftOpen').onclick=()=>{$('giftOpen').disabled=true;$('giftOpen').textContent='마음이 열리고 있어요…';$('giftEnvelope').classList.add('open');setTimeout(()=>{gift.classList.add('is-done');setTimeout(()=>gift.remove(),750);window.scrollTo({top:0,behavior:'smooth'})},1900)};
+ // Keep the gift in the selected view; hide editing widgets for this mode.
+ if(hasFixedView){currentView=fixedSharedView;update()}
+}
+
+
+/* V13: startup choose version -> title -> write, separate delivery buttons. */
+function clipboardCopyV13(value){if(location.protocol==='file:'){toast('Vercel에 배포한 후 링크 복사가 가능합니다.');return}navigator.clipboard.writeText(value).then(()=>toast('링크가 복사됐어요.')).catch(()=>{toast('링크를 선택해 직접 복사해 주세요.')})}
+function showShareV13(gift){
+ const url=buildPaperLink(currentView,gift?'gift':'normal');
+ openModal(modalHead(gift?'🎁 주인공에게 보내기':'🔗 링크 공유하기')+`<p class="help"><b>${currentView==='postbox'?'📮 우체통':'📝 롤링페이퍼'}</b> 버전으로 열리는 ${gift?'주인공 선물용':'편지 참여용'} 링크입니다.</p><input class="input" id="shareOnlyUrl" readonly value="${esc(url)}"><p class="help">${gift?'주인공이 봉투를 열면 현재 선택한 버전의 롤링페이퍼가 펼쳐집니다.':'참여자들은 링크를 이용해 편지를 남길 수 있습니다.'}</p><p class="help">⚠️ 현재는 브라우저 로컬 시제품이라 다른 기기와 편지가 자동으로 공유되지 않습니다.</p><div class="actions"><button class="btn primary" id="copyShareOnly">링크 복사</button></div>`);
+ $('copyShareOnly').onclick=()=>clipboardCopyV13(url);
+}
+$('shareParticipantBtn').onclick=()=>showShareV13(false);
+$('sendRecipientBtn').onclick=()=>showShareV13(true);
+// The homepage is intentionally a choice flow, not an implicit paper room.
+function welcomeV13(){
+ if(params.has('room')||params.has('mode'))return;
+ const bubbleData=[
+ ['l1','speech','#f4bf9f','지우야 생일 축하해<br>올해는 바다 보러 가자','민서'],
+ ['l2','square','#a2dabc','전역 축하한다<br>고생 많았어','준서'],
+ ['l3','star','#a8cff3','우리 반 최고였어<br>내년에도 꼭 보자','2학년 3반'],
+ ['l4','cloud','#f5a9c7','결혼 축하해<br>행복하게 살아','다은'],
+ ['l5','square','#d0adc8','그동안 고마웠어요<br>잘하실 거예요','팀원 일동'],
+ ['l6','cloud','#addac5','졸업 축하해<br>꽃은 네가 들게','하린'],
+ ['l7','speech','#c9a8c7','합격 기원<br>내 편이야','지호'],
+ ['l8','square','#a3caeb','백일 축하해<br>잘 부탁해','서연'],
+ ['l9','star','#f6bd97','새 출발 응원해<br>연락하자','예린'],
+ ['l10','square','#a9dbc2','20년 뒤에도<br>지금처럼 웃자','시우'],
+ ['l11','speech','#f4a9c8','생일 축하해<br>올해도 건강하자','수빈'],
+ ['l12','cloud','#f8c09b','그동안 수고 많았어<br>푹 쉬다 와','동기들'],
+ ['l13','star','#a9d2f6','늘 고마워<br>내년에도 같이','유진'],
+ ['l14','star','#d2abc8','첫 출근 축하해<br>점심은 내가 살게','현우']
+ ];
+ const gate=document.createElement('section');gate.className='welcome-stage';gate.id='welcomeStage';
+ const bubbles=bubbleData.map(([id,shape,color,msg,name])=>`<div class="landing-bubble ${id} ${shape}" style="--bubble-color:${color};animation-delay:-${(bubbleData.findIndex(v=>v[0]===id)%5)}s"><div>${msg}</div><small>${name}</small></div>`).join('');
+ gate.innerHTML=`<nav class="landing-nav"><a href="./" class="landing-brand" title="메인 화면"><span>💟</span> 롤링페이퍼</a><div class="landing-top-actions"><button class="landing-toc-btn" id="landingTocBtn">☰ 목차</button></div></nav><div class="landing-toc hidden" id="landingToc"><button id="tocList">📚 내 페이퍼 목록</button></div><div class="landing-main">${bubbles}<div class="landing-center"><svg class="landing-ring" viewBox="0 0 900 460" preserveAspectRatio="none" aria-hidden="true"><path d="M70 245 Q90 191 168 161 Q204 128 234 93 Q310 0 430 31 Q487 40 536 65 Q631 60 678 96 Q754 105 783 184 Q838 233 810 284 Q797 340 708 346 Q628 371 566 364 Q474 402 379 390 Q263 398 199 367 Q98 375 74 307 Q32 282 70 245Z" fill="none" stroke="#dfc3d6" stroke-width="2.6"/><g font-size="23"><text x="91" y="221">🧡</text><text x="204" y="99">🌸</text><text x="379" y="32">🎵</text><text x="552" y="62">🌼</text><text x="730" y="126">✨</text><text x="812" y="245">💙</text><text x="737" y="353">💗</text><text x="579" y="371">🌷</text><text x="369" y="393">💠</text><text x="181" y="369">🌺</text><text x="79" y="311">💚</text></g></svg><h1>마음을 한 장에 모으는<br><em>온라인 롤링페이퍼</em></h1><div class="landing-create"><input id="landingTitle" type="text" maxlength="80" placeholder="롤링 페이퍼의 이름을 입력해주세요" aria-label="롤링페이퍼 제목"><button id="landingStart">시작하기</button></div><div class="landing-modes" role="group" aria-label="롤링페이퍼 보기 방식"><button class="active" data-layout="letter" aria-pressed="true">📮 편지함 · 버전 1</button><button data-layout="rolling" aria-pressed="false">💌 롤링페이퍼 · 버전 2</button></div></div><div class="landing-welcome-foot">기존에 만든 페이퍼가 있나요? <button id="welcomeLibrary">내 페이퍼 목록</button></div></div>`;
+ document.body.appendChild(gate);
+ let selectedLayout='letter';
+ gate.querySelectorAll('[data-layout]').forEach(btn=>btn.onclick=()=>{selectedLayout=btn.dataset.layout;gate.querySelectorAll('[data-layout]').forEach(x=>{x.classList.toggle('active',x===btn);x.setAttribute('aria-pressed',String(x===btn))})});
+ function begin(){const title=gate.querySelector('#landingTitle').value.trim();if(!title){gate.querySelector('#landingTitle').focus();toast('롤링페이퍼 이름을 입력해주세요.');return};currentView=selectedLayout==='letter'?'postbox':'rolling';localStorage.setItem('dearTogether.view',currentView);update();gate.style.display='none';createPaperForm();const field=$('newTitle');if(field)field.value=title;const create=$('createNew');if(create)create.textContent='만들고 편지 쓰러 가기 →';const close=$('dialog').querySelector('.close');if(close)close.addEventListener('click',()=>{gate.style.display='block'},{once:true})}
+ const toc=gate.querySelector('#landingToc');gate.querySelector('#landingTocBtn').onclick=()=>toc.classList.toggle('hidden');gate.querySelector('#tocList').onclick=()=>{toc.classList.add('hidden');gate.querySelector('#welcomeLibrary').click()};
+ $('landingStart').onclick=begin;gate.querySelector('#landingTitle').addEventListener('keydown',e=>{if(e.key==='Enter')begin()});
+ $('welcomeLibrary').onclick=()=>{gate.style.display='none';openPaperDirectory();const close=$('dialog').querySelector('.close');if(close)close.addEventListener('click',()=>{gate.style.display='block'},{once:true})};
+}
+/* V27: postbox envelopes are independent, movable canvas objects. */
+function scheduleBoardExpansion(){
+ if(scheduleBoardExpansion.pending)return;
+ scheduleBoardExpansion.pending=true;
+ requestAnimationFrame(()=>{
+  scheduleBoardExpansion.pending=false;
+  const board=$('board'),stage=$('letters');
+  if(!board||!stage||!canView())return;
+  const rolling=currentView==='rolling';
+  const defaultHeight=rolling?800:560;
+  const nodes=[...stage.querySelectorAll(rolling?'.canvas-object':'.postbox-letter')];
+  let lowest=defaultHeight;
+  for(const node of nodes){
+   const top=Number.parseFloat(node.style.top)||0;
+   const h=node.getBoundingClientRect().height||node.offsetHeight||160;
+   lowest=Math.max(lowest,top+h+130);
+  }
+  if(rolling){
+   for(const photo of photosForView('rolling')){
+    const pos=canvasPos['photo:'+photo.id];
+    if(pos)lowest=Math.max(lowest,pos.y+(room.canvasSizes?.['photo:'+photo.id]?.h||260)+130);
+   }
+  }
+  stage.style.minHeight=Math.ceil(Math.max(defaultHeight,lowest))+'px';
+  if(!rolling){
+   let maxBoard=0;
+   const decor=$('postboxDecor');
+   if(decor)for(const node of decor.querySelectorAll('.canvas-object')){
+    const y=Number.parseFloat(node.style.top)||0;
+    maxBoard=Math.max(maxBoard,y+(node.getBoundingClientRect().height||240)+125);
+   }
+   const headerH=stage.offsetTop+Math.max(stage.offsetHeight,lowest)+95;
+   board.style.minHeight=Math.ceil(Math.max(780,maxBoard,headerH))+'px';
+  }else{board.style.minHeight='';}
+ });
+}
+function renderMovablePostboxLetters(){
+ const stage=$('letters');
+ if(currentView!=='postbox'||!canView())return;
+ stage.classList.add('postbox-stage');
+ const cards=[...stage.querySelectorAll('.envelope')];
+ if(!cards.length){scheduleBoardExpansion();return;}
+ stage.textContent='';
+ const available=stage.clientWidth||800;
+ const width=window.innerWidth<=650?145:166;
+ const columns=Math.max(1,Math.floor((available-12)/(width+16)));
+ const gapX=Math.max(10,(available-columns*width)/Math.max(1,columns));
+ cards.forEach((original,i)=>{
+   const letter=room.letters[i];if(!letter)return;
+   const el=document.createElement('div');
+   el.className='envelope canvas-object postbox-letter';
+   el.style.setProperty('--color',letter.color||colors[i%colors.length]);
+   el.style.setProperty('--rotate',[-3,2,-1,3,0,-2,1][i%7]+'deg');
+   el.innerHTML=original.innerHTML;
+   el.setAttribute('role','button');el.tabIndex=0;
+   el.setAttribute('aria-label',`${letter.name}님의 편지 읽기`);
+   el.addEventListener('click',e=>{if(e.target.closest('.move-handle'))return;viewLetter(letter.id)});
+   el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();viewLetter(letter.id)}});
+   const x=8+(i%columns)*(width+gapX);
+   const y=12+Math.floor(i/columns)*172;
+   const id='envelope:'+letter.id;
+   placeElement(el,id,x,y);
+   el.addEventListener('pointerdown',e=>{if(e.target.closest('.move-handle'))return;selectCanvasObject(el)});
+   stage.appendChild(el);
+ });
+ scheduleBoardExpansion();
+}
+const _v27Update=update;
+update=function(){_v27Update();scheduleBoardExpansion();};
+window.addEventListener('resize',()=>scheduleBoardExpansion());
+$('board').addEventListener('pointerup',()=>scheduleBoardExpansion());
+// For newly loaded letters in both views, always reserve more vertical paper.
+const _v27Refresh=typeof refresh==='function'?refresh:null;
+if(_v27Refresh){refresh=async function(...args){const result=await _v27Refresh(...args);scheduleBoardExpansion();return result;};}
+update();
+
+welcomeV13();
+</script><script>
+/* V16: shared multi-device letters via Supabase REST. No privileged key shipped. */
+(()=>{
+const api='https://qmqievnkwzxqnzpztvqy.supabase.co/rest/v1';
+const key='sb_publishable_GTdjMNqnXamQwFFHmgsssA_hFMZjdWR';
+const headers={'apikey':key,'Content-Type':'application/json','Prefer':'return=representation'};
+const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+let busy=false;
+let readPassword=sessionStorage.getItem("rolling.read."+room.id)||"";
+let passwordDialogOpen=false;
+let legacyMode=false; // Detected from server; do not derive from client-only flags.
+let giftVerified=false;
+let permanentArchiveLoaded=false;
+if(recipientMode && document.getElementById('giftOpen')){
+ const start=document.getElementById('giftOpen');
+ start.disabled=true;start.textContent='💌 편지를 준비하고 있어요…';
+ const subtitle=document.querySelector('.recipient-open-text');
+ if(subtitle)subtitle.textContent='주인공 전용 링크를 확인하고 있습니다';
+}
+
+async function req(endpoint, options={}) {
+ let res;try{res=await fetch(api+endpoint,{...options,mode:'cors',cache:'no-store',headers:{...headers,...(options.headers||{})}})}catch(err){throw new Error('네트워크 연결 실패: '+err.message+' (파일을 직접 열었다면 HTTPS 배포 주소에서 실행해 주세요.)')}
+ const body=await res.text();
+ if(!res.ok){let info;try{info=JSON.parse(body)}catch{};throw new Error(`HTTP ${res.status}: ${info?.message||info?.error||body.slice(0,220)||'알 수 없는 오류'}`)}
+ try{return body?JSON.parse(body):null}catch{throw new Error('서버 응답을 해석하지 못했어요.')}
+}
+
+/* Persistent shared decorations, kept separate from letter records. */
+const decorFields=['photosRolling','photosPostbox','centerPhotos','centerPhoto','photoCaption','stickersRolling','stickersPostbox','canvasPos','canvasSizes','canvasBg','postboxBg','headingColors','toLabel','fontScale','drawRolling','drawPostbox','defaultShape'];
+const decorEligible=uuid.test(room.id);
+let decorReady=false,decorRevision=0,decorWriting=false,decorDirty=false,decorConflict=false,decorTimer=null,decorLastSnapshot='',decorLastCheck=0;
+const initialDecorAdmin=room.adminPin||allData[roomId]?.adminPin||'';
+// Coordinates are shared immediately, without administrator authentication.
+let decorMovePending=0;
+const decorMoveQueue=new Map();
+let decorMoveTimer=null;
+async function flushPositionMoves(){
+ if(!decorEligible||recipientMode||!decorReady||!decorMoveQueue.size)return;
+ const changes=[...decorMoveQueue.entries()]; decorMoveQueue.clear();
+ decorMovePending++;
+ decorStatus('위치 서버에 동기화 중…');
+ try{
+  await Promise.all(changes.map(async ([objectId,position])=>{
+   await req('/rpc/rolling_move_shared',{method:'POST',body:JSON.stringify({
+    p_room:room.id,p_key:objectId,p_x:Math.round(position.x),p_y:Math.round(position.y)
+   })});
+  }));
+  decorStatus('이동 위치 서버 저장 완료 ✓');
+ }catch(error){
+  // Never tell the user that a local-only position was synchronized.
+  decorStatus('위치 동기화 실패: '+String(error.message||error).slice(0,55),true);
+  console.error('position sync failed',error);
+  for(const [objectId,position] of changes)if(!decorMoveQueue.has(objectId))decorMoveQueue.set(objectId,position);
+ }finally{
+  decorMovePending--;
+  if(!decorMovePending&&!decorDirty&&!decorWriting){
+   try{await decorLoad(true);update()}catch(error){console.warn('refresh shared positions',error)}
+  }
+ }
+}
+function schedulePositionMoves(changes){
+ for(const [objectId,position] of changes){
+  if(Number.isFinite(position?.x)&&Number.isFinite(position?.y))decorMoveQueue.set(objectId,position);
+ }
+ clearTimeout(decorMoveTimer);
+ decorMoveTimer=setTimeout(flushPositionMoves,300);
+}
+function withoutPositions(value){
+ if(!value||typeof value!=='object')return '{}';
+ const copy={...value};delete copy.canvasPos;
+ return JSON.stringify(copy);
+}
+
+if(decorEligible&&initialDecorAdmin&&!localStorage.getItem('rolling.admin.'+room.id))sessionStorage.setItem('rolling.decor.admin.'+room.id,initialDecorAdmin);
+let decorIndicator=null;
+function decorStatus(message,problem=false){
+ if(recipientMode||!decorEligible)return;
+ if(!decorIndicator){
+  decorIndicator=document.createElement('div');decorIndicator.id='decorSyncStatus';
+  decorIndicator.style.cssText='position:fixed;bottom:44px;right:12px;z-index:18;background:#fffefa;padding:7px 12px;border:1px solid #e6d8e3;border-radius:14px;box-shadow:0 3px 14px #0001;font:12px sans-serif;color:#72566f;max-width:270px';
+  document.body.appendChild(decorIndicator)
+ }
+ decorIndicator.textContent=(problem?'⚠️ ':'☁️ ')+message;
+ decorIndicator.style.color=problem?'#b73751':'#72566f';
+}
+function decorSnapshot(){const state={};for(const field of decorFields)if(room[field]!==undefined)state[field]=room[field];return state}
+function decorateFromServer(data){
+ if(!data||typeof data!=='object'||Array.isArray(data)||!Object.keys(data).length)return;
+ for(const field of decorFields)if(Object.prototype.hasOwnProperty.call(data,field))room[field]=data[field];
+ canvasPos=room.canvasPos||{};
+ allData[roomId]=room;
+ try{localStorage.setItem(storageKey,JSON.stringify(allData))}catch(e){console.warn('Local decor cache failed',e)}
+}
+async function decorLoad(force=false){
+ if(!decorEligible||decorWriting||decorDirty||decorMovePending||decorMoveQueue.size)return;
+ if(!force&&decorReady&&Date.now()-decorLastCheck<12000)return;
+ const data=await req('/rpc/rolling_decor_load',{method:'POST',body:JSON.stringify({
+  p_room:room.id,p_read:readPassword,
+  p_gift:recipientMode?(new URLSearchParams(location.search).get('gift')||''):'',
+  p_admin:recipientMode?'':(localStorage.getItem('rolling.admin.'+room.id)||sessionStorage.getItem('rolling.decor.admin.'+room.id)||'')
+ })});
+ decorLastCheck=Date.now();let newer=Number(data?.revision||0);
+ let remoteDecor=data?.data||{};
+ // A paper made before shared photo storage can still have images in the original
+ // computer's localStorage. Upload those only when the server has no such images.
+ // Never replace an existing server photograph or erase another device's data.
+ if(!recipientMode && !decorDirty && !decorWriting){
+  const localDecor=decorSnapshot();
+  const photoKeys=['photosPostbox','photosRolling','centerPhotos'];
+  const missingPhotos=photoKeys.filter(key=>Array.isArray(localDecor[key]) &&
+   localDecor[key].some(photo=>typeof photo?.src==='string' && photo.src.startsWith('data:image/')) &&
+   (!Array.isArray(remoteDecor[key]) || remoteDecor[key].length===0));
+  if(typeof localDecor.centerPhoto==='string' && localDecor.centerPhoto.startsWith('data:image/') && !remoteDecor.centerPhoto)
+   missingPhotos.push('centerPhoto');
+  if(missingPhotos.length){
+   const merged={...remoteDecor};
+   for(const key of missingPhotos)merged[key]=localDecor[key];
+   const photoIds=new Set();
+   for(const key of missingPhotos){
+    const photos=Array.isArray(localDecor[key])?localDecor[key]:[];
+    for(const photo of photos)if(photo?.id){photoIds.add('photo:'+photo.id);photoIds.add('p1photo:'+photo.id)}
+   }
+   if(photoIds.size){
+    merged.canvasPos={...(remoteDecor.canvasPos||{})};
+    for(const [id,pos] of Object.entries(localDecor.canvasPos||{}))
+     if(photoIds.has(id) && !Object.prototype.hasOwnProperty.call(merged.canvasPos,id)) merged.canvasPos[id]=pos;
+    if(localDecor.canvasSizes){
+     merged.canvasSizes={...(remoteDecor.canvasSizes||{})};
+     for(const [id,size] of Object.entries(localDecor.canvasSizes))
+      if(photoIds.has(id) && !Object.prototype.hasOwnProperty.call(merged.canvasSizes,id)) merged.canvasSizes[id]=size;
+    }
+   }
+   // When no shared decoration exists, preserve local stickers, drawings and theme too.
+   if(newer===0)for(const key of decorFields)
+    if(merged[key]===undefined && localDecor[key]!==undefined)merged[key]=localDecor[key];
+   const byteLength=JSON.stringify(merged).length;
+   if(byteLength<6500000){
+    try{
+     if(!recipientMode)decorStatus('PC에 남아 있는 사진을 서버로 이전하는 중…');
+     const rev=await req('/rpc/rolling_decor_public_save',{method:'POST',body:JSON.stringify({
+      p_room:room.id,p_data:merged,p_revision:newer
+     })});
+     newer=Number(rev);remoteDecor=merged;
+     decorStatus('기존 사진을 서버로 이전했어요 ✓');
+    }catch(error){
+     console.error('기존 사진 서버 이전 실패',error);
+     decorStatus('사진 서버 이전 실패: '+String(error?.message||error).slice(0,72),true);
+     // Avoid data loss: keep the local photos, do not replace them with an empty server response.
+     decorReady=true;decorRevision=newer;
+     decorLastSnapshot=JSON.stringify(localDecor);
+     return;
+    }
+   }else{
+    decorStatus('기존 사진 용량 초과 · 사진을 나눠서 추가해 주세요',true);
+    decorReady=true;decorRevision=newer;
+    decorLastSnapshot=JSON.stringify(localDecor);
+    return;
+   }
+  }
+ }
+ if(!decorReady||newer!==decorRevision){
+  decorateFromServer(remoteDecor);
+  decorRevision=newer;decorLastSnapshot=JSON.stringify(decorSnapshot());decorReady=true;
+  if(!recipientMode)decorStatus(newer?'꾸미기 동기화 완료':'새 꾸미기 저장 준비 완료')
+ }
+}
+function decorSecret(){return sessionStorage.getItem('rolling.decor.admin.'+room.id)||localStorage.getItem('rolling.admin.'+room.id)||initialDecorAdmin||''}
+async function decorFlush(){
+ if(decorWriting||!decorReady||!decorEligible||recipientMode||decorConflict)return;
+ const content=JSON.stringify(decorSnapshot());
+ if(content===decorLastSnapshot){decorDirty=false;return}
+ if(content.length>6500000){decorStatus('사진 저장 용량 초과 · 사진을 줄여 주세요',true);alert('서버 꾸미기 저장 용량을 초과했습니다. 사진 크기 또는 장수를 줄여 주세요.');return}
+ decorWriting=true;decorDirty=false;decorStatus('사진·꾸미기 서버에 저장 중…');
+ try{
+  const next=await req('/rpc/rolling_decor_public_save',{method:'POST',body:JSON.stringify({p_room:room.id,p_data:JSON.parse(content),p_revision:decorRevision})});
+  decorRevision=Number(next);decorLastSnapshot=content;decorStatus('사진·꾸미기 서버 저장 완료 ✓');
+  if(JSON.stringify(decorSnapshot())!==content){decorDirty=true;decorTimer=setTimeout(decorFlush,700)}
+ }catch(e){
+  decorDirty=true;
+  if(String(e.message||'').includes('VERSION_CONFLICT')){
+   decorConflict=true;decorStatus('다른 기기와 수정 충돌 · 현재 화면은 유지했어요',true);
+   alert('다른 기기에서 꾸미기가 변경됐습니다. 현재 화면은 이 브라우저에 보관했습니다. 새로고침하기 전에 확인해 주세요.')
+  }else{
+   decorStatus('서버 저장 실패: '+String(e.message||e).slice(0,65),true)
+  }
+ }finally{decorWriting=false}
+}
+window.addEventListener('rp:decor-change',()=>{
+ if(!decorReady||!decorEligible||recipientMode)return;
+ const snapshot=decorSnapshot();const current=JSON.stringify(snapshot);
+ if(current===decorLastSnapshot)return;
+ let previous={};try{previous=JSON.parse(decorLastSnapshot||'{}')}catch{}
+ if(!decorDirty && withoutPositions(snapshot)===withoutPositions(previous)){
+  const positions=snapshot.canvasPos||{};
+  const previousPositions=previous.canvasPos||{};
+  const changed=Object.entries(positions).filter(([key,value])=>
+   JSON.stringify(value)!==JSON.stringify(previousPositions[key])
+  );
+  decorLastSnapshot=current;
+  if(changed.length)schedulePositionMoves(changed);
+  return;
+ }
+ decorDirty=true;clearTimeout(decorTimer);decorTimer=setTimeout(decorFlush,850)
+});
+window.addEventListener('beforeunload',event=>{if(decorDirty||decorWriting||decorMovePending||decorMoveQueue.size){event.preventDefault();event.returnValue='서버 저장 중입니다.'}});
+
+
+/* V-next: show shared photos for both normal and recipient links, with tap-to-zoom. */
+function paperPhotosForCurrentView(){
+ const items=currentView==='postbox'?room.photosPostbox:room.photosRolling;
+ let photos=Array.isArray(items)?items.filter(p=>p&&typeof p.src==='string'&&p.src):[];
+ // The oldest canvas had one shared/center-photo field instead of version arrays.
+ if(!photos.length && currentView==='rolling'){
+   if(Array.isArray(room.centerPhotos))photos=room.centerPhotos.filter(p=>p&&typeof p.src==='string'&&p.src);
+   else if(typeof room.centerPhoto==='string'&&room.centerPhoto)photos=[{src:room.centerPhoto,caption:room.photoCaption||'Our special person ♡'}];
+ }
+ return photos;
+}
+function openPaperPhotoZoom(src,caption){
+ if(!src)return;
+ document.querySelector('.paper-photo-lightbox')?.remove();
+ const overlay=document.createElement('div');overlay.className='paper-photo-lightbox';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','사진 크게 보기');
+ const img=document.createElement('img');img.src=src;img.alt=caption||'롤링페이퍼 사진';
+ const close=document.createElement('button');close.type='button';close.className='photo-zoom-close';close.textContent='×';close.setAttribute('aria-label','닫기');
+ const label=document.createElement('div');label.className='photo-zoom-caption';label.textContent=caption||'';
+ overlay.append(img,close,label);document.body.appendChild(overlay);
+ const prev=document.body.style.overflow;document.body.style.overflow='hidden';
+ const done=()=>{overlay.remove();document.body.style.overflow=prev;document.removeEventListener('keydown',onKey)};
+ const onKey=e=>{if(e.key==='Escape')done()};
+ close.addEventListener('click',done);overlay.addEventListener('click',e=>{if(e.target===overlay)done()});document.addEventListener('keydown',onKey);
+}
+function startGalleryPhotoMove(event,index,tile,handle){
+ if(recipientMode||event.button!==0)return;
+ event.preventDefault();event.stopPropagation();
+ const gallery=document.getElementById('paperPhotoGallery');if(!gallery)return;
+ const initialY=event.clientY;let destination=index;let dragged=false;
+ tile.classList.add('photo-dragging');
+ handle.setPointerCapture(event.pointerId);
+ const selectDestination=pointerEvent=>{
+   const pointed=document.elementFromPoint(pointerEvent.clientX,pointerEvent.clientY);
+   const candidate=pointed?.closest('.paper-photo-tile');
+   if(candidate&&gallery.contains(candidate)){
+     const next=Number(candidate.dataset.photoIndex);
+     if(Number.isInteger(next)){destination=next;dragged=dragged||Math.abs(pointerEvent.clientY-initialY)>8||next!==index;}
+   }
+   gallery.querySelectorAll('.photo-drop-target').forEach(el=>el.classList.remove('photo-drop-target'));
+   if(destination!==index)gallery.querySelector('[data-photo-index="'+destination+'"]')?.classList.add('photo-drop-target');
+ };
+ const finish=()=>{
+   handle.removeEventListener('pointermove',selectDestination);
+   handle.removeEventListener('pointerup',finish);
+   handle.removeEventListener('pointercancel',cancel);
+   tile.classList.remove('photo-dragging');
+   gallery.querySelectorAll('.photo-drop-target').forEach(el=>el.classList.remove('photo-drop-target'));
+   try{handle.releasePointerCapture(event.pointerId)}catch{}
+   if(!dragged||destination===index)return;
+   const field=currentView==='postbox'?'photosPostbox':'photosRolling';
+   // Migrate old-style photo list to its own view before changing order.
+   const list=photosForView(currentView);
+   if(!Array.isArray(list)||index>=list.length||destination>=list.length)return;
+   const moved=list.splice(index,1)[0];list.splice(destination,0,moved);
+   // Save only the photo order. Letter records and desktop coordinates are untouched.
+   save();syncPaperPhotoGallery();toast('사진 순서를 서버에 저장 중이에요');
+ };
+ const cancel=()=>{dragged=false;destination=index;finish()};
+ handle.addEventListener('pointermove',selectDestination);
+ handle.addEventListener('pointerup',finish);
+ handle.addEventListener('pointercancel',cancel);
+}
+function syncPaperPhotoGallery(){
+ const board=document.getElementById('board');if(!board)return;
+ let gallery=document.getElementById('paperPhotoGallery');
+ if(!gallery){gallery=document.createElement('section');gallery.id='paperPhotoGallery';gallery.className='paper-photo-gallery';gallery.setAttribute('aria-label','롤링페이퍼 사진 모아보기');const head=board.querySelector(':scope > .board-head');if(head)head.insertAdjacentElement('afterend',gallery);else board.prepend(gallery)}
+ const photos=paperPhotosForCurrentView();
+ board.classList.toggle('has-paper-photo-gallery',photos.length>0);
+ gallery.hidden=photos.length===0;
+ gallery.replaceChildren();
+ for(let i=0;i<photos.length;i++){
+   const p=photos[i], tile=document.createElement('div');tile.className='paper-photo-tile';tile.dataset.photoIndex=String(i);
+   const open=document.createElement('button');open.type='button';open.className='paper-photo-open';
+   open.setAttribute('aria-label',(p.caption||'사진 '+(i+1))+' 크게 보기');
+   const im=document.createElement('img');im.loading=i===0?'eager':'lazy';im.src=p.src;im.alt=p.caption||'주인공 사진 '+(i+1);
+   open.appendChild(im);open.addEventListener('click',()=>openPaperPhotoZoom(p.src,p.caption));
+   const txt=document.createElement('span');txt.className='photo-tile-caption';txt.textContent=p.caption||'Our special person ♡';
+   tile.append(open,txt);
+   // Only ordinary visitors/editors may reorganize photos. Gift links are read-only.
+   if(!recipientMode){
+     const move=document.createElement('button');move.type='button';move.className='gallery-move-handle';
+     move.textContent='✥ 이동';move.title='누른 채 다른 사진 위치로 끌어 놓기';
+     move.setAttribute('aria-label','사진 '+(i+1)+' 이동');
+     move.addEventListener('click',event=>{event.preventDefault();event.stopPropagation()});
+     move.addEventListener('pointerdown',event=>startGalleryPhotoMove(event,i,tile,move));
+     tile.appendChild(move);
+   }
+   gallery.appendChild(tile);
+ }
+}
+// Desktop photo cards also open in a large viewer, without using edit handles.
+document.addEventListener('click',e=>{
+ const photo=e.target.closest('.canvas-object.photo-center img');
+ if(!photo || e.target.closest('button'))return;
+ e.preventDefault();e.stopPropagation();
+ const card=photo.closest('.photo-center');openPaperPhotoZoom(photo.currentSrc||photo.src,card?.querySelector('.photo-caption')?.textContent||'');
+},true);
+window.addEventListener('rp:decor-change',()=>requestAnimationFrame(syncPaperPhotoGallery));
+window.addEventListener('resize',()=>requestAnimationFrame(syncPaperPhotoGallery));
+
+async function readPermanentArchive(){
+ if(!recipientMode||permanentArchiveLoaded)return permanentArchiveLoaded;
+ const gift=new URLSearchParams(location.search).get('gift')||'';
+ if(!gift)return false;
+ let response;
+ try{response=await fetch('/api/archive-read?'+new URLSearchParams({room:room.id,gift}),{cache:'no-store',headers:{Accept:'application/json'}})}
+ catch{return false} // The original Supabase reader remains available when archive hosting is unreachable.
+ if(response.status===404)return false;
+ if(response.status===403)throw new Error('INVALID_GIFT');
+ if(!response.ok)return false;
+ const result=await response.json();
+ if(!result?.isArchived||!result.paper||!Array.isArray(result.letters))throw new Error('ARCHIVE_INVALID');
+ room.title=result.paper.title;room.description=result.paper.description||'';
+ room.visibility=result.paper.has_password?'password':'link';
+ room.letters=result.letters.map(l=>({id:l.id,name:l.name,message:l.message||'',color:l.color,photo:l.photo||'',visibility:l.visibility||'all',createdAt:Date.parse(l.created_at)||Date.now(),fontScale:100}));
+ decorateFromServer(result.decor||{});
+ permanentArchiveLoaded=true;giftVerified=true;accessGranted=true;
+ const start=document.getElementById('giftOpen');
+ if(start){start.disabled=false;start.textContent='💌 편지 열어보기'}
+ const caption=document.querySelector('.recipient-caption');if(caption?.firstChild?.nodeType===Node.TEXT_NODE)caption.firstChild.textContent=room.title;
+ const subtitle=document.querySelector('.recipient-open-text');if(subtitle)subtitle.textContent='소중한 마음을 언제든 다시 볼 수 있어요 ✨';
+ update();syncPaperPhotoGallery();
+ return true;
+}
+async function refresh(){
+ if(!uuid.test(room.id)||busy||permanentArchiveLoaded)return;
+ try{
+  if(await readPermanentArchive())return;
+  let data;
+  // IMPORTANT: Existing shared links are stored in rolling_papers, NOT rp_stage_papers.
+  // Read the original production table first. Only a genuine NOT_FOUND can fall back
+  // to the staging table. A wrong password is never treated as an unlocked paper.
+  const originalParams={p_room:room.id,p_read:readPassword};
+  const stageParams={p_room:room.id,p_read:readPassword,p_gift:(recipientMode?new URLSearchParams(location.search).get('gift')||'':''),p_admin:(recipientMode?'':(localStorage.getItem('rolling.admin.'+room.id)||''))};
+  // Recipient links always require a server-verified gift token.
+  // Old production paper IDs keep their original versions and letter data.
+  const originalGift=recipientMode?new URLSearchParams(location.search).get('gift')||'':'';
+  // Public celebration links from older versions can use a different gift-token issuer.
+  // When that token is rejected, a paper without a read password can still be opened
+  // through the existing server-side public-read RPC. Password-protected papers remain locked.
+  async function readOriginalPaper(){
+    if(!recipientMode)return req('/rpc/rolling_read_secure',{method:'POST',body:JSON.stringify(originalParams)});
+    try{
+      return await req('/rpc/rolling_legacy_gift_read',{method:'POST',body:JSON.stringify({p_room:room.id,p_gift:originalGift})});
+    }catch(giftError){
+      const msg=String(giftError?.message||'');
+      if(!/INVALID_GIFT|WRONG_PASSWORD|TOKEN_NOT_FOUND/.test(msg))throw giftError;
+      const openlyReadable=await req('/rpc/rolling_read_secure',{method:'POST',body:JSON.stringify(originalParams)});
+      if(!openlyReadable?.paper)throw giftError;
+      openlyReadable.paper.gift_verified=true;
+      return openlyReadable;
+    }
+  }
+  async function readStagePaper(){
+    try{return await req('/rpc/rp_stage_read',{method:'POST',body:JSON.stringify(stageParams)});}
+    catch(giftError){
+      if(!recipientMode||!/INVALID_GIFT|WRONG_PASSWORD/.test(String(giftError?.message||'')))throw giftError;
+      const openlyReadable=await req('/rpc/rp_stage_read',{method:'POST',body:JSON.stringify({p_room:room.id,p_read:readPassword,p_gift:'',p_admin:''})});
+      if(!openlyReadable?.paper)throw giftError;
+      openlyReadable.paper.gift_verified=true;
+      return openlyReadable;
+    }
+  }
+  if(legacyMode){data=await readOriginalPaper();}
+  else{
+    try{data=await readOriginalPaper();legacyMode=true;}
+    catch(originalError){
+      if(!/NOT_FOUND|PAPER_NOT_FOUND/.test(String(originalError?.message||'')))throw originalError;
+      data=await readStagePaper();
+    }
+  }
+  if(!data?.paper)throw new Error('서버에 해당 페이퍼가 없습니다.');
+  if(recipientMode&&!data.paper.gift_verified)throw new Error('INVALID_GIFT');
+  if(recipientMode){
+   giftVerified=true;
+   const start=document.getElementById('giftOpen');
+   if(start && !document.getElementById('giftEnvelope')?.classList.contains('open')){
+    start.disabled=false;start.textContent='💌 편지 열어보기';
+   }
+   const caption=document.querySelector('.recipient-caption');
+   if(caption){
+    const title=caption.firstChild;
+    if(title&&title.nodeType===Node.TEXT_NODE)title.textContent=data.paper.title;
+   }
+   const sub=document.querySelector('.recipient-open-text');if(sub)sub.textContent='클릭하면 축하의 순간이 펼쳐집니다 ✨';
+   // Do not close a reading modal on periodic Supabase refresh.
+   // The modal is owned by the reader and only closes on explicit user action.
+  }
+  const paper=data.paper, letters=data.letters||[];
+  room.title=paper.title;room.description=paper.description;
+  room.visibility=paper.has_password?'password':'link';
+  room.letters=letters.map(l=>({id:l.id,name:l.name,message:l.message===null?'🔒 주인공에게만 공개된 편지':l.message,color:l.color,photo:l.photo||'',visibility:l.visibility||'all',privateHidden:l.message===null,createdAt:Date.parse(l.created_at),fontScale:100}));
+  accessGranted=true;
+  // Old local UI could open a link-only gate before the first remote fetch completes.
+  const dialogText=$('dialog')?.textContent||'';
+  if(dialogText.includes('초대 링크 확인')||dialogText.includes('전용 링크로 입장')||dialogText.includes('초대받은 공유 링크'))closeModal();
+  const local=JSON.parse(localStorage.getItem('dearTogether.v1')||'{}');local[room.id]={...room,adminPin:''};localStorage.setItem('dearTogether.v1',JSON.stringify(local));
+  try{await decorLoad()}catch(decorError){console.warn('꾸미기 동기화 재시도 예정',decorError);decorStatus('꾸미기 연결 확인 중…',true)}
+  update();
+  syncPaperPhotoGallery();
+ }catch(e){
+   if(String(e?.message||'').includes('WRONG_PASSWORD')){
+     accessGranted=false;
+     if(!passwordDialogOpen){
+       passwordDialogOpen=true;
+       openModal(modalHead('🔑 열람 비밀번호 입력')+'<p class="help">이 롤링페이퍼는 비밀번호를 입력해야 볼 수 있어요.</p><input id="serverReadPassword" class="input" type="password" autocomplete="off" placeholder="열람 비밀번호"><div class="actions"><button id="serverUnlock" class="btn primary">열람하기</button></div>');
+       $('serverUnlock').onclick=async()=>{readPassword=$('serverReadPassword').value;sessionStorage.setItem('rolling.read.'+room.id,readPassword);passwordDialogOpen=false;closeModal();await refresh();};
+     }
+   }else{
+    console.error('공유 편지 로딩 오류',e);
+    const list=$('letters');
+    if(list&&!accessGranted){
+      list.innerHTML='<div class="empty">⚠️ 서버에서 편지를 불러오지 못했습니다.<div style="margin-top:12px;font-size:12px;word-break:break-word"></div><button class="btn primary" type="button" id="reloadPaper">다시 불러오기</button></div>';
+      list.querySelector('div div').textContent=String(e?.message||e).slice(0,180);
+      list.querySelector('#reloadPaper').onclick=()=>refresh();
+    }
+    if(recipientMode){
+     giftVerified=false;
+     const start=document.getElementById('giftOpen');
+     const sub=document.querySelector('.recipient-open-text');
+     if(start){start.disabled=true;start.textContent='🔒 선물 링크 확인 필요';}
+     if(sub)sub.textContent=String(e?.message||'').includes('INVALID_GIFT')
+       ?'주인공 링크를 확인할 수 없습니다. 일반 공유 링크로 열거나 새 링크를 받아주세요.'
+       :'편지를 불러오지 못했습니다: '+String(e?.message||'연결 오류').slice(0,100);
+     if(start){start.textContent='↻ 다시 불러오기';start.disabled=false;start.onclick=()=>{start.disabled=true;refresh()};}
+    }
+   }
+ }
+}
+async function create(event){
+ if(event.target?.id!=='createNew')return;
+ event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+ if(busy)return;
+ const title=document.getElementById('newTitle')?.value.trim();
+ if(!title){toast('제목을 입력해주세요.');return;}
+ busy=true;
+ try{
+  const view=currentView==='rolling'?'rolling':'postbox';
+  const adminPin=document.getElementById('newAdminPin')?.value||'';
+  if(adminPin.length<4){toast('관리자 비밀번호 4자 이상 입력해 주세요.');return;}
+  const password=document.getElementById('newPaperReadPassword')?.value||'';
+  const id=await req('/rpc/rp_stage_create',{method:'POST',body:JSON.stringify({p_title:title,p_description:document.getElementById('newDesc')?.value.trim()||'',p_layout:view,p_admin:adminPin,p_read:password})});
+  if(!id?.id)throw new Error('테스트 서버에서 주소를 받지 못했습니다.');
+  localStorage.setItem('rp.stage.gift.'+id.id,id.gift_token);
+  sessionStorage.setItem('rolling.read.'+id.id,password);
+  localStorage.setItem('rolling.admin.'+id.id,adminPin);
+  location.href=location.pathname+'?stage=1&room='+encodeURIComponent(id.id)+'&view='+encodeURIComponent(view);
+ }catch(e){showSaveError('페이퍼 만들기',e)}finally{busy=false}
+}
+async function send(event){
+ if(event.target?.id!=='send'||!uuid.test(room.id))return;
+ event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+ if(busy)return;
+ const name=document.getElementById('writer')?.value.trim();const message=document.getElementById('message')?.value.trim();
+ const authorPin=document.getElementById('authorPin')?.value||'';
+ if(!name||!message){toast('이름과 편지 내용을 입력해 주세요.');return;}
+ if(authorPin.length<4){toast('편지 수정·삭제 비밀번호를 4자 이상 입력해 주세요.');return;}
+ busy=true;
+ try{
+  const f=document.querySelector('#preview img');const photo=f?.getAttribute('src')||null;
+  const fields={p_room:room.id,p_read:readPassword,p_name:name,p_message:message,p_color:document.querySelector('#swatches .selected')?.style.backgroundColor||'#f4d5e1',p_photo:photo,p_author:authorPin};
+  if(legacyMode){
+    
+    await req('/rpc/rolling_write_with_author',{method:'POST',body:JSON.stringify(fields)});
+  }else{
+    await req('/rpc/rp_stage_write',{method:'POST',body:JSON.stringify({...fields,p_visibility:'all'})});
+  }
+  closeModal();await refresh();toast('모든 친구에게 편지가 공유됐어요! 💌');
+ }catch(e){showSaveError('편지 저장',e)}finally{busy=false}
+}
+function showSaveError(stage,err){
+ console.error('[Supabase '+stage+']',err);
+ const reason=String(err?.message||err||'알 수 없는 오류');
+ toast(stage+' 실패 · '+reason.slice(0,140));
+ const msg='저장할 수 없었습니다.\n\n'+reason+'\n\n파일을 직접 열었다면 Vercel에 배포한 HTTPS 주소에서 다시 실행해 주세요.\n그래도 실패하면 이 오류 문구를 복사해서 알려주세요.';
+ alert(msg);
+}
+document.addEventListener('click',create,true);
+document.addEventListener('click',send,true);
+// Don't silently claim that client-only editing, password gates or drawing are shared.
+const info=document.createElement('div');info.style.cssText='position:fixed;bottom:9px;right:9px;z-index:17;background:#fffdf9ee;border:1px solid #e8dbe7;border-radius:13px;padding:7px 10px;font:11px sans-serif;color:#765a76;max-width:250px;box-shadow:0 3px 13px #0001';
+info.innerHTML='<button id="serverStatusBtn" type="button" style="border:0;background:transparent;cursor:pointer;color:#765a76;font:inherit">🔌 서버 연결 확인</button><span id="serverStatusText"></span>';document.body.appendChild(info);
+info.querySelector('#serverStatusBtn').onclick=async()=>{const label=info.querySelector('#serverStatusText');label.textContent=' · 확인 중';try{await req(legacyMode?'/rpc/rolling_read_secure':'/rpc/rp_stage_read',{method:'POST',body:JSON.stringify(legacyMode?{p_room:room.id,p_read:readPassword}:{p_room:room.id,p_read:readPassword,p_gift:(recipientMode?new URLSearchParams(location.search).get('gift')||'':''),p_admin:(recipientMode?'':(localStorage.getItem('rolling.admin.'+room.id)||''))})});label.textContent=' · 연결 정상 ✅'}catch(e){label.textContent=' · 연결 오류 ⚠️';showSaveError('서버 연결',e)}};
+
+if(uuid.test(room.id)){
+  accessGranted=false;
+  const list=$('letters');
+  if(list)list.innerHTML='<div class="empty" id="remoteLoading">💌 편지를 서버에서 불러오는 중이에요…</div>';
+  refresh();
+  setInterval(()=>{if(!document.hidden && !passwordDialogOpen)refresh()},4000);
+}
+/* V23: no fake local password setting; use Supabase access control */
+const createObserver=new MutationObserver(()=>{
+  const pin=document.getElementById('newAdminPin');
+  if(!pin||document.getElementById('newPaperReadPassword'))return;
+  const label=document.createElement('label');label.className='field';label.htmlFor='newPaperReadPassword';label.textContent='공유 링크 열람 비밀번호 (선택)';
+  const input=document.createElement('input');input.id='newPaperReadPassword';input.className='input';input.type='password';input.placeholder='비워두면 링크만으로 열람';
+  pin.insertAdjacentElement('afterend',input);input.insertAdjacentElement('beforebegin',label);
+});createObserver.observe(document.getElementById('dialog'),{childList:true,subtree:true});
+const settingBtn=document.getElementById('settingsBtn');
+settingBtn.addEventListener('click',ev=>{
+ if(!uuid.test(room.id))return;
+ ev.stopImmediatePropagation();ev.preventDefault();
+ const savedAdmin=localStorage.getItem('rolling.admin.'+room.id)||'';
+ openModal(modalHead('⚙️ 열람 비밀번호 설정')+
+  '<p class="help">서버에 저장된 페이퍼의 열람 비밀번호를 변경합니다. 비워두면 링크만으로 볼 수 있습니다.</p>'+
+  '<label class="field">관리자 비밀번호</label><input id="secureAdmin" class="input" type="password" autocomplete="off" placeholder="새 페이퍼 생성 시 정한 비밀번호">'+
+  '<label class="field">새 열람 비밀번호 (선택)</label><input id="secureRead" class="input" type="password" placeholder="비워두면 암호 없이 링크로 열람">'+
+  '<p class="help">※ V22 이전에 만든 서버 페이퍼는 서버 관리자 비밀번호가 등록되지 않았습니다. 이 설정을 변경하려면 새 페이퍼를 생성해야 합니다.</p>'+
+  '<div class="actions"><button class="btn primary" id="secureSave">서버에 저장</button></div>');
+ $('secureAdmin').value=savedAdmin;
+ $('secureSave').onclick=async()=>{
+  try{
+   const admin=$('secureAdmin').value,newRead=$('secureRead').value;
+   await req(legacyMode?'/rpc/rolling_set_access_secure':'/rpc/rp_stage_set_access',{method:'POST',body:JSON.stringify({p_room:room.id,p_admin:admin,p_read:newRead})});
+   localStorage.setItem('rolling.admin.'+room.id,admin);
+   readPassword=newRead;sessionStorage.setItem('rolling.read.'+room.id,readPassword);
+   closeModal();await refresh();toast('열람 비밀번호가 서버에 저장됐어요.');
+  }catch(err){showSaveError('열람 암호 변경',err);}
+ };
+},true);
+// Link-only papers work without a password. Password-protected ones require an explicit server check.
+
+// On new paper URLs, prefer the chosen layout (not a different old browser preference).
+const requestedView=new URLSearchParams(location.search).get('view');if(requestedView==='postbox'||requestedView==='rolling'){currentView=requestedView;update();}
+
+/* V19: glamorous recipient reading mode */
+if(recipientMode){
+  function recipientApplyChrome(){
+    document.querySelector('.controls')?.classList.add('pill-actions-only');
+    const hideIds=['writeBtn','shareParticipantBtn','sendRecipientBtn','settingsBtn','shareBtn','newBtn','myPapersBtn'];
+    hideIds.forEach(id=>{const el=$(id); if(el) el.style.display='none';});
+    ['count','mode','status'].forEach(id=>{const el=$(id); if(el) el.style.display='none';});
+    const fp=document.querySelector('.font-panel'); if(fp) fp.style.display='none';
+    const ct=$('canvasToolbar'); if(ct) ct.style.display='none';
+    const pt=document.querySelector('.paint-toolbar'); if(pt) pt.style.display='none';
+    const bl=document.querySelector('.below'); if(bl) bl.style.display='none';
+    const ft=document.querySelector('.footerhint'); if(ft) ft.style.display='none';
+    document.querySelectorAll('.edit-handle,.move-handle,.resize-handle').forEach(el=>el.remove());
+    document.querySelectorAll('.canvas-object').forEach(el=>el.classList.remove('is-selected'));
+  }
+  function recipientLetterMarkup(l){
+    const visible = (!l.viewPin || unlockedLetters.has(l.id) || adminGranted);
+    return `<div class="letter-paper" data-letter-id="${l.id}" style="font-size:${16*(room.fontScale[currentView]||100)/100*(l.fontScale||100)/100}px">${l.viewPin&&!unlockedLetters.has(l.id)&&!adminGranted?'🔒 비밀번호가 설정된 편지':esc(l.message).replace(/\n/g,'<br>')}${l.photo&&visible?`<img src="${l.photo}" alt="첨부한 사진">`:''}<div class="letter-sign">From. ${esc(l.name)}</div></div>`;
+  }
+  function recipientOpenLetter(id){
+    if(!canView()){accessModal();return}
+    const l=room.letters.find(x=>String(x.id)===String(id));if(!l)return;
+    openModal(modalHead('💌 편지 크게 읽기')+
+      `<div class="recipient-expanded-letter">${recipientLetterMarkup(l)}</div>`+
+      `<div class="actions recipient-reader-actions"><button class="btn light" id="recipientBack">← 편지 모아보기</button><button class="btn primary" id="recipientDone">닫기</button></div>`,true);
+    $('recipientBack').onclick=()=>allLettersModal();
+    $('recipientDone').onclick=closeModal;
+  }
+  viewLetter=function(id){recipientOpenLetter(id)};
+  allLettersModal=function(){
+    if(!canView()){accessModal();return}
+    const collection=room.letters.length?room.letters.map(l=>
+      `<button type="button" class="recipient-letter-preview" data-recipient-letter="${esc(l.id)}" aria-label="${esc(l.name)}님의 편지 크게 보기">${recipientLetterMarkup(l)}<span class="recipient-preview-tip">눌러서 크게 읽기 ↗</span></button>`
+    ).join(''):'<p class="help">아직 편지가 없어요.</p>';
+    openModal(modalHead('💌 편지 모아보기')+`<div class="recipient-letter-collection">${collection}</div>`,true);
+    $('dialog').querySelectorAll('[data-recipient-letter]').forEach(el=>{
+      el.onclick=()=>recipientOpenLetter(el.dataset.recipientLetter);
+    });
+  };
+  const _v19Update=update;
+  update=function(){_v19Update();recipientApplyChrome();};
+  recipientApplyChrome();
+
+  function launchCelebration(){
+    const colors=['#f49ac2','#ffd166','#7bdff2','#b8f2e6','#cdb4db','#ff9f1c','#8ecae6','#ff6b9a'];
+    const confetti=document.createElement('div'); confetti.className='recipient-confetti';
+    for(let i=0;i<(window.matchMedia('(max-width: 650px)').matches?40:72);i++){
+      const p=document.createElement('span'); p.className='piece';
+      p.style.left=(Math.random()*100)+'vw';
+      p.style.background=colors[i%colors.length];
+      p.style.setProperty('--dx', ((Math.random()*50)-25)+'vw');
+      p.style.animationDelay=(Math.random()*0.45)+'s';
+      p.style.transform=`translate3d(0,-10vh,0) rotate(${Math.random()*220}deg)`;
+      confetti.appendChild(p);
+    }
+    const fireworks=document.createElement('div'); fireworks.className='recipient-fireworks';
+    (window.matchMedia('(max-width: 650px)').matches?[[18,24],[82,22],[50,35]]:[[18,24],[82,22],[28,62],[73,58],[50,35]]).forEach(([x,y],idx)=>{
+      const b=document.createElement('span'); b.className='burst';
+      b.style.left=x+'vw'; b.style.top=y+'vh'; b.style.color=colors[(idx*2)%colors.length];
+      b.style.animationDelay=(idx*0.12)+'s'; fireworks.appendChild(b);
+    });
+    const banner=document.createElement('div'); banner.className='recipient-banner';
+    banner.innerHTML='🎉 축하해요!<small>소중한 마음이 한가득 도착했어요</small>';
+    document.body.append(confetti,fireworks,banner);
+    setTimeout(()=>{confetti.remove();fireworks.remove();banner.remove();},3200);
+  }
+  const giftOpenBtn=$('giftOpen');
+  if(giftOpenBtn && $('giftEnvelope')){
+    giftOpenBtn.onclick=()=>{
+      if(!giftVerified){toast('주인공 링크를 확인한 뒤 열 수 있어요.');return;}
+      giftOpenBtn.disabled=true;
+      giftOpenBtn.textContent='마음이 열리고 있어요…';
+      launchCelebration();
+      $('giftEnvelope').classList.add('open');
+      setTimeout(()=>{document.getElementById('giftReveal')?.classList.add('is-done');setTimeout(()=>document.getElementById('giftReveal')?.remove(),750);window.scrollTo({top:0,behavior:'smooth'});update();},2200);
+    };
+  }
+}
+
+
+/* V25: remote-safe letter edit and delete. Never trust client-only adminGranted. */
+if(uuid.test(room.id) && !recipientMode){
+ async function modifyServerLetter(letter,secret,action,data={}){
+   // Empty strings are not images. The secured Supabase RPC validates photo MIME format.
+   // Keep existing data unless a replacement is explicitly supplied; never send "".
+   const selectedPhoto=Object.prototype.hasOwnProperty.call(data,'photo')?data.photo:letter.photo;
+   const validPhoto=typeof selectedPhoto==='string' && /^data:image\/(?:jpeg|png|webp);base64,/i.test(selectedPhoto)?selectedPhoto:null;
+   if(selectedPhoto && !validPhoto && action!=='delete'){
+     throw new Error('사진이 유효하지 않습니다. 사진을 다시 선택해 주세요.');
+   }
+   const p={p_room:room.id,p_letter:letter.id,p_secret:secret,
+     p_name:data.name??letter.name,p_message:data.message??letter.message,
+     p_photo:validPhoto,p_delete:action==='delete',p_visibility:data.visibility||letter.visibility||'all'};
+   const endpoint=legacyMode?'/rpc/rolling_modify_letter':'/rpc/rp_stage_modify';
+   if(legacyMode)delete p.p_visibility;
+   const ok=await req(endpoint,{method:'POST',body:JSON.stringify(p)});
+   if(ok!==true)throw new Error('서버에서 변경 성공을 확인하지 못했어요.');
+   await refresh();
+ }
+ function serverOwnerChoice(letter,action){
+   const saved=localStorage.getItem('rolling.admin.'+room.id)||'';
+   const isDelete=action==='delete';
+   openModal(modalHead(isDelete?'🗑 편지 삭제 확인':'✏️ 편지 수정 확인')+
+     '<p class="help">작성할 때 정한 <b>편지 수정·삭제 비밀번호</b> 또는 <b>페이퍼 관리자 비밀번호</b>를 입력하세요.</p>'+
+     `<input class="input" type="password" id="remoteOwnerPin" autocomplete="off" placeholder="작성자 또는 관리자 비밀번호">`+
+     '<div class="actions"><button class="btn primary" id="remoteVerifyOwner">확인</button></div>');
+   // Only suggest the device's saved administrator secret. Do not bypass server verification.
+   if(saved) $('remoteOwnerPin').value=saved;
+   $('remoteVerifyOwner').onclick=async()=>{
+     const secret=$('remoteOwnerPin').value;
+     if(!secret){toast('비밀번호를 입력해 주세요.');return;}
+     if(isDelete){
+       if(!confirm('이 편지를 서버에서 삭제할까요? 다른 기기에서도 사라집니다.'))return;
+       $('remoteVerifyOwner').disabled=true;
+       try{await modifyServerLetter(letter,secret,'delete');closeModal();toast('편지가 삭제됐어요.');}
+       catch(e){$('remoteVerifyOwner').disabled=false;toast(String(e.message).includes('INVALID_EDITOR_PASSWORD')?'비밀번호가 맞지 않습니다.':e.message);}
+       return;
+     }
+     if(letter.privateHidden){
+       try{const own=await req('/rpc/rp_stage_read_letter',{method:'POST',body:JSON.stringify({p_room:room.id,p_letter:letter.id,p_secret:secret})});serverEditForm({...letter,name:own.name,message:own.message,photo:own.photo||'',visibility:own.visibility},secret)}
+       catch(e){toast(e.message.includes('INVALID_EDITOR_PASSWORD')?'작성자 또는 관리자 비밀번호가 틀려요.':e.message)}
+     } else serverEditForm(letter,secret);
+   };
+ }
+ function serverEditForm(letter,secret){
+   openModal(modalHead('✏️ 편지 수정')+
+     `<label class="field">보내는 사람</label><input class="input" id="remoteEditName" maxlength="60" value="${esc(letter.name)}">`+
+     `<label class="field">편지 내용</label><textarea class="input" id="remoteEditMessage" maxlength="3000">${esc(letter.message)}</textarea>`+
+     '<label class="field">사진 변경 (선택)</label><input class="input" type="file" id="remoteEditPhoto" accept="image/*">'+
+     '<p class="help">사진을 선택하지 않으면 기존 사진이 유지됩니다.</p>'+
+     '<label class="field">공개 범위</label><select class="input" id="remoteEditVisibility"><option value="all">🌍 모두 공개</option><option value="recipient">💌 주인공에게만 공개</option></select>'+ 
+     '<div class="actions"><button class="btn light" id="remoteCancel">취소</button><button class="btn primary" id="remoteSaveEdit">서버에 수정 저장</button></div>',true);
+   $('remoteEditVisibility').value=letter.visibility||'all';
+   $('remoteCancel').onclick=closeModal;
+   $('remoteSaveEdit').onclick=async()=>{
+     const name=$('remoteEditName').value.trim(),message=$('remoteEditMessage').value.trim();
+     if(!name||!message){toast('작성자 이름과 편지 내용을 입력해 주세요.');return;}
+     $('remoteSaveEdit').disabled=true;
+     try{
+       const file=$('remoteEditPhoto').files?.[0];
+       const photo=file?await resizeImage(file):(letter.photo||null);
+       await modifyServerLetter(letter,secret,'edit',{name,message,photo,visibility:$('remoteEditVisibility').value});
+       closeModal();toast('수정한 편지가 모든 기기에 반영됐어요.');
+     }catch(e){$('remoteSaveEdit').disabled=false;toast(String(e.message).includes('INVALID_EDITOR_PASSWORD')?'비밀번호가 맞지 않습니다.':e.message);}
+   };
+ }
+ // Capture intercepts the old local-only button handlers in the letter modal.
+ document.addEventListener('click',event=>{
+   const button=event.target.closest?.('#authorEdit,#authorDelete');
+   if(!button)return;
+   event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+   const id=$('dialog')?.querySelector('.letter-paper')?.dataset.letterId;
+   const letter=room.letters.find(l=>l.id===id);
+   if(!letter){toast('편지를 찾을 수 없어요.');return;}
+   serverOwnerChoice(letter,button.id==='authorDelete'?'delete':'edit');
+ },true);
+ // Clicking a selected memo's edit control can open the actual message editor too.
+ document.addEventListener('dblclick',event=>{
+   const card=event.target.closest?.('.note-card[data-letter-id]');
+   if(!card||currentView!=='rolling')return;
+   const l=room.letters.find(x=>x.id===card.dataset.letterId);
+   if(l){event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();serverOwnerChoice(l,'edit');}
+ },true);
+}
+
+
+/* Stage: administrator permissions must be checked by the database. */
+if(uuid.test(room.id)){
+ requireAdmin=function(next){
+  openModal(modalHead('🔐 관리자 인증')+'<p class="help">관리자 비밀번호를 서버에서 확인합니다.</p><input type="password" class="input" id="stageAdminInput" placeholder="관리자 비밀번호"><div class="actions"><button class="btn primary" id="stageAdminConfirm">인증하기</button></div>');
+  $('stageAdminInput').value=localStorage.getItem('rolling.admin.'+room.id)||'';
+  $('stageAdminConfirm').onclick=async()=>{
+   const pin=$('stageAdminInput').value;
+   if(!pin)return toast('관리 비밀번호를 입력해 주세요.');
+   try{
+    const allowed=await req(legacyMode?'/rpc/rolling_admin_check':'/rpc/rp_stage_admin_check',{method:'POST',body:JSON.stringify({p_room:room.id,p_admin:pin})});
+    if(!allowed)throw new Error('관리자 비밀번호가 다릅니다.');
+    localStorage.setItem('rolling.admin.'+room.id,pin);
+    adminGranted=true;closeModal();await refresh();next();
+   }catch(e){toast('인증 실패: '+e.message)}
+  };
+ };
+}
+/* Permanent archive: make an independent, read-only copy after the server has all photos. */
+if(uuid.test(room.id)&&!recipientMode){
+ const archiveButton=document.createElement('button');
+ archiveButton.type='button';archiveButton.id='permanentArchiveButton';
+ archiveButton.className='btn light slim';
+ archiveButton.textContent='🗃 영구 보관하기';
+ const parent=document.getElementById('sendRecipientBtn')||document.getElementById('settingsBtn');
+ parent?.insertAdjacentElement('afterend',archiveButton);
+ archiveButton?.addEventListener('click',()=>{
+  openModal(modalHead('🗃 영구 보관하기')+
+   '<p class="help">현재 서버에 저장된 편지, 사진, 스티커, 배치를 독립 저장소에 복사합니다. <b>기존 자료는 삭제하지 않습니다.</b></p>'+
+   '<p class="help">기존 주인공 링크를 그대로 유지하려면 실제 전달했던 주인공 링크를 붙여넣으세요. 여러 개의 주인공 링크를 사용했다면 각각 한 번씩 추가 보관하세요.</p>'+
+   '<label class="field">기존 주인공 링크</label><input class="input" id="archiveExistingGift" placeholder="https://.../?room=...&mode=gift&gift=...">'+
+   '<label class="field">보관 관리자 키 (Vercel 환경변수로 설정)</label><input class="input" id="archiveAdminSecret" type="password" autocomplete="off">'+
+   '<p class="help">보관이 성공한 뒤 다른 기기의 주인공 링크로 확인하고 Supabase를 중지하세요.</p>'+
+   '<div class="actions"><button class="btn primary" id="archiveConfirmButton">원본을 유지하고 보관본 만들기</button></div>',true);
+  document.getElementById('archiveConfirmButton').onclick=async()=>{
+   const button=document.getElementById('archiveConfirmButton');
+   const giftUrl=document.getElementById('archiveExistingGift').value.trim();
+   const adminSecret=document.getElementById('archiveAdminSecret').value;
+   if(!giftUrl||!adminSecret){toast('주인공 링크와 보관 관리자 키를 입력해주세요.');return}
+   if(decorDirty||decorWriting||decorMovePending||decorMoveQueue.size){toast('꾸미기 서버 저장이 완료된 후 보관해주세요.');return}
+   button.disabled=true;button.textContent='편지·사진 보관 및 확인 중…';
+   try{
+    const res=await fetch('/api/archive-create',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({roomId:room.id,giftUrl,adminSecret,expectedLetters:room.letters.length,expectedImageReferences:(JSON.stringify({photosPostbox:room.photosPostbox,photosRolling:room.photosRolling,centerPhotos:room.centerPhotos,centerPhoto:room.centerPhoto,letters:room.letters.map(x=>x.photo)}).match(/data:image\//g)||[]).length})});
+    const data=await res.json();if(!res.ok||!data.ok)throw new Error(data.error||'보관 실패');
+    closeModal();
+    alert('영구 보관 확인 완료! 편지 '+data.counts.letters+'개, 사진 데이터 '+data.counts.images+'개 보관됨. 기존 원본은 유지됩니다.\n기존 주인공 링크로 실제 읽기를 확인한 뒤 Supabase를 중지하세요.');
+   }catch(e){toast('영구 보관 실패: '+String(e.message||e).slice(0,75));button.disabled=false;button.textContent='다시 시도'}
+  }
+ });
+}
+
+/* V30: reliable share actions, always show the generated URL, with copy fallback. */
+function showStageLinkDialog(title,url,description){
+ openModal(modalHead(title)+`<p class="help">${description}</p><label class="field">공유할 주소</label><input class="input" id="v30LinkInput" readonly value="${esc(url)}"><div class="actions"><button class="btn primary" id="v30CopyLink">링크 복사</button></div>`,true);
+ $('v30CopyLink').onclick=async()=>{try{await navigator.clipboard.writeText(url);toast('링크를 복사했어요!')}catch{const field=$('v30LinkInput');field.select();field.setSelectionRange(0,field.value.length);try{document.execCommand('copy');toast('링크 복사를 시도했어요.')}catch{toast('주소를 길게 눌러 직접 복사해 주세요.')}}};
+}
+if(uuid.test(room.id)){
+ $('shareParticipantBtn').onclick=()=>{
+  const url=new URL(location.origin+location.pathname);
+  url.searchParams.set('stage','1');url.searchParams.set('room',room.id);url.searchParams.set('view',currentView);
+  showStageLinkDialog('🔗 참여자 링크 공유',url.href,'이 링크로 들어오면 편지를 작성할 수 있어요. 열람 암호를 설정했다면 암호도 따로 알려주세요.');
+ };
+ $('shareBtn').onclick=$('shareParticipantBtn').onclick;
+}
+
+/* Public celebration link: administrators manage letters; anybody may share the celebration. */
+if(uuid.test(room.id)){
+ $('sendRecipientBtn').onclick=async()=>{
+   const btn=$('sendRecipientBtn');btn.disabled=true;
+   try{
+     // Read mode is determined from the backend, never from a browser-only flag.
+     const rpc=legacyMode?'/rpc/rolling_public_gift_issue':'/rpc/rp_stage_public_gift_issue';
+     const token=await req(rpc,{method:'POST',body:JSON.stringify({p_room:room.id})});
+     if(typeof token!=='string'||token.length<32)throw new Error('서버에서 주인공 링크를 받지 못했습니다.');
+     const url=new URL(location.origin+location.pathname);
+     url.searchParams.set('room',room.id);
+     // A recipient link opens the original layout of this current paper link.
+     url.searchParams.set('view',currentView);
+     url.searchParams.set('mode','gift');
+     url.searchParams.set('gift',token);
+     openModal(modalHead('🎁 주인공에게 보내기')+
+       '<p class="help">누구나 축하 링크를 만들어 전달할 수 있어요. 봉투 열기와 빵빠레 애니메이션이 실행됩니다.</p>'+
+       `<label class="field">주인공 전달 링크</label><input class="input" id="giftLinkPublic" readonly value="${esc(url.href)}">`+
+       '<p class="help">⚠️ 이 링크를 가진 사람은 주인공에게만 공개된 편지도 읽을 수 있습니다. 공유 대상에 주의하세요.</p>'+
+       '<div class="actions"><button id="giftCopyPublic" class="btn primary">링크 복사하기</button></div>',true);
+     $('giftCopyPublic').onclick=async()=>{
+       try{await navigator.clipboard.writeText(url.href);toast('주인공 링크 복사 완료!')}
+       catch{const f=$('giftLinkPublic');f.select();f.setSelectionRange(0,f.value.length);toast('주소를 선택했어요. 복사해주세요.')}
+     };
+   }catch(e){toast('링크 생성 오류: '+String(e.message||e))}
+   finally{btn.disabled=false}
+ };
+}
+
+
+
+
+/* Single-tap letter opening for canvas notes (regular and recipient views).
+   Edit/move/resize controls retain their existing handlers. */
+document.addEventListener('click', function openCanvasLetterOnSingleClick(event){
+  if(currentView!=='rolling')return;
+  const card=event.target.closest?.('#letters .note-card[data-letter-id]');
+  if(!card)return;
+  if(event.target.closest('button,.move-handle,.resize-handle,.edit-handle,.resize-grip,[data-no-open]'))return;
+  const letterId=card.dataset.letterId;
+  if(!letterId)return;
+  event.preventDefault();
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+  viewLetter(letterId);
+},true);
+
+})();
+</script></body></html>
